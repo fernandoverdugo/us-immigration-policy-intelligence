@@ -63,6 +63,10 @@ jobs:
       - name: Verify semantic search endpoint
         run: |
           curl --fail --silent --get             --data-urlencode "q=work permits for Liberians protected from deportation"             --data-urlencode "k=3"             http://127.0.0.1:8000/search             | python -c 'import json,sys; d=json.load(sys.stdin); assert d["count"]==3; print(d["results"][0]["title"])'
+      - name: Verify document detail page
+        run: |
+          curl --fail --silent http://127.0.0.1:8000/document/2017-00902 \
+            | grep "Federal Register document"
       - name: Verify rich document endpoint
         run: |
           curl --fail --silent http://127.0.0.1:8000/documents/2017-00902 \

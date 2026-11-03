@@ -49,6 +49,23 @@ def build_text(frame: pd.DataFrame) -> pd.Series:
     return (titles + ". " + abstracts).str.replace(r"\\s+", " ", regex=True).str.strip()
 
 
+def nlp_scope(frame: pd.DataFrame) -> pd.Series:
+    routine_notice = (
+        frame["document_type"].eq("Notice")
+        & frame["title"].fillna("").str.startswith(
+            "Agency Information Collection Activities"
+        )
+    )
+    return pd.Series(
+        np.where(
+            routine_notice,
+            "administrative_information_collection",
+            "substantive_policy",
+        ),
+        index=frame.index,
+    )
+
+
 def fit_tfidf(text: pd.Series) -> tuple[TfidfVectorizer, np.ndarray]:
     vectorizer = TfidfVectorizer(
         stop_words="english",
@@ -171,36 +188,51 @@ def main() -> None:
         frame["publication_date"], errors="coerce"
     ).dt.year.astype("Int64")
 
+    frame["nlp_scope"] = nlp_scope(frame)
+
     coverage = {
         "documents": int(len(frame)),
         "nonempty_title": int(frame["title"].fillna("").str.strip().ne("").sum()),
         "nonempty_abstract": int(frame["abstract"].fillna("").str.strip().ne("").sum()),
         "nonempty_text": int(frame["text"].str.strip().ne("").sum()),
+        "administrative_information_collection": int(
+            frame["nlp_scope"].eq("administrative_information_collection").sum()
+        ),
+        "substantive_policy": int(frame["nlp_scope"].eq("substantive_policy").sum()),
     }
 
-    vectorizer, matrix = fit_tfidf(frame["text"])
+    substantive = frame.loc[frame["nlp_scope"].eq("substantive_policy")].copy()
+    substantive = substantive.reset_index(drop=True)
 
+    vectorizer, matrix = fit_tfidf(substantive["text"])
+
+    year_mask = substantive["publication_year"].notna().to_numpy()
+    year_frame = substantive.loc[year_mask].copy()
+    year_frame["publication_year"] = year_frame["publication_year"].astype(str)
     year_terms = top_terms_by_group(
-        frame.dropna(subset=["publication_year"]).assign(
-            publication_year=lambda x: x["publication_year"].astype(str)
-        ),
-        matrix[frame["publication_year"].notna().to_numpy()],
+        year_frame,
+        matrix[year_mask],
         vectorizer,
         "publication_year",
     )
 
-    agency_long = frame.copy()
+    agency_long = substantive.copy()
     agency_long["agency_scopes"] = agency_long["agency_scopes"].fillna("")
     exploded = agency_long.assign(
-        agency_scope=agency_long["agency_scopes"].str.split(r"s+|s+", regex=True)
+        agency_scope=agency_long["agency_scopes"].str.split(" | ", regex=False)
     ).explode("agency_scope")
     exploded = exploded[exploded["agency_scope"].ne("")]
 
     agency_rows = []
     features = np.array(vectorizer.get_feature_names_out())
     for scope in sorted(exploded["agency_scope"].unique()):
-        doc_numbers = set(exploded.loc[exploded["agency_scope"] == scope, "document_number"])
-        mask = frame["document_number"].isin(doc_numbers).to_numpy()
+        doc_numbers = set(
+            exploded.loc[
+                exploded["agency_scope"] == scope,
+                "document_number",
+            ]
+        )
+        mask = substantive["document_number"].isin(doc_numbers).to_numpy()
         mean_scores = np.asarray(matrix[mask].mean(axis=0)).ravel()
         order = mean_scores.argsort()[::-1][:15]
         for rank, idx in enumerate(order, start=1):
@@ -214,8 +246,12 @@ def main() -> None:
             )
     agency_terms = pd.DataFrame(agency_rows)
 
-    related = related_documents(frame, matrix)
-    assignments, cluster_terms = cluster_documents(frame, matrix, vectorizer)
+    related = related_documents(substantive, matrix)
+    assignments, cluster_terms = cluster_documents(
+        substantive,
+        matrix,
+        vectorizer,
+    )
 
     frame[
         [
@@ -224,6 +260,7 @@ def main() -> None:
             "document_type",
             "title",
             "agency_scopes",
+            "nlp_scope",
             "text",
         ]
     ].to_csv(OUTPUT_DIR / "document_text.csv", index=False)
@@ -237,6 +274,7 @@ def main() -> None:
         "coverage": coverage,
         "tfidf_features": int(matrix.shape[1]),
         "tfidf_documents": int(matrix.shape[0]),
+        "tfidf_scope": "substantive_policy",
         "clusters": int(assignments["cluster"].nunique()),
     }
     (OUTPUT_DIR / "nlp_summary.json").write_text(

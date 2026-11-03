@@ -53,6 +53,7 @@ jobs:
           git add analysis/retrieval/results
           if ! git diff --cached --quiet; then
             git commit -m "Update retrieval benchmark results"
+            git pull --rebase origin main
             git push
           fi
       - uses: actions/upload-artifact@v4

@@ -31,7 +31,7 @@ jobs:
           --health-timeout 5s
           --health-retries 10
     permissions:
-      contents: read
+      contents: write
     env:
       DATABASE_URL: postgresql://postgres:postgres@localhost:5432/immigration_policy
     steps:
@@ -45,6 +45,17 @@ jobs:
       - run: python -m scripts.build_corpus_quality_report
       - run: python -m scripts.load_postgres
       - run: python -m scripts.run_sql_analysis
+      - name: Preserve aggregate SQL outputs
+        run: |
+          mkdir -p analysis/outputs
+          cp data/processed/sql/*.csv analysis/outputs/
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/outputs
+          if ! git diff --cached --quiet; then
+            git commit -m "Update full-corpus SQL outputs"
+            git push
+          fi
       - uses: actions/upload-artifact@v4
         with:
           name: full-corpus-analysis

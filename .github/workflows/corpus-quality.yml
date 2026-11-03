@@ -1,0 +1,82 @@
+name: Corpus quality audit
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - run: python -m pip install -r requirements.txt
+      - run: python -m pytest -q
+      - run: python scripts/fetch_federal_register.py
+      - name: Build corpus quality report
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from pathlib import Path
+
+          raw_dir = Path("data/raw")
+          processed = json.loads(Path("data/processed/federal_register_corpus.json").read_text())
+
+          fetched = {}
+          for path in raw_dir.glob("federal_register_*.json"):
+              agency = path.stem.replace("federal_register_", "")
+              fetched[agency] = len(json.loads(path.read_text()))
+
+          by_agency = Counter()
+          by_year = Counter()
+          by_type = Counter()
+          by_reason = Counter()
+
+          for doc in processed:
+              by_agency[doc.get("source_agency_scope", "unknown")] += 1
+              date = doc.get("publication_date") or ""
+              if len(date) >= 4:
+                  by_year[date[:4]] += 1
+              by_type[doc.get("type") or "unknown"] += 1
+              for reason in doc.get("inclusion_reasons", []):
+                  by_reason[reason] += 1
+
+          report = {
+              "fetched_by_agency": dict(sorted(fetched.items())),
+              "included_unique": len(processed),
+              "included_by_source_agency": dict(sorted(by_agency.items())),
+              "included_by_year": dict(sorted(by_year.items())),
+              "included_by_document_type": dict(sorted(by_type.items())),
+              "included_by_reason": dict(sorted(by_reason.items())),
+              "sample_documents": [
+                  {
+                      "document_number": d.get("document_number"),
+                      "source_agency_scope": d.get("source_agency_scope"),
+                      "publication_date": d.get("publication_date"),
+                      "type": d.get("type"),
+                      "title": d.get("title"),
+                      "inclusion_reasons": d.get("inclusion_reasons"),
+                      "matched_terms": d.get("matched_terms"),
+                  }
+                  for d in processed[:40]
+              ],
+          }
+
+          Path("corpus_quality_summary.json").write_text(
+              json.dumps(report, indent=2), encoding="utf-8"
+          )
+          print(json.dumps(report, indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: corpus-quality-audit
+          path: |
+            corpus_quality_summary.json
+            data/processed/federal_register_corpus.json
+          retention-days: 7

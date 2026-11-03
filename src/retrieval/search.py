@@ -29,10 +29,37 @@ def load_index() -> tuple[pd.DataFrame, np.ndarray]:
     if len(metadata) != len(embeddings):
         raise ValueError("Embedding index metadata and vectors are misaligned.")
 
-    app_metadata = pd.read_csv(NLP_RESULTS_DIR / "document_metadata.csv")
-    app_metadata = app_metadata.loc[
-        app_metadata["nlp_scope"].eq("substantive_policy")
-    ].copy()
+    metadata_path = NLP_RESULTS_DIR / "document_metadata.csv"
+    if metadata_path.exists():
+        app_metadata = pd.read_csv(metadata_path)
+        app_metadata = app_metadata.loc[
+            app_metadata["nlp_scope"].eq("substantive_policy")
+        ].copy()
+    else:
+        text_index = pd.read_csv(NLP_RESULTS_DIR / "document_text.csv")
+        app_metadata = text_index.loc[
+            text_index["nlp_scope"].eq("substantive_policy")
+        ].copy()
+
+        title_prefix = app_metadata["title"].fillna("").astype(str) + ". "
+        full_text = app_metadata["text"].fillna("").astype(str)
+        app_metadata["abstract"] = [
+            text[len(prefix):] if text.startswith(prefix) else text
+            for text, prefix in zip(full_text, title_prefix)
+        ]
+
+        for column in [
+            "action",
+            "effective_on",
+            "comments_close_on",
+            "citation",
+            "cfr_references",
+            "regulation_identifiers",
+            "html_url",
+            "pdf_url",
+            "raw_text_url",
+        ]:
+            app_metadata[column] = None
 
     merged = metadata.merge(
         app_metadata,

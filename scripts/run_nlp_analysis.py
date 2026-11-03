@@ -23,14 +23,44 @@ def load_documents(database_url: str) -> pd.DataFrame:
         d.document_type,
         d.title,
         d.abstract,
+        d.action,
+        d.effective_on,
+        d.comments_close_on,
+        d.citation,
+        d.html_url,
+        d.pdf_url,
+        d.raw_text_url,
+        d.action,
+        d.effective_on,
+        d.comments_close_on,
+        d.citation,
+        d.html_url,
+        d.pdf_url,
+        d.raw_text_url,
         STRING_AGG(
             DISTINCT ce.evidence_value,
             ' | '
             ORDER BY ce.evidence_value
-        ) FILTER (WHERE ce.evidence_type = 'source_scope') AS agency_scopes
+        ) FILTER (WHERE ce.evidence_type = 'source_scope') AS agency_scopes,
+        STRING_AGG(
+            DISTINCT (cr.title_number::text || ' CFR ' || cr.part),
+            ' | '
+            ORDER BY (cr.title_number::text || ' CFR ' || cr.part)
+        ) AS cfr_references,
+        STRING_AGG(
+            DISTINCT dri.rin,
+            ' | '
+            ORDER BY dri.rin
+        ) AS regulation_identifiers
     FROM documents d
     LEFT JOIN corpus_evidence ce
         ON ce.document_number = d.document_number
+    LEFT JOIN document_cfr_references dcr
+        ON dcr.document_number = d.document_number
+    LEFT JOIN cfr_references cr
+        ON cr.cfr_reference_id = dcr.cfr_reference_id
+    LEFT JOIN document_regulation_identifiers dri
+        ON dri.document_number = d.document_number
     GROUP BY
         d.document_number,
         d.publication_date,
@@ -340,6 +370,27 @@ def main() -> None:
             "text",
         ]
     ].to_csv(OUTPUT_DIR / "document_text.csv", index=False)
+
+    frame[
+        [
+            "document_number",
+            "publication_date",
+            "document_type",
+            "title",
+            "abstract",
+            "action",
+            "effective_on",
+            "comments_close_on",
+            "citation",
+            "agency_scopes",
+            "cfr_references",
+            "regulation_identifiers",
+            "html_url",
+            "pdf_url",
+            "raw_text_url",
+            "nlp_scope",
+        ]
+    ].to_csv(OUTPUT_DIR / "document_metadata.csv", index=False)
     year_terms.to_csv(OUTPUT_DIR / "top_terms_by_year.csv", index=False)
     agency_terms.to_csv(OUTPUT_DIR / "top_terms_by_agency.csv", index=False)
     related.to_csv(OUTPUT_DIR / "document_similarity.csv", index=False)

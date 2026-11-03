@@ -6,7 +6,6 @@ services:
     region: ohio
     dockerfilePath: ./Dockerfile
     dockerContext: .
-    healthCheckPath: /health
     autoDeployTrigger: commit
     envVars:
       - key: PORT

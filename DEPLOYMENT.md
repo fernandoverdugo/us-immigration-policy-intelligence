@@ -1,6 +1,6 @@
 # Application deployment
 
-The repository can run as a single container serving both the FastAPI backend and the web interface.
+The repository runs as a single Docker container serving both the FastAPI backend and browser interface.
 
 ## Container
 
@@ -33,36 +33,36 @@ FastAPI
   ├── document metadata endpoint
   └── OpenAPI documentation
         ↓
-precomputed document embeddings
+precomputed FastEmbed document embeddings
         +
-local MiniLM query encoder
+FastEmbed / ONNX MiniLM query encoder
 ```
 
-The current deployed-service design uses committed analytical indexes so the app can run without requiring a live PostgreSQL instance. PostgreSQL remains the project's analytical source of truth for ingestion and SQL analysis.
+The application uses `sentence-transformers/all-MiniLM-L6-v2` through FastEmbed's ONNX runtime. The document and query embedding paths use the same implementation.
 
-A future production deployment could replace the file-backed search metadata with PostgreSQL while retaining the same API contract.
+The ONNX model is downloaded during the Docker build into `/opt/fastembed-cache`. Runtime inference is configured for local-files-only operation, so a cold application start does not depend on downloading model weights from an external model host.
 
+The deployed service uses committed analytical indexes and therefore does not require a live PostgreSQL database. PostgreSQL remains the analytical source of truth for ingestion and SQL analysis.
 
 ## Render
 
-The repository includes a `render.yaml` Blueprint for a Docker-based web service.
-
-Current Blueprint settings:
+The repository includes a `render.yaml` Blueprint aligned with the deployed service:
 
 - Docker runtime
-- free web-service plan
+- Free web-service plan
+- Ohio region
 - `/health` health check
-- auto-deploy only after repository checks pass
+- auto-deploy on commits to `main`
 - application port `8000`
 
-Render's free web services are suitable for portfolio/demo use, but they spin down after 15 minutes without inbound traffic and can take roughly a minute to wake on the next request. The free plan currently provides 512 MB RAM, so the deployment image installs CPU-only PyTorch to reduce unnecessary CUDA dependencies and memory/storage overhead.
+Public application:
 
-To deploy manually in Render:
+`https://us-immigration-policy-intelligence.onrender.com`
 
-1. Create a new Blueprint or Web Service from this GitHub repository.
-2. Allow Render to read the repository's `render.yaml`.
-3. Confirm the service name and Free compute plan.
-4. Deploy.
-5. Verify `/health`, `/`, and `/docs` on the generated `onrender.com` URL.
+Interactive API docs:
 
-The service does not require a database or secret API key at runtime because it serves the committed analytical index and computes only the query embedding on demand.
+`https://us-immigration-policy-intelligence.onrender.com/docs`
+
+The Free service can spin down after inactivity. The GitHub live smoke-test workflow retries the public service to allow for cold starts and runs automatically after successful container validation on `main`.
+
+The service does not require runtime secrets or a database connection.

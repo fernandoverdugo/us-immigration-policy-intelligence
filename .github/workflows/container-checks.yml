@@ -1,0 +1,59 @@
+name: Container checks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "Dockerfile"
+      - ".dockerignore"
+      - "api/**"
+      - "src/retrieval/**"
+      - "web/**"
+      - "analysis/retrieval/results/**"
+      - "analysis/nlp/cluster_labels.csv"
+      - "requirements*.txt"
+      - ".github/workflows/container-checks.yml"
+  pull_request:
+    paths:
+      - "Dockerfile"
+      - ".dockerignore"
+      - "api/**"
+      - "src/retrieval/**"
+      - "web/**"
+      - "analysis/retrieval/results/**"
+      - "analysis/nlp/cluster_labels.csv"
+      - "requirements*.txt"
+  workflow_dispatch:
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build container image
+        run: docker build -t immigration-policy-intelligence:test .
+      - name: Start container
+        run: |
+          docker run -d --rm             --name immigration-policy-intelligence             -p 8000:8000             immigration-policy-intelligence:test
+      - name: Wait for health endpoint
+        run: |
+          for i in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:8000/health; then
+              exit 0
+            fi
+            sleep 2
+          done
+          docker logs immigration-policy-intelligence
+          exit 1
+      - name: Verify web interface
+        run: |
+          curl --fail --silent http://127.0.0.1:8000/ | grep "U.S. Immigration Policy Intelligence"
+      - name: Verify OpenAPI
+        run: |
+          curl --fail --silent http://127.0.0.1:8000/openapi.json | grep '"/search"'
+      - name: Verify semantic search endpoint
+        run: |
+          curl --fail --silent --get             --data-urlencode "q=work permits for Liberians protected from deportation"             --data-urlencode "k=3"             http://127.0.0.1:8000/search             | python -c 'import json,sys; d=json.load(sys.stdin); assert d["count"]==3; print(d["results"][0]["title"])'
+      - name: Container logs
+        if: always()
+        run: docker logs immigration-policy-intelligence || true

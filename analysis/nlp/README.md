@@ -2,6 +2,16 @@
 
 This stage analyzes the Federal Register corpus using interpretable text methods before introducing embeddings.
 
+## NLP scope
+
+The full Federal Register corpus remains available for database and SQL analysis. For topic-oriented NLP, the pipeline separates routine administrative information-collection notices from substantive policy documents.
+
+A document is classified as `administrative_information_collection` when it is a Notice whose title begins with `Agency Information Collection Activities`.
+
+All Rules, Proposed Rules, and other notices are classified as `substantive_policy`.
+
+In the current corpus, this leaves approximately 288 substantive documents for TF-IDF, similarity analysis, and clustering, while retaining the administrative notices in the underlying corpus.
+
 ## Methods
 
 - title + abstract analytical text construction

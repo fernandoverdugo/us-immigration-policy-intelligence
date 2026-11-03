@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: us-immigration-policy-intelligence
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    autoDeployTrigger: checksPass
+    envVars:
+      - key: PORT
+        value: 8000

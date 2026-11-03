@@ -1,0 +1,57 @@
+name: API checks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "api/**"
+      - "src/retrieval/**"
+      - "tests/test_api.py"
+      - "tests/test_retrieval_search.py"
+      - "analysis/retrieval/results/**"
+      - "requirements.txt"
+      - "requirements-retrieval.txt"
+      - "requirements-api.txt"
+      - ".github/workflows/api-checks.yml"
+  workflow_dispatch:
+
+jobs:
+  api:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          cache: "pip"
+          cache-dependency-path: |
+            requirements.txt
+            requirements-retrieval.txt
+            requirements-api.txt
+      - run: python -m pip install -r requirements-api.txt
+      - run: python -m pytest -q
+      - name: Verify real semantic search service
+        run: |
+          python - <<'PY'
+          from src.retrieval.search import semantic_search
+
+          results = semantic_search(
+              "work permits for Liberians protected from deportation",
+              k=3,
+          )
+          assert len(results) == 3
+          assert results[0]["score"] > 0
+          assert all("document_number" in result for result in results)
+          print(results)
+          PY
+      - name: Verify FastAPI OpenAPI schema
+        run: |
+          python - <<'PY'
+          from api.main import app
+
+          schema = app.openapi()
+          assert "/health" in schema["paths"]
+          assert "/search" in schema["paths"]
+          assert "/documents/{document_number}" in schema["paths"]
+          print(schema["info"])
+          PY

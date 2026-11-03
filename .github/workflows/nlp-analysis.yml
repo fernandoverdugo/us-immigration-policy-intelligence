@@ -8,11 +8,16 @@ on:
       - "tests/test_nlp_analysis.py"
       - "requirements.txt"
       - "src/ingestion/**"
+      - "src/retrieval/search.py"
       - "scripts/fetch_federal_register.py"
       - "scripts/load_postgres.py"
       - "database/**"
       - ".github/workflows/nlp-analysis.yml"
   workflow_dispatch:
+
+concurrency:
+  group: nlp-analysis-main
+  cancel-in-progress: true
 
 jobs:
   nlp:

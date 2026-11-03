@@ -14,8 +14,24 @@ on:
 jobs:
   audit:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: immigration_policy
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d immigration_policy"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
     permissions:
       contents: read
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/immigration_policy
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -25,10 +41,14 @@ jobs:
       - run: python -m pytest -q
       - run: python -m scripts.fetch_federal_register
       - run: python -m scripts.build_corpus_quality_report
+      - run: python -m scripts.load_postgres
+      - run: python -m scripts.run_sql_analysis
       - uses: actions/upload-artifact@v4
         with:
-          name: corpus-quality-audit
+          name: full-corpus-analysis
           path: |
             corpus_quality_summary.json
             data/processed/federal_register_corpus.json
+            data/processed/sql_summary.json
+            data/processed/sql/*.csv
           retention-days: 7

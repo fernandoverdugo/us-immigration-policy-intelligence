@@ -38,7 +38,7 @@ precomputed FastEmbed document embeddings
 FastEmbed / ONNX MiniLM query encoder
 ```
 
-The application uses `sentence-transformers/all-MiniLM-L6-v2` through FastEmbed's ONNX runtime. The document and query embedding paths use the same implementation.
+The application uses `sentence-transformers/all-MiniLM-L6-v2` through FastEmbed's ONNX runtime. The deployment image installs the fully resolved environment from `requirements-lock.txt`. The document and query embedding paths use the same implementation.
 
 The ONNX model is downloaded during the Docker build into `/opt/fastembed-cache`. Runtime inference is configured for local-files-only operation, so a cold application start does not depend on downloading model weights from an external model host.
 

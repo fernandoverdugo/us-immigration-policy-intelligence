@@ -25,6 +25,10 @@ on:
       - "requirements*.txt"
   workflow_dispatch:
 
+concurrency:
+  group: container-checks-main
+  cancel-in-progress: true
+
 jobs:
   docker:
     runs-on: ubuntu-latest

@@ -22,7 +22,7 @@ The service runs on Render's free web-service tier, so it may take roughly a min
 - Seven reusable SQL analyses covering activity, CFR references, RIN reuse, and rulemaking timelines
 - TF-IDF text analysis, cosine similarity, K-means clustering, model-selection diagnostics, and representative-document review
 - Nine analyst-interpreted policy clusters
-- Local MiniLM sentence embeddings for semantic search
+- FastEmbed/ONNX MiniLM embeddings for semantic search
 - Direct TF-IDF vs. semantic retrieval benchmark
 - FastAPI backend with OpenAPI documentation
 - Responsive browser search interface
@@ -69,6 +69,8 @@ Current validated corpus:
 | Routine administrative information-collection notices | 785 |
 
 The corpus distinguishes formal **core rulemaking** (Rules and Proposed Rules) from the larger **supplemental notice** layer.
+
+The current committed analytical snapshot records its retrieval timestamp and configured publication-date window in `analysis/corpus_snapshot.json`. Because 2026 is still in progress, rerunning ingestion can change current-year counts and downstream outputs.
 
 ## Architecture
 
@@ -164,11 +166,11 @@ See `analysis/nlp/FINDINGS.md`.
 
 ## Semantic retrieval
 
-The project compares TF-IDF retrieval against local sentence embeddings using:
+The project compares TF-IDF retrieval against local FastEmbed/ONNX embeddings using:
 
 `sentence-transformers/all-MiniLM-L6-v2`
 
-Nine natural-language policy queries are evaluated against the same 277-document substantive-policy corpus.
+Nine natural-language policy queries are evaluated against the same 277-document substantive-policy corpus. The benchmark and deployed application now use the same FastEmbed implementation for both document and query vectors.
 
 | Metric | TF-IDF | Semantic |
 | --- | ---: | ---: |
@@ -207,6 +209,7 @@ Search results include:
 .
 ├── .github/workflows/
 ├── analysis/
+│   ├── corpus_snapshot.json
 │   ├── nlp/
 │   ├── outputs/
 │   └── retrieval/
@@ -222,6 +225,7 @@ Search results include:
 ├── web/
 ├── Dockerfile
 ├── DEPLOYMENT.md
+├── LICENSE
 ├── render.yaml
 ├── requirements.txt
 ├── requirements-api.txt
@@ -271,7 +275,7 @@ docker build -t immigration-policy-intelligence .
 docker run --rm -p 8000:8000 immigration-policy-intelligence
 ```
 
-The deployment image installs CPU-only PyTorch because the application performs inference on CPU and does not require CUDA.
+The deployment image uses FastEmbed's ONNX runtime and bakes the MiniLM model into the image during build. Production inference runs in local-files-only mode, so cold starts do not depend on downloading model weights.
 
 See `DEPLOYMENT.md` for Render deployment instructions.
 
@@ -288,6 +292,15 @@ GitHub Actions validates:
 - real semantic search execution
 - FastAPI/OpenAPI behavior
 - Docker image build and live-container HTTP checks
+- automatic public Render smoke tests after successful container validation
+
+## Dependency reproducibility
+
+Direct project dependencies are pinned to exact versions in the requirements files. Separate base, retrieval, and API requirement sets keep analytical and deployment environments explicit.
+
+## License
+
+Released under the MIT License. See `LICENSE`.
 
 ## Methodological boundaries
 
@@ -300,4 +313,4 @@ GitHub Actions validates:
 
 ## Technologies
 
-Python · PostgreSQL · SQL · pandas · NumPy · scikit-learn · sentence-transformers · PyTorch · FastAPI · Uvicorn · HTML/CSS/JavaScript · Docker · pytest · GitHub Actions
+Python · PostgreSQL · SQL · pandas · NumPy · scikit-learn · FastEmbed · ONNX Runtime · FastAPI · Uvicorn · HTML/CSS/JavaScript · Docker · pytest · GitHub Actions

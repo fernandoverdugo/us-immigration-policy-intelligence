@@ -67,6 +67,20 @@ jobs:
         run: |
           curl --fail --silent http://127.0.0.1:8000/document/2017-00902 \
             | grep "Federal Register document"
+      - name: Verify document detail JavaScript references
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          script = Path("web/document.js").read_text()
+          assert "window.item.title" not in script
+          assert "sourceLinks(document)" not in script
+          assert "document.html_url" not in script
+          assert "document.pdf_url" not in script
+          assert "document.raw_text_url" not in script
+          assert "window.document.title" in script
+          assert "sourceLinks(item)" in script
+          PY
       - name: Verify rich document endpoint
         run: |
           curl --fail --silent http://127.0.0.1:8000/documents/2017-00902 \

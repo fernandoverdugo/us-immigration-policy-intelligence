@@ -30,13 +30,6 @@ def load_documents(database_url: str) -> pd.DataFrame:
         d.html_url,
         d.pdf_url,
         d.raw_text_url,
-        d.action,
-        d.effective_on,
-        d.comments_close_on,
-        d.citation,
-        d.html_url,
-        d.pdf_url,
-        d.raw_text_url,
         STRING_AGG(
             DISTINCT ce.evidence_value,
             ' | '
@@ -66,7 +59,14 @@ def load_documents(database_url: str) -> pd.DataFrame:
         d.publication_date,
         d.document_type,
         d.title,
-        d.abstract
+        d.abstract,
+        d.action,
+        d.effective_on,
+        d.comments_close_on,
+        d.citation,
+        d.html_url,
+        d.pdf_url,
+        d.raw_text_url
     ORDER BY d.publication_date, d.document_number
     """
 

@@ -45,6 +45,23 @@ jobs:
           assert all("document_number" in result for result in results)
           print(results)
           PY
+      - name: Verify filters and rich document metadata
+        run: |
+          python - <<'PY'
+          from api.main import document, filters
+
+          options = filters()
+          assert "uscis" in options["agencies"]
+          assert 2026 in options["years"]
+          assert "Rule" in options["document_types"]
+          assert len(options["topics"]) == 9
+
+          record = document("2017-00902")
+          assert record["abstract"]
+          assert record["cfr_references"]
+          assert record["html_url"]
+          print(record["title"])
+          PY
       - name: Verify FastAPI OpenAPI schema
         run: |
           python - <<'PY'
@@ -52,6 +69,7 @@ jobs:
 
           schema = app.openapi()
           assert "/health" in schema["paths"]
+          assert "/filters" in schema["paths"]
           assert "/search" in schema["paths"]
           assert "/documents/{document_number}" in schema["paths"]
           print(schema["info"])

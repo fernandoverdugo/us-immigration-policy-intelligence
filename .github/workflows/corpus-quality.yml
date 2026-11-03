@@ -8,6 +8,8 @@ on:
       - "scripts/fetch_federal_register.py"
       - "scripts/build_corpus_quality_report.py"
       - "tests/test_filtering.py"
+      - "database/queries/**"
+      - "scripts/run_sql_analysis.py"
       - ".github/workflows/corpus-quality.yml"
   workflow_dispatch:
 

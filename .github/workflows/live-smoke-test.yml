@@ -21,12 +21,30 @@ jobs:
         )
       }}
     runs-on: ubuntu-latest
+    env:
+      EXPECTED_SHA: ${{ github.event.workflow_run.head_sha }}
     steps:
-      - name: Verify health
+      - name: Verify health and deployed commit
         run: |
-          curl --fail --retry 18 --retry-delay 10 --retry-all-errors \
+          curl --fail --retry 24 --retry-delay 10 --retry-all-errors \
             https://us-immigration-policy-intelligence.onrender.com/health \
-            | python -c 'import json,sys; d=json.load(sys.stdin); assert d["status"]=="ok"; print(d)'
+            > /tmp/health.json
+          cat /tmp/health.json
+          python - <<'PY'
+          import json
+          import os
+
+          with open("/tmp/health.json") as handle:
+              data = json.load(handle)
+
+          assert data["status"] == "ok"
+          expected = os.environ.get("EXPECTED_SHA", "").strip()
+          if expected:
+              actual = data.get("deployment_commit")
+              assert actual == expected, (
+                  f"stale deployment: expected {expected}, got {actual}"
+              )
+          PY
       - name: Verify homepage
         run: |
           curl --fail --retry 12 --retry-delay 10 --retry-all-errors \

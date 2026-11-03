@@ -51,6 +51,16 @@ jobs:
           curl --fail --retry 12 --retry-delay 10 --retry-all-errors \
             https://us-immigration-policy-intelligence.onrender.com/ \
             | grep "U.S. Immigration Policy Intelligence"
+      - name: Verify live filters
+        run: |
+          curl --fail --retry 12 --retry-delay 10 --retry-all-errors \
+            https://us-immigration-policy-intelligence.onrender.com/filters \
+            | python -c 'import json,sys; d=json.load(sys.stdin); assert "uscis" in d["agencies"]; assert len(d["topics"])==9'
+      - name: Verify live document detail
+        run: |
+          curl --fail --retry 12 --retry-delay 10 --retry-all-errors \
+            https://us-immigration-policy-intelligence.onrender.com/documents/2017-00902 \
+            | python -c 'import json,sys; d=json.load(sys.stdin); assert d["abstract"]; assert d["cfr_references"]; assert d["html_url"]; print(d["title"])'
       - name: Verify live semantic search
         run: |
           curl --fail --retry 12 --retry-delay 10 --retry-all-errors --get \

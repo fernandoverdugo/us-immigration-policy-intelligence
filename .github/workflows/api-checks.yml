@@ -9,6 +9,7 @@ on:
       - "tests/test_api.py"
       - "tests/test_retrieval_search.py"
       - "analysis/retrieval/results/**"
+      - "analysis/nlp/results/document_metadata.csv"
       - "requirements.txt"
       - "requirements-retrieval.txt"
       - "requirements-api.txt"

@@ -7,9 +7,10 @@ from typing import Any
 import numpy as np
 import pandas as pd
 
+from src.retrieval.embedding import MODEL_NAME, create_embedding_model
+
 RESULTS_DIR = Path("analysis/retrieval/results")
 CLUSTER_LABELS_PATH = Path("analysis/nlp/cluster_labels.csv")
-MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
 
 @lru_cache(maxsize=1)
@@ -34,12 +35,7 @@ def load_cluster_labels() -> dict[int, str]:
 
 @lru_cache(maxsize=1)
 def load_model() -> Any:
-    from fastembed import TextEmbedding
-
-    return TextEmbedding(
-        model_name=MODEL_NAME,
-        threads=1,
-    )
+    return create_embedding_model()
 
 
 def semantic_search(query: str, k: int = 10) -> list[dict]:

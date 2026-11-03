@@ -8,13 +8,19 @@ AGENCY_SLUGS = {
     "eoir": "executive-office-for-immigration-review",
 }
 
+AGENCY_NAME_PHRASES = {
+    "u.s. citizenship and immigration services",
+    "u.s. customs and border protection",
+    "u.s. immigration and customs enforcement",
+    "executive office for immigration review",
+}
+
 TITLE_TERMS = {
     "alien",
     "asylum",
     "citizenship",
     "deferred action",
     "deportation",
-    "detention",
     "employment authorization",
     "immigrant",
     "immigration",
@@ -24,7 +30,9 @@ TITLE_TERMS = {
     "nonimmigrant",
     "parole",
     "refugee",
-    "removal",
+    "removal order",
+    "removal proceedings",
+    "stay of removal",
     "student and exchange visitor",
     "temporary protected status",
     "visa",
@@ -41,6 +49,7 @@ HIGH_SIGNAL_TERMS = {
     "nonimmigrant",
     "refugee",
     "removal proceedings",
+    "stay of removal",
     "student and exchange visitor",
     "temporary protected status",
 }

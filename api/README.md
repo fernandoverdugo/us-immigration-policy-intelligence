@@ -26,7 +26,7 @@ Returns indexed metadata for one Federal Register document.
 Install retrieval and API dependencies:
 
 ```bash
-python -m pip install -r requirements-retrieval.txt
+python -m pip install -r requirements-api.txt
 ```
 
 Run:

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 from collections import Counter
 from datetime import datetime, timezone
@@ -11,6 +12,20 @@ RAW_DIR = Path("data/raw")
 CORPUS_PATH = Path("data/processed/federal_register_corpus.json")
 OUTPUT_PATH = Path("corpus_quality_summary.json")
 SNAPSHOT_PATH = Path("analysis/corpus_snapshot.json")
+
+
+def corpus_sha256(processed: list[dict]) -> str:
+    canonical = sorted(
+        processed,
+        key=lambda document: str(document.get("document_number") or ""),
+    )
+    payload = json.dumps(
+        canonical,
+        sort_keys=True,
+        separators=(",", ":"),
+        ensure_ascii=False,
+    ).encode("utf-8")
+    return hashlib.sha256(payload).hexdigest()
 
 
 def main() -> None:
@@ -45,6 +60,7 @@ def main() -> None:
             by_reason[reason] += 1
 
     generated_at = datetime.now(timezone.utc).isoformat()
+    corpus_hash = corpus_sha256(processed)
 
     report = {
         "snapshot": {
@@ -52,6 +68,7 @@ def main() -> None:
             "source": "FederalRegister.gov API",
             "publication_date_start": START_DATE,
             "publication_date_end": END_DATE,
+            "corpus_sha256": corpus_hash,
             "note": (
                 "The 2026 calendar year is incomplete at retrieval time; "
                 "rerunning ingestion can change downstream counts."

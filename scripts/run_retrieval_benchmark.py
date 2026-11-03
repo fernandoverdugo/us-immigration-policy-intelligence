@@ -2,10 +2,10 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from typing import Any
 
 import numpy as np
 import pandas as pd
-from sentence_transformers import SentenceTransformer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -47,7 +47,7 @@ def build_tfidf_index(
 
 
 def embed_documents(
-    model: SentenceTransformer,
+    model: Any,
     documents: pd.DataFrame,
 ) -> np.ndarray:
     return model.encode(
@@ -67,7 +67,7 @@ def evaluate_query(
     target_cluster: int,
     tfidf_vectorizer: TfidfVectorizer,
     tfidf_matrix,
-    embedding_model: SentenceTransformer,
+    embedding_model: Any,
     embedding_matrix: np.ndarray,
     k: int = 5,
 ) -> tuple[dict, list[dict]]:
@@ -118,6 +118,8 @@ def evaluate_query(
 
 
 def main() -> None:
+    from sentence_transformers import SentenceTransformer
+
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     documents = load_policy_documents()

@@ -13,6 +13,10 @@ on:
       - ".github/workflows/corpus-quality.yml"
   workflow_dispatch:
 
+concurrency:
+  group: corpus-quality-main
+  cancel-in-progress: true
+
 jobs:
   audit:
     runs-on: ubuntu-latest
@@ -54,6 +58,7 @@ jobs:
           git add analysis/outputs analysis/corpus_snapshot.json
           if ! git diff --cached --quiet; then
             git commit -m "Update full-corpus SQL outputs"
+            git pull --rebase origin main
             git push
           fi
       - uses: actions/upload-artifact@v4

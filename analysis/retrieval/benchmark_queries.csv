@@ -1,0 +1,10 @@
+query_id,query,target_cluster
+ded_liberia,work permits for Liberians protected from deportation,0
+asylum_removal,barriers to asylum and withholding of removal,1
+tribal_border,Native American tribal cards for crossing land borders,2
+tps_redesignation,extension and redesignation of temporary protected status,3
+eoir_appeals,immigration court appeals and Board of Immigration Appeals procedure,4
+f1_hardship,student work authorization after severe financial hardship,5
+tps_ead,temporary protected status extension with automatic employment authorization,6
+fees_penalties,immigration fees and inflation adjusted civil penalties,7
+tps_termination,ending temporary protected status for a designated country,8

@@ -2,6 +2,7 @@
   "queries": 9,
   "documents": 277,
   "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "embedding_runtime": "fastembed-onnx",
   "evaluation_note": "Target clusters are analyst-interpreted exploratory policy topics, not legal relevance judgments.",
   "tfidf_mean_precision_at_5": 0.7333333333333334,
   "tfidf_hit_rate_at_5": 1.0,

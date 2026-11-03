@@ -2,12 +2,15 @@ from __future__ import annotations
 
 from typing import Any
 
-from .config import IMMIGRATION_TERMS
+from .config import HIGH_SIGNAL_TERMS, TITLE_TERMS
 
 
-def combined_text(document: dict[str, Any]) -> str:
+def title_text(document: dict[str, Any]) -> str:
+    return str(document.get("title") or "").lower()
+
+
+def supporting_text(document: dict[str, Any]) -> str:
     values = [
-        document.get("title"),
         document.get("abstract"),
         document.get("action"),
         document.get("excerpts"),
@@ -23,8 +26,12 @@ def references_title_8(document: dict[str, Any]) -> bool:
 
 
 def matched_terms(document: dict[str, Any]) -> list[str]:
-    text = combined_text(document)
-    return sorted(term for term in IMMIGRATION_TERMS if term in text)
+    title = title_text(document)
+    context = supporting_text(document)
+
+    matches = {term for term in TITLE_TERMS if term in title}
+    matches.update(term for term in HIGH_SIGNAL_TERMS if term in context)
+    return sorted(matches)
 
 
 def include_document(document: dict[str, Any], source_agency: str) -> tuple[bool, list[str]]:

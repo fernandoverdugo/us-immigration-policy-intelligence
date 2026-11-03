@@ -51,7 +51,7 @@ jobs:
           cp data/processed/sql/*.csv analysis/outputs/
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add analysis/outputs
+          git add analysis/outputs analysis/corpus_snapshot.json
           if ! git diff --cached --quiet; then
             git commit -m "Update full-corpus SQL outputs"
             git push
@@ -64,4 +64,5 @@ jobs:
             data/processed/federal_register_corpus.json
             data/processed/sql_summary.json
             data/processed/sql/*.csv
+            analysis/corpus_snapshot.json
           retention-days: 7

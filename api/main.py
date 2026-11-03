@@ -1,16 +1,34 @@
 from __future__ import annotations
 
-from fastapi import FastAPI, HTTPException, Query
+from pathlib import Path
 
-from src.retrieval.search import MODEL_NAME, load_index, semantic_search
+from fastapi import FastAPI, HTTPException, Query
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
+
+from src.retrieval.search import (
+    MODEL_NAME,
+    load_cluster_labels,
+    load_index,
+    semantic_search,
+)
+
+WEB_DIR = Path("web")
 
 app = FastAPI(
     title="U.S. Immigration Policy Intelligence API",
-    version="0.1.0",
+    version="0.2.0",
     description=(
         "Search and explore the project's Federal Register immigration-policy corpus."
     ),
 )
+
+app.mount("/static", StaticFiles(directory=WEB_DIR), name="static")
+
+
+@app.get("/", include_in_schema=False)
+def home():
+    return FileResponse(WEB_DIR / "index.html")
 
 
 @app.get("/health")
@@ -20,6 +38,18 @@ def health() -> dict:
         "status": "ok",
         "documents": len(metadata),
         "retrieval_model": MODEL_NAME,
+    }
+
+
+@app.get("/topics")
+def topics() -> dict:
+    labels = load_cluster_labels()
+    return {
+        "count": len(labels),
+        "topics": [
+            {"cluster": cluster, "label": label}
+            for cluster, label in sorted(labels.items())
+        ],
     }
 
 
@@ -43,17 +73,24 @@ def search(
 @app.get("/documents/{document_number}")
 def document(document_number: str) -> dict:
     metadata, _ = load_index()
-    matches = metadata.loc[metadata["document_number"].astype(str) == document_number]
+    labels = load_cluster_labels()
+    matches = metadata.loc[
+        metadata["document_number"].astype(str) == document_number
+    ]
 
     if matches.empty:
         raise HTTPException(status_code=404, detail="Document not found.")
 
     row = matches.iloc[0]
+    cluster = int(row["cluster"])
+
     return {
         "document_number": row["document_number"],
         "publication_date": row["publication_date"],
         "document_type": row["document_type"],
         "title": row["title"],
         "agency_scopes": row["agency_scopes"],
-        "cluster": int(row["cluster"]),
+        "cluster": cluster,
+        "topic": labels.get(cluster, "Unlabeled policy topic"),
+        "source_url": f"https://www.federalregister.gov/d/{document_number}",
     }

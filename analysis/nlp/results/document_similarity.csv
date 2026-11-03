@@ -137,8 +137,8 @@ C1-2018-00885,2018-00885,3,0.49801106052947586,Termination of the Designation of
 2019-25137,2019-15246,1,0.4560974759911274,Asylum Eligibility and Procedural Modifications
 2019-25137,2018-24594,2,0.3500129612447721,Aliens Subject to a Bar on Entry Under Certain Presidential Proclamations; Procedures for Protection Claims
 2019-25137,2020-27856,3,0.31260202254487846,Asylum Eligibility and Procedural Modifications
-2019-26444,2017-18999,1,1.0000000000000004,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Pokagon Band of Potawatomi Indians as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
-2019-26444,2020-11378,2,1.0000000000000004,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Confederated Tribes of the Colville Reservation as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
+2019-26444,2020-11378,1,1.0000000000000004,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Confederated Tribes of the Colville Reservation as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
+2019-26444,2017-18999,2,1.0000000000000004,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Pokagon Band of Potawatomi Indians as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
 2019-26444,2021-01401,3,0.9657455267335869,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Muscogee (Creek) Nation as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
 2019-27055,2020-23159,1,0.7020292333900648,Procedures for Asylum and Bars to Asylum Eligibility
 2019-27055,2020-12575,2,0.2247095733977035,Procedures for Asylum and Withholding of Removal; Credible Fear and Reasonable Fear Review
@@ -185,8 +185,8 @@ C1-2018-00885,2018-00885,3,0.49801106052947586,Termination of the Designation of
 2020-07616,2020-23159,1,0.19549196433592594,Procedures for Asylum and Bars to Asylum Eligibility
 2020-07616,2019-25137,2,0.1741008395225254,Implementing Bilateral and Multilateral Asylum Cooperative Agreements Under the Immigration and Nationality Act
 2020-07616,2019-15246,3,0.16761116497873887,Asylum Eligibility and Procedural Modifications
-2020-11378,2017-18999,1,1.0000000000000004,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Pokagon Band of Potawatomi Indians as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
-2020-11378,2019-26444,2,1.0000000000000004,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Puyallup Tribe of Indians as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
+2020-11378,2019-26444,1,1.0000000000000004,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Puyallup Tribe of Indians as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
+2020-11378,2017-18999,2,1.0000000000000004,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Pokagon Band of Potawatomi Indians as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
 2020-11378,2021-01401,3,0.9657455267335869,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Muscogee (Creek) Nation as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
 2020-12575,2020-26875,1,0.8595211948446934,Procedures for Asylum and Withholding of Removal; Credible Fear and Reasonable Fear Review
 2020-12575,2021-00409,2,0.7647981424560474,Procedures for Asylum and Withholding of Removal; Credible Fear and Reasonable Fear Review
@@ -794,8 +794,8 @@ C1-2023-19312,2023-19312,3,0.46600647924793837,Extension and Redesignation of So
 2026-04179,2026-00596,1,0.6681317666423562,Termination of the Designation of Somalia for Temporary Protected Status
 2026-04179,2025-22746,2,0.6389429654436338,Termination of the Designation of Ethiopia for Temporary Protected Status
 2026-04179,2025-18322,3,0.606895650703981,Termination of the Designation of Syria for Temporary Protected Status
-2026-05942,2024-24213,1,0.974654680789743,Notice of Approval of New Credentialing Organization for Healthcare Workers for Certain Immigration Purposes
-2026-05942,2021-16181,2,0.974654680789743,Notice of Approval of New Credentialing Organization for Healthcare Workers for Certain Immigration Purposes
+2026-05942,2021-16181,1,0.974654680789743,Notice of Approval of New Credentialing Organization for Healthcare Workers for Certain Immigration Purposes
+2026-05942,2024-24213,2,0.974654680789743,Notice of Approval of New Credentialing Organization for Healthcare Workers for Certain Immigration Purposes
 2026-05942,2021-07987,3,0.1265455294415206,Identifying Barriers Across U.S. Citizenship and Immigration Services (USCIS) Benefits and Services; Request for Public Input
 2026-10082,2025-20401,1,0.36056335777119364,Certain Immigration Enforcement-Related Fees Required by HR-1 Reconciliation Bill: Fiscal Year 2026 Adjustments for Inflation
 2026-10082,2026-20186,2,0.344754199087174,Certain DHS Immigration-Related Fees Required by HR-1: Fiscal Year 2027 Adjustments for Inflation

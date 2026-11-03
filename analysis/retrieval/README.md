@@ -31,3 +31,8 @@ The target cluster is used as a topic-level relevance proxy. This is useful for 
 - `retrieval_summary.json`
 
 The benchmark must outperform or meaningfully complement the lexical baseline before semantic retrieval is promoted into the application layer.
+
+
+## Upstream dependency
+
+The retrieval benchmark consumes the committed Milestone 4 outputs in `analysis/nlp/results/`, including the normalized `document_text.csv` index and cluster assignments. This ensures lexical and semantic retrieval are evaluated against the same validated substantive-policy corpus.

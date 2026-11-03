@@ -189,19 +189,31 @@ FastAPI exposes:
 - `GET /` — browser search interface
 - `GET /health` — service status
 - `GET /topics` — interpreted policy topics
-- `GET /search?q=<query>&k=<n>` — semantic policy search
-- `GET /documents/{document_number}` — document metadata
+- `GET /filters` — available agency/year/type/topic filters
+- `GET /search?q=<query>&k=<n>` — filter-aware semantic policy search
+- `GET /documents/{document_number}` — rich document metadata
 - `GET /docs` — interactive OpenAPI documentation
+
+Search supports filters for:
+
+- agency
+- publication year
+- document type
+- analyst-interpreted policy topic
 
 Search results include:
 
 - Federal Register title
+- abstract snippet
 - publication date
 - document type
 - scoped agency
 - analyst-interpreted topic
 - semantic similarity score
+- internal document-detail link
 - direct link to the source document on FederalRegister.gov
+
+Document-detail pages expose the indexed abstract, agency action, effective and comment-close dates, Federal Register citation, CFR references, Regulation Identifier Numbers, official source links, and related documents.
 
 ## Repository structure
 

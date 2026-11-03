@@ -4,6 +4,11 @@ const results = document.querySelector("#results");
 const status = document.querySelector("#status");
 const title = document.querySelector("#results-title");
 const documentCount = document.querySelector("#document-count");
+const agencyFilter = document.querySelector("#agency-filter");
+const yearFilter = document.querySelector("#year-filter");
+const typeFilter = document.querySelector("#type-filter");
+const topicFilter = document.querySelector("#topic-filter");
+const clearFilters = document.querySelector("#clear-filters");
 
 async function refreshHealth() {
   try {
@@ -16,8 +21,36 @@ async function refreshHealth() {
   }
 }
 
+function addOptions(select, values, labelKey = null, valueKey = null) {
+  values.forEach((item) => {
+    const option = document.createElement("option");
+    if (labelKey) {
+      option.textContent = item[labelKey];
+      option.value = item[valueKey];
+    } else {
+      option.textContent = item.toUpperCase ? item.toUpperCase() : item;
+      option.value = item;
+    }
+    select.appendChild(option);
+  });
+}
+
+async function loadFilters() {
+  try {
+    const response = await fetch("/filters");
+    if (!response.ok) return;
+    const data = await response.json();
+    addOptions(agencyFilter, data.agencies);
+    addOptions(yearFilter, data.years);
+    addOptions(typeFilter, data.document_types);
+    addOptions(topicFilter, data.topics, "label", "cluster");
+  } catch (_) {
+    return;
+  }
+}
+
 function escapeHtml(value) {
-  return String(value)
+  return String(value ?? "")
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
@@ -25,15 +58,27 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
+function activeFilterSummary() {
+  const parts = [];
+  if (agencyFilter.value) parts.push(agencyFilter.options[agencyFilter.selectedIndex].text);
+  if (yearFilter.value) parts.push(yearFilter.value);
+  if (typeFilter.value) parts.push(typeFilter.value);
+  if (topicFilter.value) parts.push(topicFilter.options[topicFilter.selectedIndex].text);
+  return parts;
+}
+
 function renderResults(query, items) {
+  const filters = activeFilterSummary();
   title.textContent = `Results for “${query}”`;
-  status.textContent = `${items.length} results`;
+  status.textContent = filters.length
+    ? `${items.length} results · ${filters.join(" · ")}`
+    : `${items.length} results`;
 
   if (!items.length) {
     results.innerHTML = `
       <div class="empty-state">
         <h3>No results found.</h3>
-        <p>Try a broader policy concept or different wording.</p>
+        <p>Try removing a filter or using broader policy language.</p>
       </div>
     `;
     return;
@@ -48,11 +93,17 @@ function renderResults(query, items) {
         <span class="score">Similarity ${Number(item.score).toFixed(3)}</span>
       </div>
       <h3>
-        <a href="${escapeHtml(item.source_url)}" target="_blank" rel="noopener">
+        <a href="${escapeHtml(item.detail_url)}">
           ${escapeHtml(item.title)}
         </a>
       </h3>
-      <span class="topic">${escapeHtml(item.topic)}</span>
+      ${item.snippet ? `<p class="snippet">${escapeHtml(item.snippet)}</p>` : ""}
+      <div class="result-footer">
+        <span class="topic">${escapeHtml(item.topic)}</span>
+        <a class="source-link" href="${escapeHtml(item.source_url)}" target="_blank" rel="noopener">
+          Federal Register ↗
+        </a>
+      </div>
     </article>
   `).join("");
 }
@@ -62,12 +113,18 @@ async function runSearch(query) {
   results.innerHTML = `
     <div class="empty-state">
       <h3>Running semantic search…</h3>
-      <p>The first query may take longer while the local embedding model loads.</p>
+      <p>Ranking the filtered policy corpus by semantic similarity.</p>
     </div>
   `;
 
+  const params = new URLSearchParams({ q: query, k: "10" });
+  if (agencyFilter.value) params.set("agency", agencyFilter.value);
+  if (yearFilter.value) params.set("year", yearFilter.value);
+  if (typeFilter.value) params.set("document_type", typeFilter.value);
+  if (topicFilter.value) params.set("topic", topicFilter.value);
+
   try {
-    const response = await fetch(`/search?q=${encodeURIComponent(query)}&k=10`);
+    const response = await fetch(`/search?${params.toString()}`);
     if (!response.ok) {
       throw new Error("Search request failed.");
     }
@@ -98,4 +155,12 @@ document.querySelectorAll("[data-query]").forEach((button) => {
   });
 });
 
+clearFilters.addEventListener("click", () => {
+  agencyFilter.value = "";
+  yearFilter.value = "";
+  typeFilter.value = "";
+  topicFilter.value = "";
+});
+
 refreshHealth();
+loadFilters();

@@ -15,6 +15,18 @@ def test_build_text_combines_title_and_abstract():
     assert text.iloc[0] == "Asylum Procedures. Changes to eligibility standards."
 
 
+def test_build_text_collapses_whitespace():
+    frame = pd.DataFrame(
+        {
+            "title": ["Asylum   Procedures"],
+            "abstract": ["Changes\n to   eligibility standards."],
+        }
+    )
+
+    text = build_text(frame)
+    assert text.iloc[0] == "Asylum Procedures. Changes to eligibility standards."
+
+
 def test_build_text_handles_missing_abstract():
     frame = pd.DataFrame(
         {
@@ -27,13 +39,14 @@ def test_build_text_handles_missing_abstract():
     assert text.iloc[0] == "Immigration Rule."
 
 
-def test_routine_information_collection_notice_is_administrative():
+def test_information_collection_notice_is_administrative():
     frame = pd.DataFrame(
         {
             "document_type": ["Notice"],
-            "title": [
-                "Agency Information Collection Activities; "
-                "Extension of a Currently Approved Collection"
+            "title": ["Visa Waiver Program Carrier Agreement"],
+            "abstract": [
+                "This notice concerns an information collection under the "
+                "Paperwork Reduction Act."
             ],
         }
     )
@@ -47,6 +60,7 @@ def test_rule_is_substantive_policy():
         {
             "document_type": ["Rule"],
             "title": ["Procedures for Asylum and Bars to Asylum Eligibility"],
+            "abstract": ["This final rule revises asylum procedures."],
         }
     )
 

@@ -59,6 +59,8 @@ jobs:
               "document_similarity.csv",
               "cluster_assignments.csv",
               "cluster_terms.csv",
+              "cluster_evaluation.csv",
+              "cluster_representatives.csv",
               "nlp_summary.json",
           }
           assert all((base / name).exists() for name in expected)
@@ -66,7 +68,7 @@ jobs:
           summary = json.loads((base / "nlp_summary.json").read_text())
           assert summary["tfidf_documents"] > 0
           assert summary["tfidf_features"] > 0
-          assert summary["clusters"] == 8
+          assert summary["clusters"] == 9
           print(summary)
           PY
       - uses: actions/upload-artifact@v4

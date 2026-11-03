@@ -17,8 +17,7 @@
       <h1>U.S. Immigration Policy Intelligence</h1>
       <p class="lede">
         Search federal immigration policy using semantic retrieval rather than exact
-        keywords. Results are drawn from a validated corpus spanning USCIS, CBP, ICE,
-        and EOIR.
+        keywords. Narrow results by agency, year, document type, or interpreted policy topic.
       </p>
 
       <form id="search-form" class="search-panel">
@@ -36,6 +35,34 @@
           >
           <button type="submit">Search</button>
         </div>
+
+        <div class="filter-grid">
+          <label>
+            <span>Agency</span>
+            <select id="agency-filter">
+              <option value="">All agencies</option>
+            </select>
+          </label>
+          <label>
+            <span>Year</span>
+            <select id="year-filter">
+              <option value="">All years</option>
+            </select>
+          </label>
+          <label>
+            <span>Type</span>
+            <select id="type-filter">
+              <option value="">All types</option>
+            </select>
+          </label>
+          <label>
+            <span>Topic</span>
+            <select id="topic-filter">
+              <option value="">All topics</option>
+            </select>
+          </label>
+        </div>
+
         <div class="examples" aria-label="Example searches">
           <button type="button" data-query="barriers to asylum and withholding of removal">
             Asylum & removal
@@ -46,6 +73,7 @@
           <button type="button" data-query="ending temporary protected status for a designated country">
             TPS termination
           </button>
+          <button type="button" id="clear-filters">Clear filters</button>
         </div>
       </form>
     </section>
@@ -76,11 +104,10 @@
 
       <div id="results" class="results">
         <div class="empty-state">
-          <h3>Search by concept, not just wording.</h3>
+          <h3>Search by concept, then narrow by policy context.</h3>
           <p>
-            The sentence-embedding model can retrieve conceptually related Federal
-            Register documents even when your query does not match the document title
-            word-for-word.
+            Semantic ranking finds conceptually related documents, while the filters let you
+            focus on a particular agency, year, document type, or policy topic.
           </p>
         </div>
       </div>

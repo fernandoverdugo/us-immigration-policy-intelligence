@@ -1,6 +1,6 @@
 # Milestone 5 — Retrieval findings
 
-The retrieval benchmark compares lexical TF-IDF search with local sentence embeddings over the same 277-document substantive-policy corpus.
+The retrieval benchmark compares lexical TF-IDF search with local FastEmbed/ONNX sentence embeddings over the same 277-document substantive-policy corpus.
 
 ## Headline results
 
@@ -46,7 +46,7 @@ TF-IDF remains useful as a transparent lexical baseline and may later be combine
 
 `sentence-transformers/all-MiniLM-L6-v2`
 
-The model runs locally and does not require a paid API.
+The model runs locally through FastEmbed's ONNX runtime and does not require a paid API. The benchmark and deployed search service use the same embedding implementation.
 
 ## Evaluation limitation
 

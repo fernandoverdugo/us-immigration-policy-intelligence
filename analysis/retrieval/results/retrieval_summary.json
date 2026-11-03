@@ -1,0 +1,12 @@
+{
+  "queries": 9,
+  "documents": 277,
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "evaluation_note": "Target clusters are analyst-interpreted exploratory policy topics, not legal relevance judgments.",
+  "tfidf_mean_precision_at_5": 0.7333333333333334,
+  "tfidf_hit_rate_at_5": 1.0,
+  "tfidf_mean_reciprocal_rank_at_5": 0.8888888888888888,
+  "semantic_mean_precision_at_5": 0.8444444444444444,
+  "semantic_hit_rate_at_5": 1.0,
+  "semantic_mean_reciprocal_rank_at_5": 0.9166666666666666
+}

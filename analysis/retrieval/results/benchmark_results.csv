@@ -1,0 +1,10 @@
+query_id,query,target_cluster,tfidf_precision_at_5,tfidf_hit_at_5,tfidf_reciprocal_rank_at_5,semantic_precision_at_5,semantic_hit_at_5,semantic_reciprocal_rank_at_5
+ded_liberia,work permits for Liberians protected from deportation,0,0.8,1,1.0,1.0,1,1.0
+asylum_removal,barriers to asylum and withholding of removal,1,0.6,1,1.0,0.8,1,1.0
+tribal_border,Native American tribal cards for crossing land borders,2,1.0,1,1.0,1.0,1,1.0
+tps_redesignation,extension and redesignation of temporary protected status,3,0.6,1,0.5,0.2,1,0.25
+eoir_appeals,immigration court appeals and Board of Immigration Appeals procedure,4,1.0,1,1.0,1.0,1,1.0
+f1_hardship,student work authorization after severe financial hardship,5,1.0,1,1.0,1.0,1,1.0
+tps_ead,temporary protected status extension with automatic employment authorization,6,0.2,1,1.0,0.8,1,1.0
+fees_penalties,immigration fees and inflation adjusted civil penalties,7,1.0,1,1.0,1.0,1,1.0
+tps_termination,ending temporary protected status for a designated country,8,0.4,1,0.5,0.8,1,1.0

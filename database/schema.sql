@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS agencies (
     name TEXT NOT NULL,
     raw_name TEXT,
     slug TEXT NOT NULL UNIQUE,
-    parent_agency_id INTEGER REFERENCES agencies(agency_id)
+    parent_agency_id INTEGER REFERENCES agencies(agency_id) DEFERRABLE INITIALLY DEFERRED
 );
 
 CREATE TABLE IF NOT EXISTS documents (

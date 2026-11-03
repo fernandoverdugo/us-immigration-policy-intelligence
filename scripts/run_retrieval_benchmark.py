@@ -12,7 +12,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 NLP_DIR = Path("analysis/nlp/results")
 OUTPUT_DIR = Path("analysis/retrieval/results")
 BENCHMARK_PATH = Path("analysis/retrieval/benchmark_queries.csv")
-MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
+from src.retrieval.embedding import MODEL_NAME, create_embedding_model
 
 
 def load_policy_documents() -> pd.DataFrame:
@@ -115,15 +115,13 @@ def evaluate_query(
 
 
 def main() -> None:
-    from fastembed import TextEmbedding
-
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     documents = load_policy_documents()
     benchmark = pd.read_csv(BENCHMARK_PATH)
 
     tfidf_vectorizer, tfidf_matrix = build_tfidf_index(documents)
-    model = TextEmbedding(model_name=MODEL_NAME, threads=1)
+    model = create_embedding_model(local_files_only=False)
     embedding_matrix = embed_documents(model, documents)
 
     retrieval_rows = []

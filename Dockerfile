@@ -7,7 +7,9 @@ ENV PIP_NO_CACHE_DIR=1
 ENV PORT=8000
 
 COPY requirements.txt requirements-retrieval.txt requirements-api.txt ./
+
 RUN python -m pip install --upgrade pip \
+    && python -m pip install torch --index-url https://download.pytorch.org/whl/cpu \
     && python -m pip install -r requirements-api.txt
 
 COPY . .

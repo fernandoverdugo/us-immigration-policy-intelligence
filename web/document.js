@@ -24,7 +24,7 @@ function listValue(values) {
   return values && values.length ? values.map(escapeHtml).join(", ") : "—";
 }
 
-function sourceLinks(document) {
+function sourceLinks(item) {
   const links = [];
   if (document.html_url) {
     links.push(`<a href="${escapeHtml(document.html_url)}" target="_blank" rel="noopener">Federal Register page ↗</a>`);
@@ -55,39 +55,39 @@ function relatedMarkup(items) {
   `;
 }
 
-function renderDocument(document) {
-  document.title = `${document.title} · U.S. Immigration Policy Intelligence`;
+function renderDocument(item) {
+  window.item.title = `${item.title} · U.S. Immigration Policy Intelligence`;
 
   root.innerHTML = `
     <section class="detail-hero">
-      <div class="eyebrow">${escapeHtml(document.topic)}</div>
-      <h1>${escapeHtml(document.title)}</h1>
+      <div class="eyebrow">${escapeHtml(item.topic)}</div>
+      <h1>${escapeHtml(item.title)}</h1>
       <div class="detail-meta">
-        <span>${escapeHtml(displayDate(document.publication_date))}</span>
-        <span>${escapeHtml(document.document_type || "")}</span>
-        <span>${escapeHtml(document.agency_scopes.join(" · ").toUpperCase())}</span>
-        <span>${escapeHtml(document.document_number)}</span>
+        <span>${escapeHtml(displayDate(item.publication_date))}</span>
+        <span>${escapeHtml(item.document_type || "")}</span>
+        <span>${escapeHtml(item.agency_scopes.join(" · ").toUpperCase())}</span>
+        <span>${escapeHtml(item.document_number)}</span>
       </div>
-      <span class="topic">${escapeHtml(document.topic)}</span>
+      <span class="topic">${escapeHtml(item.topic)}</span>
     </section>
 
     <section class="detail-grid">
       <div>
         <article class="detail-card">
           <h2>Abstract</h2>
-          <p>${escapeHtml(document.abstract || "No abstract is available in the indexed Federal Register metadata.")}</p>
+          <p>${escapeHtml(item.abstract || "No abstract is available in the indexed Federal Register metadata.")}</p>
         </article>
 
-        ${document.action ? `
+        ${item.action ? `
           <article class="detail-card" style="margin-top: 18px;">
             <h2>Agency action</h2>
-            <p>${escapeHtml(document.action)}</p>
+            <p>${escapeHtml(item.action)}</p>
           </article>
         ` : ""}
 
         <article class="detail-card" style="margin-top: 18px;">
           <h2>Related documents</h2>
-          ${relatedMarkup(document.related_documents)}
+          ${relatedMarkup(item.related_documents)}
         </article>
       </div>
 
@@ -96,23 +96,23 @@ function renderDocument(document) {
         <dl class="metadata-list">
           <div class="metadata-row">
             <dt>Federal Register citation</dt>
-            <dd>${escapeHtml(document.citation || "—")}</dd>
+            <dd>${escapeHtml(item.citation || "—")}</dd>
           </div>
           <div class="metadata-row">
             <dt>Effective date</dt>
-            <dd>${escapeHtml(displayDate(document.effective_on))}</dd>
+            <dd>${escapeHtml(displayDate(item.effective_on))}</dd>
           </div>
           <div class="metadata-row">
             <dt>Comments close</dt>
-            <dd>${escapeHtml(displayDate(document.comments_close_on))}</dd>
+            <dd>${escapeHtml(displayDate(item.comments_close_on))}</dd>
           </div>
           <div class="metadata-row">
             <dt>CFR references</dt>
-            <dd>${listValue(document.cfr_references)}</dd>
+            <dd>${listValue(item.cfr_references)}</dd>
           </div>
           <div class="metadata-row">
             <dt>RIN</dt>
-            <dd>${listValue(document.regulation_identifiers)}</dd>
+            <dd>${listValue(item.regulation_identifiers)}</dd>
           </div>
         </dl>
 

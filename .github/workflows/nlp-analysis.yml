@@ -32,7 +32,7 @@ jobs:
           --health-timeout 5s
           --health-retries 10
     permissions:
-      contents: read
+      contents: write
     env:
       DATABASE_URL: postgresql://postgres:postgres@localhost:5432/immigration_policy
     steps:
@@ -71,6 +71,24 @@ jobs:
           assert summary["clusters"] == 9
           print(summary)
           PY
+      - name: Preserve NLP results
+        run: |
+          mkdir -p analysis/nlp/results
+          cp analysis/nlp/nlp_summary.json analysis/nlp/results/
+          cp analysis/nlp/top_terms_by_year.csv analysis/nlp/results/
+          cp analysis/nlp/top_terms_by_agency.csv analysis/nlp/results/
+          cp analysis/nlp/document_similarity.csv analysis/nlp/results/
+          cp analysis/nlp/cluster_assignments.csv analysis/nlp/results/
+          cp analysis/nlp/cluster_terms.csv analysis/nlp/results/
+          cp analysis/nlp/cluster_evaluation.csv analysis/nlp/results/
+          cp analysis/nlp/cluster_representatives.csv analysis/nlp/results/
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/nlp/results
+          if ! git diff --cached --quiet; then
+            git commit -m "Update classical NLP results"
+            git push
+          fi
       - uses: actions/upload-artifact@v4
         with:
           name: classical-nlp-analysis

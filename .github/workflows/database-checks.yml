@@ -1,0 +1,68 @@
+name: Database checks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "database/**"
+      - "scripts/load_postgres.py"
+      - "tests/test_database_loader.py"
+      - "tests/fixtures/corpus_sample.json"
+      - "requirements.txt"
+      - ".github/workflows/database-checks.yml"
+  pull_request:
+    paths:
+      - "database/**"
+      - "scripts/load_postgres.py"
+      - "tests/test_database_loader.py"
+      - "tests/fixtures/corpus_sample.json"
+      - "requirements.txt"
+
+jobs:
+  postgres:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: immigration_policy
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d immigration_policy"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/immigration_policy
+      CORPUS_PATH: tests/fixtures/corpus_sample.json
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - run: python -m pip install -r requirements.txt
+      - run: python -m pytest -q
+      - run: python -m scripts.load_postgres
+      - name: Verify relational load
+        run: |
+          python - <<'PY'
+          import os
+          import psycopg
+
+          with psycopg.connect(os.environ["DATABASE_URL"]) as connection:
+              documents = connection.execute("SELECT COUNT(*) FROM documents").fetchone()[0]
+              agencies = connection.execute("SELECT COUNT(*) FROM agencies").fetchone()[0]
+              links = connection.execute("SELECT COUNT(*) FROM document_agencies").fetchone()[0]
+              cfr = connection.execute("SELECT COUNT(*) FROM cfr_references").fetchone()[0]
+              rins = connection.execute("SELECT COUNT(*) FROM regulation_identifiers").fetchone()[0]
+
+          assert documents == 2
+          assert agencies == 3
+          assert links == 3
+          assert cfr == 1
+          assert rins == 1
+          print("PostgreSQL schema and loader verification passed")
+          PY

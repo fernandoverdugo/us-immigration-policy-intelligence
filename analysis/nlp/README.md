@@ -29,7 +29,7 @@ The selected 9-cluster solution balances quantitative separation with policy int
 
 The workflow writes:
 
-- `document_text.csv`
+- `document_text.csv` — normalized title + abstract text and NLP scope used by downstream retrieval
 - `top_terms_by_year.csv`
 - `top_terms_by_agency.csv`
 - `document_similarity.csv`

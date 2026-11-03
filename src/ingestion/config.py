@@ -8,22 +8,39 @@ AGENCY_SLUGS = {
     "eoir": "executive-office-for-immigration-review",
 }
 
-IMMIGRATION_TERMS = {
+TITLE_TERMS = {
     "alien",
     "asylum",
-    "border",
     "citizenship",
     "deferred action",
     "deportation",
+    "detention",
     "employment authorization",
     "immigrant",
     "immigration",
     "inadmissibility",
     "naturalization",
+    "noncitizen",
     "nonimmigrant",
     "parole",
     "refugee",
     "removal",
+    "student and exchange visitor",
     "temporary protected status",
     "visa",
+}
+
+HIGH_SIGNAL_TERMS = {
+    "asylum",
+    "deferred action",
+    "deportation",
+    "employment authorization",
+    "inadmissibility",
+    "naturalization",
+    "noncitizen",
+    "nonimmigrant",
+    "refugee",
+    "removal proceedings",
+    "student and exchange visitor",
+    "temporary protected status",
 }

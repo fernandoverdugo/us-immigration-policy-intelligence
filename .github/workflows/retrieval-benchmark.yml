@@ -1,0 +1,62 @@
+name: Retrieval benchmark
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/run_retrieval_benchmark.py"
+      - "tests/test_retrieval_benchmark.py"
+      - "analysis/retrieval/**"
+      - "analysis/nlp/results/**"
+      - "requirements.txt"
+      - ".github/workflows/retrieval-benchmark.yml"
+  workflow_dispatch:
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - run: python -m pip install -r requirements.txt
+      - run: python -m pytest -q
+      - run: python -m scripts.run_retrieval_benchmark
+      - name: Verify retrieval outputs
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          base = Path("analysis/retrieval/results")
+          expected = {
+              "semantic_embeddings.npy",
+              "embedding_index.csv",
+              "benchmark_results.csv",
+              "retrieval_examples.csv",
+              "retrieval_summary.json",
+          }
+          assert all((base / name).exists() for name in expected)
+
+          summary = json.loads((base / "retrieval_summary.json").read_text())
+          assert summary["queries"] == 9
+          assert summary["documents"] > 0
+          print(summary)
+          PY
+      - name: Preserve retrieval results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/retrieval/results
+          if ! git diff --cached --quiet; then
+            git commit -m "Update retrieval benchmark results"
+            git push
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: semantic-retrieval-benchmark
+          path: analysis/retrieval/results/
+          retention-days: 7

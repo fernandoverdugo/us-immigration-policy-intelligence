@@ -3,10 +3,11 @@ services:
     name: us-immigration-policy-intelligence
     runtime: docker
     plan: free
+    region: ohio
     dockerfilePath: ./Dockerfile
     dockerContext: .
     healthCheckPath: /health
-    autoDeployTrigger: checksPass
+    autoDeployTrigger: commit
     envVars:
       - key: PORT
         value: 8000

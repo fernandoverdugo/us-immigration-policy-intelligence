@@ -46,6 +46,28 @@ jobs:
       - run: python -m pip install -r requirements.txt
       - run: python -m pytest -q
       - run: python -m scripts.load_postgres
+      - run: python -m scripts.run_sql_analysis
+      - name: Verify SQL analytical outputs
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          summary = json.loads(Path("data/processed/sql_summary.json").read_text())
+          expected = {
+              "01_activity_by_year",
+              "02_activity_by_agency",
+              "03_top_cfr_parts",
+              "04_rin_reuse",
+              "05_rulemaking_lifecycle",
+              "06_multi_agency_documents",
+              "07_year_over_year",
+          }
+          assert expected.issubset(summary)
+          for name in expected:
+              assert Path(summary[name]["output"]).exists()
+          print("All SQL analytical outputs were generated")
+          PY
       - name: Verify relational load
         run: |
           python - <<'PY'

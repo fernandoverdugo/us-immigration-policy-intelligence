@@ -26,14 +26,14 @@ function listValue(values) {
 
 function sourceLinks(item) {
   const links = [];
-  if (document.html_url) {
-    links.push(`<a href="${escapeHtml(document.html_url)}" target="_blank" rel="noopener">Federal Register page ↗</a>`);
+  if (item.html_url) {
+    links.push(`<a href="${escapeHtml(item.html_url)}" target="_blank" rel="noopener">Federal Register page ↗</a>`);
   }
-  if (document.pdf_url) {
-    links.push(`<a href="${escapeHtml(document.pdf_url)}" target="_blank" rel="noopener">Official PDF ↗</a>`);
+  if (item.pdf_url) {
+    links.push(`<a href="${escapeHtml(item.pdf_url)}" target="_blank" rel="noopener">Official PDF ↗</a>`);
   }
-  if (document.raw_text_url) {
-    links.push(`<a href="${escapeHtml(document.raw_text_url)}" target="_blank" rel="noopener">Raw text ↗</a>`);
+  if (item.raw_text_url) {
+    links.push(`<a href="${escapeHtml(item.raw_text_url)}" target="_blank" rel="noopener">Raw text ↗</a>`);
   }
   return links.join("");
 }
@@ -56,7 +56,7 @@ function relatedMarkup(items) {
 }
 
 function renderDocument(item) {
-  window.item.title = `${item.title} · U.S. Immigration Policy Intelligence`;
+  window.document.title = `${item.title} · U.S. Immigration Policy Intelligence`;
 
   root.innerHTML = `
     <section class="detail-hero">
@@ -117,7 +117,7 @@ function renderDocument(item) {
         </dl>
 
         <div class="link-stack">
-          ${sourceLinks(document)}
+          ${sourceLinks(item)}
         </div>
       </aside>
     </section>

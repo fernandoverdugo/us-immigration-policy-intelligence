@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>U.S. Immigration Policy Intelligence</title>
+  <meta
+    name="description"
+    content="Semantic search and longitudinal analysis of U.S. federal immigration rulemaking."
+  >
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow">Federal Register · 2017–2026</div>
+      <h1>U.S. Immigration Policy Intelligence</h1>
+      <p class="lede">
+        Search federal immigration policy using semantic retrieval rather than exact
+        keywords. Results are drawn from a validated corpus spanning USCIS, CBP, ICE,
+        and EOIR.
+      </p>
+
+      <form id="search-form" class="search-panel">
+        <label for="search-input">Search the policy corpus</label>
+        <div class="search-row">
+          <input
+            id="search-input"
+            name="q"
+            type="search"
+            minlength="2"
+            maxlength="500"
+            placeholder="e.g. work permits for Liberians protected from deportation"
+            autocomplete="off"
+            required
+          >
+          <button type="submit">Search</button>
+        </div>
+        <div class="examples" aria-label="Example searches">
+          <button type="button" data-query="barriers to asylum and withholding of removal">
+            Asylum & removal
+          </button>
+          <button type="button" data-query="student work authorization after severe financial hardship">
+            Student hardship
+          </button>
+          <button type="button" data-query="ending temporary protected status for a designated country">
+            TPS termination
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <section class="stats" aria-label="Project summary">
+      <article>
+        <strong id="document-count">277</strong>
+        <span>substantive policy documents</span>
+      </article>
+      <article>
+        <strong>9</strong>
+        <span>interpreted policy topics</span>
+      </article>
+      <article>
+        <strong>0.844</strong>
+        <span>semantic precision@5 benchmark</span>
+      </article>
+    </section>
+
+    <section class="results-section">
+      <div class="results-header">
+        <div>
+          <div class="eyebrow">Semantic retrieval</div>
+          <h2 id="results-title">Explore the corpus</h2>
+        </div>
+        <div id="status" class="status" aria-live="polite"></div>
+      </div>
+
+      <div id="results" class="results">
+        <div class="empty-state">
+          <h3>Search by concept, not just wording.</h3>
+          <p>
+            The sentence-embedding model can retrieve conceptually related Federal
+            Register documents even when your query does not match the document title
+            word-for-word.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        Analytical portfolio project using FederalRegister.gov data. Topic labels are
+        exploratory analyst interpretations, not official Federal Register classifications.
+      </p>
+      <a href="/docs">API documentation</a>
+    </footer>
+  </main>
+
+  <script src="/static/app.js" defer></script>
+</body>
+</html>

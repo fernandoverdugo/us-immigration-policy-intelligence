@@ -7,12 +7,14 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import psycopg
+from scipy.optimize import linear_sum_assignment
 from sklearn.cluster import KMeans
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import silhouette_score
 from sklearn.metrics.pairwise import cosine_similarity
 
 OUTPUT_DIR = Path("analysis/nlp")
+PREVIOUS_ASSIGNMENTS_PATH = Path("analysis/nlp/results/cluster_assignments.csv")
 
 
 def load_documents(database_url: str) -> pd.DataFrame:
@@ -275,6 +277,74 @@ def cluster_representatives(
     return pd.DataFrame(rows)
 
 
+def align_cluster_ids(
+    assignments: pd.DataFrame,
+    cluster_terms: pd.DataFrame,
+    representatives: pd.DataFrame,
+    previous_path: Path = PREVIOUS_ASSIGNMENTS_PATH,
+) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, dict[int, int], float]:
+    cluster_ids = sorted(assignments["cluster"].astype(int).unique())
+    identity = {cluster_id: cluster_id for cluster_id in cluster_ids}
+
+    if not previous_path.exists():
+        return assignments, cluster_terms, representatives, identity, 0.0
+
+    previous = pd.read_csv(previous_path)[["document_number", "cluster"]]
+    overlap = assignments[["document_number", "cluster"]].merge(
+        previous,
+        on="document_number",
+        how="inner",
+        suffixes=("_new", "_old"),
+    )
+
+    if overlap.empty:
+        return assignments, cluster_terms, representatives, identity, 0.0
+
+    old_ids = sorted(previous["cluster"].astype(int).unique())
+    if len(old_ids) != len(cluster_ids):
+        return assignments, cluster_terms, representatives, identity, 0.0
+
+    matrix = np.zeros((len(cluster_ids), len(old_ids)), dtype=int)
+    new_index = {cluster_id: idx for idx, cluster_id in enumerate(cluster_ids)}
+    old_index = {cluster_id: idx for idx, cluster_id in enumerate(old_ids)}
+
+    for _, row in overlap.iterrows():
+        matrix[
+            new_index[int(row["cluster_new"])],
+            old_index[int(row["cluster_old"])],
+        ] += 1
+
+    row_ind, col_ind = linear_sum_assignment(-matrix)
+    mapping = {
+        cluster_ids[row]: old_ids[col]
+        for row, col in zip(row_ind, col_ind)
+    }
+
+    matched = int(matrix[row_ind, col_ind].sum())
+    confidence = matched / len(overlap)
+
+    aligned_assignments = assignments.copy()
+    aligned_assignments["cluster"] = (
+        aligned_assignments["cluster"].astype(int).map(mapping)
+    )
+
+    aligned_terms = cluster_terms.copy()
+    aligned_terms["cluster"] = aligned_terms["cluster"].astype(int).map(mapping)
+
+    aligned_representatives = representatives.copy()
+    aligned_representatives["cluster"] = (
+        aligned_representatives["cluster"].astype(int).map(mapping)
+    )
+
+    return (
+        aligned_assignments.sort_values(["cluster", "document_number"]),
+        aligned_terms.sort_values(["cluster", "rank"]),
+        aligned_representatives.sort_values(["cluster", "rank"]),
+        mapping,
+        confidence,
+    )
+
+
 def main() -> None:
     database_url = os.environ["DATABASE_URL"]
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -359,6 +429,18 @@ def main() -> None:
         n_clusters=selected_clusters,
     )
 
+    (
+        assignments,
+        cluster_terms,
+        representatives,
+        cluster_mapping,
+        cluster_alignment_confidence,
+    ) = align_cluster_ids(
+        assignments,
+        cluster_terms,
+        representatives,
+    )
+
     frame[
         [
             "document_number",
@@ -409,6 +491,11 @@ def main() -> None:
             "selected": selected_clusters,
             "evaluated_range": [5, 12],
             "criterion": "balance of cosine silhouette separation and policy interpretability",
+        },
+        "cluster_alignment": {
+            "mapping": {str(key): int(value) for key, value in cluster_mapping.items()},
+            "overlap_confidence": float(cluster_alignment_confidence),
+            "previous_assignments_used": PREVIOUS_ASSIGNMENTS_PATH.exists(),
         },
     }
     (OUTPUT_DIR / "nlp_summary.json").write_text(

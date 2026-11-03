@@ -1,0 +1,2 @@
+-r requirements-retrieval.txt
+uvicorn[standard]>=0.34,<1

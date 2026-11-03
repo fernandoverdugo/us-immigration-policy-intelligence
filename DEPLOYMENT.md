@@ -51,9 +51,10 @@ The repository includes a `render.yaml` Blueprint aligned with the deployed serv
 - Docker runtime
 - Free web-service plan
 - Ohio region
-- `/health` health check
-- auto-deploy on commits to `main`
+- auto-deploy configured for commits to `main`
 - application port `8000`
+
+The connected Render service was created directly rather than from the Blueprint, so Render itself does not currently have a platform-level health-check path configured. Application health is instead verified through the public `/health` endpoint by the GitHub live smoke-test workflow.
 
 Public application:
 
@@ -63,6 +64,6 @@ Interactive API docs:
 
 `https://us-immigration-policy-intelligence.onrender.com/docs`
 
-The Free service can spin down after inactivity. The GitHub live smoke-test workflow retries the public service to allow for cold starts and runs automatically after successful container validation on `main`.
+The Free service can spin down after inactivity. The GitHub live smoke-test workflow retries the public service to allow for cold starts, runs automatically after successful container validation on `main`, and rejects stale deployments by comparing Render's `RENDER_GIT_COMMIT` value with the current GitHub `main` SHA.
 
 The service does not require runtime secrets or a database connection.

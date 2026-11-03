@@ -34,9 +34,12 @@ def load_cluster_labels() -> dict[int, str]:
 
 @lru_cache(maxsize=1)
 def load_model() -> Any:
-    from sentence_transformers import SentenceTransformer
+    from fastembed import TextEmbedding
 
-    return SentenceTransformer(MODEL_NAME)
+    return TextEmbedding(
+        model_name=MODEL_NAME,
+        threads=1,
+    )
 
 
 def semantic_search(query: str, k: int = 10) -> list[dict]:
@@ -49,11 +52,13 @@ def semantic_search(query: str, k: int = 10) -> list[dict]:
     labels = load_cluster_labels()
     model = load_model()
 
-    query_vector = model.encode(
-        [query.strip()],
-        normalize_embeddings=True,
-        show_progress_bar=False,
-    )[0]
+    query_vector = np.asarray(
+        list(model.query_embed(query.strip()))[0],
+        dtype=np.float32,
+    )
+    norm = np.linalg.norm(query_vector)
+    if norm:
+        query_vector = query_vector / norm
 
     scores = embeddings @ query_vector
     indices = np.argsort(scores)[::-1][:k]

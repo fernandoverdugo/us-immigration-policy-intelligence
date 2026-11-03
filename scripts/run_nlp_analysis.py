@@ -9,6 +9,7 @@ import pandas as pd
 import psycopg
 from sklearn.cluster import KMeans
 from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics import silhouette_score
 from sklearn.metrics.pairwise import cosine_similarity
 
 OUTPUT_DIR = Path("analysis/nlp")
@@ -46,15 +47,14 @@ def load_documents(database_url: str) -> pd.DataFrame:
 def build_text(frame: pd.DataFrame) -> pd.Series:
     titles = frame["title"].fillna("").astype(str).str.strip()
     abstracts = frame["abstract"].fillna("").astype(str).str.strip()
-    return (titles + ". " + abstracts).str.replace(r"\\s+", " ", regex=True).str.strip()
+    return (titles + ". " + abstracts).str.split().str.join(" ").str.strip()
 
 
 def nlp_scope(frame: pd.DataFrame) -> pd.Series:
-    routine_notice = (
-        frame["document_type"].eq("Notice")
-        & frame["title"].fillna("").str.startswith(
-            "Agency Information Collection Activities"
-        )
+    text = build_text(frame).str.lower()
+    routine_notice = frame["document_type"].eq("Notice") & (
+        text.str.contains("information collection", regex=False)
+        | text.str.contains("paperwork reduction act", regex=False)
     )
     return pd.Series(
         np.where(
@@ -139,7 +139,7 @@ def cluster_documents(
     frame: pd.DataFrame,
     matrix,
     vectorizer: TfidfVectorizer,
-    n_clusters: int = 8,
+    n_clusters: int = 9,
     top_n_terms: int = 12,
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
     model = KMeans(
@@ -176,6 +176,73 @@ def cluster_documents(
             )
 
     return assignments, pd.DataFrame(cluster_rows)
+
+
+def evaluate_cluster_counts(
+    matrix,
+    minimum_clusters: int = 5,
+    maximum_clusters: int = 12,
+) -> pd.DataFrame:
+    rows = []
+
+    for cluster_count in range(minimum_clusters, maximum_clusters + 1):
+        model = KMeans(
+            n_clusters=cluster_count,
+            random_state=42,
+            n_init=20,
+        )
+        labels = model.fit_predict(matrix)
+        rows.append(
+            {
+                "clusters": cluster_count,
+                "silhouette_cosine": float(
+                    silhouette_score(matrix, labels, metric="cosine")
+                ),
+                "inertia": float(model.inertia_),
+            }
+        )
+
+    return pd.DataFrame(rows)
+
+
+def cluster_representatives(
+    frame: pd.DataFrame,
+    matrix,
+    assignments: pd.DataFrame,
+    n_clusters: int,
+    representatives_per_cluster: int = 3,
+) -> pd.DataFrame:
+    model = KMeans(
+        n_clusters=n_clusters,
+        random_state=42,
+        n_init=20,
+    )
+    model.fit(matrix)
+    distances = model.transform(matrix)
+    rows = []
+
+    for cluster_id in range(n_clusters):
+        member_indices = np.flatnonzero(assignments["cluster"].to_numpy() == cluster_id)
+        ordered = sorted(
+            member_indices,
+            key=lambda idx: distances[idx, cluster_id],
+        )[:representatives_per_cluster]
+
+        for rank, idx in enumerate(ordered, start=1):
+            rows.append(
+                {
+                    "cluster": cluster_id,
+                    "rank": rank,
+                    "document_number": frame.iloc[idx]["document_number"],
+                    "publication_date": frame.iloc[idx]["publication_date"],
+                    "document_type": frame.iloc[idx]["document_type"],
+                    "title": frame.iloc[idx]["title"],
+                    "agency_scopes": frame.iloc[idx]["agency_scopes"],
+                    "distance_to_centroid": float(distances[idx, cluster_id]),
+                }
+            )
+
+    return pd.DataFrame(rows)
 
 
 def main() -> None:
@@ -247,10 +314,19 @@ def main() -> None:
     agency_terms = pd.DataFrame(agency_rows)
 
     related = related_documents(substantive, matrix)
+    selected_clusters = 9
+    cluster_evaluation = evaluate_cluster_counts(matrix)
     assignments, cluster_terms = cluster_documents(
         substantive,
         matrix,
         vectorizer,
+        n_clusters=selected_clusters,
+    )
+    representatives = cluster_representatives(
+        substantive,
+        matrix,
+        assignments,
+        n_clusters=selected_clusters,
     )
 
     frame[
@@ -269,6 +345,8 @@ def main() -> None:
     related.to_csv(OUTPUT_DIR / "document_similarity.csv", index=False)
     assignments.to_csv(OUTPUT_DIR / "cluster_assignments.csv", index=False)
     cluster_terms.to_csv(OUTPUT_DIR / "cluster_terms.csv", index=False)
+    cluster_evaluation.to_csv(OUTPUT_DIR / "cluster_evaluation.csv", index=False)
+    representatives.to_csv(OUTPUT_DIR / "cluster_representatives.csv", index=False)
 
     metadata = {
         "coverage": coverage,
@@ -276,6 +354,11 @@ def main() -> None:
         "tfidf_documents": int(matrix.shape[0]),
         "tfidf_scope": "substantive_policy",
         "clusters": int(assignments["cluster"].nunique()),
+        "cluster_selection": {
+            "selected": selected_clusters,
+            "evaluated_range": [5, 12],
+            "criterion": "balance of cosine silhouette separation and policy interpretability",
+        },
     }
     (OUTPUT_DIR / "nlp_summary.json").write_text(
         json.dumps(metadata, indent=2),

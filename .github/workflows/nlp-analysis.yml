@@ -74,6 +74,7 @@ jobs:
       - name: Preserve NLP results
         run: |
           mkdir -p analysis/nlp/results
+          cp analysis/nlp/document_text.csv analysis/nlp/results/
           cp analysis/nlp/nlp_summary.json analysis/nlp/results/
           cp analysis/nlp/top_terms_by_year.csv analysis/nlp/results/
           cp analysis/nlp/top_terms_by_agency.csv analysis/nlp/results/

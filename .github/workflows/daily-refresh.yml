@@ -195,20 +195,49 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add             analysis/corpus_snapshot.json             analysis/outputs             analysis/nlp/results             analysis/retrieval/results
+          rm -rf /tmp/daily-refresh
+          mkdir -p /tmp/daily-refresh/analysis/nlp /tmp/daily-refresh/analysis/retrieval
 
-          if git diff --cached --quiet; then
-            echo "No tracked analytical outputs changed."
-            echo "pushed=false" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
+          cp analysis/corpus_snapshot.json /tmp/daily-refresh/analysis/
+          cp -a analysis/outputs /tmp/daily-refresh/analysis/
+          cp -a analysis/nlp/results /tmp/daily-refresh/analysis/nlp/
+          cp -a analysis/retrieval/results /tmp/daily-refresh/analysis/retrieval/
 
-          git commit -m "Daily Federal Register data refresh"
-          git pull --rebase origin main
-          git push origin HEAD:main
+          for attempt in 1 2 3; do
+            echo "Publish attempt $attempt/3"
 
-          echo "pushed=true" >> "$GITHUB_OUTPUT"
-          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+            git fetch origin main
+            git reset --hard origin/main
+
+            rm -rf analysis/outputs analysis/nlp/results analysis/retrieval/results
+
+            cp /tmp/daily-refresh/analysis/corpus_snapshot.json analysis/
+            cp -a /tmp/daily-refresh/analysis/outputs analysis/
+            mkdir -p analysis/nlp analysis/retrieval
+            cp -a /tmp/daily-refresh/analysis/nlp/results analysis/nlp/
+            cp -a /tmp/daily-refresh/analysis/retrieval/results analysis/retrieval/
+
+            git add analysis/corpus_snapshot.json analysis/outputs analysis/nlp/results analysis/retrieval/results
+
+            if git diff --cached --quiet; then
+              echo "Latest main already contains these analytical outputs."
+              echo "pushed=false" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+
+            git commit -m "Daily Federal Register data refresh"
+
+            if git push origin HEAD:main; then
+              echo "pushed=true" >> "$GITHUB_OUTPUT"
+              echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+
+            echo "Push raced another main update; retrying from latest origin/main."
+          done
+
+          echo "Unable to publish refreshed outputs after three attempts."
+          exit 1
 
       - name: Wait for Render deployment
         if: steps.corpus.outputs.changed == 'true' && steps.commit.outputs.pushed == 'true'

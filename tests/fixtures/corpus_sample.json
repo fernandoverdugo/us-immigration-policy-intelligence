@@ -1,0 +1,92 @@
+[
+  {
+    "abstract": "Test immigration rule abstract.",
+    "action": "Final rule.",
+    "agencies": [
+      {
+        "raw_name": "DEPARTMENT OF HOMELAND SECURITY",
+        "name": "Homeland Security Department",
+        "id": 227,
+        "parent_id": null,
+        "slug": "homeland-security-department"
+      },
+      {
+        "raw_name": "U.S. Citizenship and Immigration Services",
+        "name": "U.S. Citizenship and Immigration Services",
+        "id": 499,
+        "parent_id": 227,
+        "slug": "u-s-citizenship-and-immigration-services"
+      }
+    ],
+    "cfr_references": [
+      {
+        "title": 8,
+        "part": 208
+      }
+    ],
+    "citation": "91 FR 1000",
+    "comments_close_on": null,
+    "document_number": "TEST-0001",
+    "effective_on": "2026-01-15",
+    "end_page": 1010,
+    "html_url": "https://example.gov/test",
+    "pdf_url": "https://example.gov/test.pdf",
+    "publication_date": "2026-01-01",
+    "raw_text_url": "https://example.gov/test.txt",
+    "regulation_id_numbers": [
+      "1615-TEST"
+    ],
+    "significant": true,
+    "start_page": 1000,
+    "subtype": null,
+    "title": "Test Asylum Rule",
+    "type": "Rule",
+    "source_agency_scopes": [
+      "uscis"
+    ],
+    "inclusion_reasons": [
+      "title_8_cfr",
+      "immigration_lexicon",
+      "uscis_scope"
+    ],
+    "matched_terms": [
+      "asylum"
+    ]
+  },
+  {
+    "abstract": "Supplemental notice.",
+    "action": "Notice.",
+    "agencies": [
+      {
+        "raw_name": "EXECUTIVE OFFICE FOR IMMIGRATION REVIEW",
+        "name": "Executive Office for Immigration Review",
+        "id": 105,
+        "parent_id": null,
+        "slug": "executive-office-for-immigration-review"
+      }
+    ],
+    "cfr_references": [],
+    "citation": "91 FR 2000",
+    "comments_close_on": "2026-02-15",
+    "document_number": "TEST-0002",
+    "effective_on": null,
+    "end_page": 2002,
+    "html_url": "https://example.gov/test2",
+    "pdf_url": "https://example.gov/test2.pdf",
+    "publication_date": "2026-02-01",
+    "raw_text_url": "https://example.gov/test2.txt",
+    "regulation_id_numbers": [],
+    "significant": null,
+    "start_page": 2000,
+    "subtype": null,
+    "title": "Administrative Notice",
+    "type": "Notice",
+    "source_agency_scopes": [
+      "eoir"
+    ],
+    "inclusion_reasons": [
+      "eoir_scope"
+    ],
+    "matched_terms": []
+  }
+]

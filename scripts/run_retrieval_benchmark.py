@@ -19,18 +19,12 @@ def load_policy_documents() -> pd.DataFrame:
     assignments = pd.read_csv(NLP_DIR / "cluster_assignments.csv")
     text = pd.read_csv(NLP_DIR / "document_text.csv")
 
-    merged = assignments.merge(
-        text[
-            [
-                "document_number",
-                "text",
-            ]
-        ],
+    return assignments.merge(
+        text[["document_number", "text"]],
         on="document_number",
         how="left",
         validate="one_to_one",
     )
-    return merged
 
 
 def build_tfidf_index(
@@ -46,15 +40,22 @@ def build_tfidf_index(
     return vectorizer, matrix
 
 
-def embed_documents(
-    model: Any,
-    documents: pd.DataFrame,
-) -> np.ndarray:
-    return model.encode(
-        documents["text"].fillna("").tolist(),
-        normalize_embeddings=True,
-        show_progress_bar=False,
-    )
+def normalize_rows(matrix: np.ndarray) -> np.ndarray:
+    matrix = np.asarray(matrix, dtype=np.float32)
+    norms = np.linalg.norm(matrix, axis=1, keepdims=True)
+    norms[norms == 0] = 1.0
+    return matrix / norms
+
+
+def embed_documents(model: Any, documents: pd.DataFrame) -> np.ndarray:
+    vectors = list(model.embed(documents["text"].fillna("").tolist()))
+    return normalize_rows(np.asarray(vectors))
+
+
+def embed_query(model: Any, query: str) -> np.ndarray:
+    vector = np.asarray(list(model.query_embed(query))[0], dtype=np.float32)
+    norm = np.linalg.norm(vector)
+    return vector / norm if norm else vector
 
 
 def top_k_indices(scores: np.ndarray, k: int) -> np.ndarray:
@@ -74,11 +75,7 @@ def evaluate_query(
     tfidf_query = tfidf_vectorizer.transform([query])
     tfidf_scores = cosine_similarity(tfidf_query, tfidf_matrix).ravel()
 
-    semantic_query = embedding_model.encode(
-        [query],
-        normalize_embeddings=True,
-        show_progress_bar=False,
-    )[0]
+    semantic_query = embed_query(embedding_model, query)
     semantic_scores = embedding_matrix @ semantic_query
 
     rows = []
@@ -118,7 +115,7 @@ def evaluate_query(
 
 
 def main() -> None:
-    from sentence_transformers import SentenceTransformer
+    from fastembed import TextEmbedding
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -126,7 +123,7 @@ def main() -> None:
     benchmark = pd.read_csv(BENCHMARK_PATH)
 
     tfidf_vectorizer, tfidf_matrix = build_tfidf_index(documents)
-    model = SentenceTransformer(MODEL_NAME)
+    model = TextEmbedding(model_name=MODEL_NAME, threads=1)
     embedding_matrix = embed_documents(model, documents)
 
     retrieval_rows = []
@@ -160,6 +157,7 @@ def main() -> None:
         "queries": int(len(benchmark_results)),
         "documents": int(len(documents)),
         "embedding_model": MODEL_NAME,
+        "embedding_runtime": "fastembed-onnx",
         "evaluation_note": (
             "Target clusters are analyst-interpreted exploratory policy topics, "
             "not legal relevance judgments."

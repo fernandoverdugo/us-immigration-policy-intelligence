@@ -6,6 +6,10 @@ on:
     workflows: ["Container checks"]
     types: [completed]
 
+concurrency:
+  group: live-deployment-smoke
+  cancel-in-progress: true
+
 jobs:
   smoke:
     if: >-

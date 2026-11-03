@@ -6,12 +6,26 @@ import api.main as api_main
 client = TestClient(api_main.app)
 
 
+def test_home_serves_web_interface():
+    response = client.get("/")
+    assert response.status_code == 200
+    assert "U.S. Immigration Policy Intelligence" in response.text
+
+
 def test_health_endpoint():
     response = client.get("/health")
     assert response.status_code == 200
     payload = response.json()
     assert payload["status"] == "ok"
     assert payload["documents"] > 0
+
+
+def test_topics_endpoint():
+    response = client.get("/topics")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["count"] == 9
+    assert len(payload["topics"]) == 9
 
 
 def test_document_not_found():
@@ -30,6 +44,8 @@ def test_search_endpoint_uses_retrieval_service(monkeypatch):
                 "title": "Test Result",
                 "agency_scopes": "uscis",
                 "cluster": 1,
+                "topic": "Asylum and removal rulemaking",
+                "source_url": "https://www.federalregister.gov/d/TEST-1",
                 "score": 0.9,
             }
         ]

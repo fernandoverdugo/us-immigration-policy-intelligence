@@ -292,6 +292,19 @@ The deployment image uses FastEmbed's ONNX runtime and bakes the MiniLM model in
 
 See `DEPLOYMENT.md` for Render deployment instructions.
 
+## Automatic data refresh
+
+The deployed corpus is checked against the Federal Register every day at **12:30 UTC** (approximately **6:30 AM Central Standard Time / 7:30 AM Central Daylight Time**).
+
+The scheduled workflow computes a stable SHA-256 fingerprint of the complete analytical corpus.
+
+- If the fingerprint is unchanged, the workflow exits after ingestion and validation without rebuilding PostgreSQL, NLP, embeddings, or the deployment.
+- If the corpus changed, the workflow regenerates SQL outputs, NLP/application metadata, topic assignments, semantic embeddings, and retrieval results before committing the refreshed analytical state.
+- Existing topic-cluster IDs are aligned against the previous committed assignments so analyst-interpreted topic labels remain stable as new documents are added.
+- After a changed corpus is published, the workflow waits for Render to serve the new Git commit and verifies the live filters, document-detail API, and semantic search.
+
+This keeps the public research application current while avoiding unnecessary model and deployment work when the Federal Register corpus has not changed.
+
 ## Reproducibility and CI
 
 GitHub Actions validates:

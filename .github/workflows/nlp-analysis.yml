@@ -54,6 +54,7 @@ jobs:
           base = Path("analysis/nlp")
           expected = {
               "document_text.csv",
+              "document_metadata.csv",
               "top_terms_by_year.csv",
               "top_terms_by_agency.csv",
               "document_similarity.csv",
@@ -75,6 +76,7 @@ jobs:
         run: |
           mkdir -p analysis/nlp/results
           cp analysis/nlp/document_text.csv analysis/nlp/results/
+          cp analysis/nlp/document_metadata.csv analysis/nlp/results/
           cp analysis/nlp/nlp_summary.json analysis/nlp/results/
           cp analysis/nlp/top_terms_by_year.csv analysis/nlp/results/
           cp analysis/nlp/top_terms_by_agency.csv analysis/nlp/results/

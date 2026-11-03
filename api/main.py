@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, Query
@@ -38,6 +39,7 @@ def health() -> dict:
         "status": "ok",
         "documents": len(metadata),
         "retrieval_model": MODEL_NAME,
+        "deployment_commit": os.environ.get("RENDER_GIT_COMMIT"),
     }
 
 

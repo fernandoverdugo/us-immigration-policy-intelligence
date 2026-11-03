@@ -1,0 +1,255 @@
+name: Daily Federal Register refresh
+
+on:
+  schedule:
+    - cron: "30 12 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/daily-refresh.yml"
+
+concurrency:
+  group: daily-federal-register-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: immigration_policy
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d immigration_policy"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/immigration_policy
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          cache: "pip"
+          cache-dependency-path: |
+            requirements.txt
+            requirements-retrieval.txt
+            requirements-api.txt
+
+      - run: python -m pip install -r requirements-api.txt
+
+      - name: Run test suite
+        run: python -m pytest -q
+
+      - name: Fetch current Federal Register corpus
+        run: python -m scripts.fetch_federal_register
+
+      - name: Build current corpus fingerprint
+        run: python -m scripts.build_corpus_quality_report
+
+      - name: Detect corpus change
+        id: corpus
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import subprocess
+          from pathlib import Path
+
+          current = json.loads(
+              Path("analysis/corpus_snapshot.json").read_text(encoding="utf-8")
+          )
+          current_hash = current["corpus_sha256"]
+
+          try:
+              previous_text = subprocess.check_output(
+                  ["git", "show", "HEAD:analysis/corpus_snapshot.json"],
+                  text=True,
+              )
+              previous = json.loads(previous_text)
+              previous_hash = previous.get("corpus_sha256")
+          except Exception:
+              previous_hash = None
+
+          changed = previous_hash != current_hash
+
+          print(f"Previous corpus hash: {previous_hash}")
+          print(f"Current corpus hash:  {current_hash}")
+          print(f"Corpus changed:       {changed}")
+
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as handle:
+              handle.write(f"changed={str(changed).lower()}\n")
+              handle.write(f"corpus_sha256={current_hash}\n")
+          PY
+
+      - name: No corpus change
+        if: steps.corpus.outputs.changed != 'true'
+        run: |
+          echo "Federal Register corpus is unchanged. Skipping SQL, NLP, embeddings, and deployment."
+
+      - name: Load PostgreSQL
+        if: steps.corpus.outputs.changed == 'true'
+        run: python -m scripts.load_postgres
+
+      - name: Run SQL analytics
+        if: steps.corpus.outputs.changed == 'true'
+        run: python -m scripts.run_sql_analysis
+
+      - name: Run NLP and application metadata
+        if: steps.corpus.outputs.changed == 'true'
+        run: python -m scripts.run_nlp_analysis
+
+      - name: Preserve NLP outputs for retrieval
+        if: steps.corpus.outputs.changed == 'true'
+        run: |
+          mkdir -p analysis/nlp/results
+          cp analysis/nlp/document_text.csv analysis/nlp/results/
+          cp analysis/nlp/document_metadata.csv analysis/nlp/results/
+          cp analysis/nlp/nlp_summary.json analysis/nlp/results/
+          cp analysis/nlp/top_terms_by_year.csv analysis/nlp/results/
+          cp analysis/nlp/top_terms_by_agency.csv analysis/nlp/results/
+          cp analysis/nlp/document_similarity.csv analysis/nlp/results/
+          cp analysis/nlp/cluster_assignments.csv analysis/nlp/results/
+          cp analysis/nlp/cluster_terms.csv analysis/nlp/results/
+          cp analysis/nlp/cluster_evaluation.csv analysis/nlp/results/
+          cp analysis/nlp/cluster_representatives.csv analysis/nlp/results/
+
+      - name: Verify topic-cluster continuity
+        if: steps.corpus.outputs.changed == 'true'
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          summary = json.loads(
+              Path("analysis/nlp/results/nlp_summary.json").read_text()
+          )
+          alignment = summary.get("cluster_alignment", {})
+          confidence = float(alignment.get("overlap_confidence", 0.0))
+          previous_used = bool(alignment.get("previous_assignments_used"))
+
+          print(f"Previous assignments used: {previous_used}")
+          print(f"Cluster overlap confidence: {confidence:.3f}")
+
+          if previous_used and confidence < 0.70:
+              raise SystemExit(
+                  "Cluster continuity check failed: overlap confidence below 0.70"
+              )
+          PY
+
+      - name: Rebuild semantic retrieval index
+        if: steps.corpus.outputs.changed == 'true'
+        run: python -m scripts.run_retrieval_benchmark
+
+      - name: Preserve SQL outputs
+        if: steps.corpus.outputs.changed == 'true'
+        run: |
+          mkdir -p analysis/outputs
+          cp data/processed/sql/*.csv analysis/outputs/
+
+      - name: Verify refreshed application indexes
+        if: steps.corpus.outputs.changed == 'true'
+        run: |
+          python - <<'PY'
+          import json
+          import pandas as pd
+          from pathlib import Path
+
+          snapshot = json.loads(Path("analysis/corpus_snapshot.json").read_text())
+          nlp = json.loads(Path("analysis/nlp/results/nlp_summary.json").read_text())
+          retrieval = json.loads(
+              Path("analysis/retrieval/results/retrieval_summary.json").read_text()
+          )
+          metadata = pd.read_csv("analysis/nlp/results/document_metadata.csv")
+          index = pd.read_csv("analysis/retrieval/results/embedding_index.csv")
+
+          assert snapshot["included_unique"] > 0
+          assert nlp["tfidf_documents"] > 0
+          assert retrieval["documents"] == len(index)
+          assert len(metadata) >= len(index)
+          assert retrieval["embedding_runtime"] == "fastembed-onnx"
+
+          print(
+              f"Refreshed {snapshot['included_unique']} corpus documents; "
+              f"{retrieval['documents']} substantive documents indexed for search."
+          )
+          PY
+
+      - name: Commit refreshed analytical state
+        if: steps.corpus.outputs.changed == 'true'
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add             analysis/corpus_snapshot.json             analysis/outputs             analysis/nlp/results             analysis/retrieval/results
+
+          if git diff --cached --quiet; then
+            echo "No tracked analytical outputs changed."
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          git commit -m "Daily Federal Register data refresh"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Wait for Render deployment
+        if: steps.corpus.outputs.changed == 'true' && steps.commit.outputs.pushed == 'true'
+        env:
+          EXPECTED_SHA: ${{ steps.commit.outputs.sha }}
+        run: |
+          for i in {1..45}; do
+            echo "Checking Render deployment ($i/45)..."
+
+            if curl --fail --silent               https://us-immigration-policy-intelligence.onrender.com/health               > /tmp/health.json; then
+
+              if python - <<'PY'
+          import json
+          import os
+
+          with open("/tmp/health.json") as handle:
+              health = json.load(handle)
+
+          expected = os.environ["EXPECTED_SHA"]
+          actual = health.get("deployment_commit")
+          print(f"Expected: {expected}")
+          print(f"Live:     {actual}")
+          raise SystemExit(0 if actual == expected else 1)
+          PY
+              then
+                echo "Render is serving the refreshed commit."
+                exit 0
+              fi
+            fi
+
+            sleep 20
+          done
+
+          echo "Render did not deploy the refreshed commit within the expected window."
+          exit 1
+
+      - name: Verify refreshed public application
+        if: steps.corpus.outputs.changed == 'true' && steps.commit.outputs.pushed == 'true'
+        run: |
+          curl --fail --silent             https://us-immigration-policy-intelligence.onrender.com/filters             | python -c 'import json,sys; d=json.load(sys.stdin); assert d["years"]; assert d["agencies"]; assert len(d["topics"])==9'
+
+          curl --fail --silent --get             --data-urlencode "q=barriers to asylum and withholding of removal"             --data-urlencode "k=3"             https://us-immigration-policy-intelligence.onrender.com/search             | python -c 'import json,sys; d=json.load(sys.stdin); assert len(d["results"])==3'
+
+          curl --fail --silent             https://us-immigration-policy-intelligence.onrender.com/documents/2017-00902             | python -c 'import json,sys; d=json.load(sys.stdin); assert d["abstract"]; assert d["html_url"]'

@@ -6,6 +6,14 @@ The project builds a reproducible 2017–2026 immigration-policy corpus, normali
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/fernandoverdugo/us-immigration-policy-intelligence)
 
+## Live application
+
+**Public app:** https://us-immigration-policy-intelligence.onrender.com
+
+**Interactive API docs:** https://us-immigration-policy-intelligence.onrender.com/docs
+
+The service runs on Render's free web-service tier, so it may take roughly a minute to wake after a period of inactivity.
+
 ## Portfolio highlights
 
 - **1,062** validated Federal Register documents in the current corpus

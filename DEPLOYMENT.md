@@ -67,3 +67,21 @@ Interactive API docs:
 The Free service can spin down after inactivity. The GitHub live smoke-test workflow retries the public service to allow for cold starts, runs automatically after successful container validation on `main`, and rejects stale deployments by comparing Render's `RENDER_GIT_COMMIT` value with the current GitHub `main` SHA.
 
 The service does not require runtime secrets or a database connection.
+
+
+## Scheduled data refresh
+
+`.github/workflows/daily-refresh.yml` runs every day at `12:30 UTC`.
+
+The workflow:
+
+1. retrieves the current Federal Register corpus,
+2. computes a stable corpus SHA-256 fingerprint,
+3. skips downstream processing when the corpus is unchanged,
+4. rebuilds PostgreSQL/SQL/NLP/application metadata and FastEmbed vectors when it changes,
+5. preserves topic-label continuity by aligning refreshed clusters to the prior committed assignments,
+6. commits the refreshed analytical state,
+7. waits for Render to deploy that exact Git SHA, and
+8. verifies the live filters, rich document metadata, and semantic search.
+
+The scheduled job can also be run manually with GitHub Actions' `workflow_dispatch` control.

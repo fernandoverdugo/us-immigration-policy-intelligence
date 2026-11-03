@@ -10,6 +10,7 @@ on:
       - "src/retrieval/**"
       - "web/**"
       - "analysis/retrieval/results/**"
+      - "analysis/nlp/results/document_metadata.csv"
       - "analysis/nlp/cluster_labels.csv"
       - "requirements*.txt"
       - ".github/workflows/container-checks.yml"

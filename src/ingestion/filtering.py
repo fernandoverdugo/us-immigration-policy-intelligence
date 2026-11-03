@@ -2,11 +2,14 @@ from __future__ import annotations
 
 from typing import Any
 
-from .config import HIGH_SIGNAL_TERMS, TITLE_TERMS
+from .config import AGENCY_NAME_PHRASES, HIGH_SIGNAL_TERMS, TITLE_TERMS
 
 
 def title_text(document: dict[str, Any]) -> str:
-    return str(document.get("title") or "").lower()
+    text = str(document.get("title") or "").lower()
+    for phrase in AGENCY_NAME_PHRASES:
+        text = text.replace(phrase, " ")
+    return " ".join(text.split())
 
 
 def supporting_text(document: dict[str, Any]) -> str:
@@ -15,7 +18,10 @@ def supporting_text(document: dict[str, Any]) -> str:
         document.get("action"),
         document.get("excerpts"),
     ]
-    return " ".join(str(value) for value in values if value).lower()
+    text = " ".join(str(value) for value in values if value).lower()
+    for phrase in AGENCY_NAME_PHRASES:
+        text = text.replace(phrase, " ")
+    return " ".join(text.split())
 
 
 def references_title_8(document: dict[str, Any]) -> bool:
@@ -40,8 +46,7 @@ def include_document(document: dict[str, Any], source_agency: str) -> tuple[bool
     if references_title_8(document):
         reasons.append("title_8_cfr")
 
-    terms = matched_terms(document)
-    if terms:
+    if matched_terms(document):
         reasons.append("immigration_lexicon")
 
     if source_agency == "eoir":

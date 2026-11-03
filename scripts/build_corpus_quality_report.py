@@ -2,11 +2,15 @@ from __future__ import annotations
 
 import json
 from collections import Counter
+from datetime import datetime, timezone
 from pathlib import Path
+
+from src.ingestion.config import END_DATE, START_DATE
 
 RAW_DIR = Path("data/raw")
 CORPUS_PATH = Path("data/processed/federal_register_corpus.json")
 OUTPUT_PATH = Path("corpus_quality_summary.json")
+SNAPSHOT_PATH = Path("analysis/corpus_snapshot.json")
 
 
 def main() -> None:
@@ -40,7 +44,19 @@ def main() -> None:
         for reason in document.get("inclusion_reasons", []):
             by_reason[reason] += 1
 
+    generated_at = datetime.now(timezone.utc).isoformat()
+
     report = {
+        "snapshot": {
+            "generated_at_utc": generated_at,
+            "source": "FederalRegister.gov API",
+            "publication_date_start": START_DATE,
+            "publication_date_end": END_DATE,
+            "note": (
+                "The 2026 calendar year is incomplete at retrieval time; "
+                "rerunning ingestion can change downstream counts."
+            ),
+        },
         "fetched_by_agency": dict(sorted(fetched.items())),
         "included_unique": len(processed),
         "included_document_associations_by_agency": dict(sorted(by_agency.items())),
@@ -63,6 +79,18 @@ def main() -> None:
     }
 
     OUTPUT_PATH.write_text(json.dumps(report, indent=2), encoding="utf-8")
+
+    SNAPSHOT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    snapshot = {
+        **report["snapshot"],
+        "included_unique": report["included_unique"],
+        "included_by_document_type": report["included_by_document_type"],
+        "included_document_associations_by_agency": (
+            report["included_document_associations_by_agency"]
+        ),
+    }
+    SNAPSHOT_PATH.write_text(json.dumps(snapshot, indent=2), encoding="utf-8")
+
     print(json.dumps(report, indent=2))
 
 

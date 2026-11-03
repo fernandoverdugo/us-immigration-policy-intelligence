@@ -6,7 +6,11 @@ The API exposes the policy-intelligence retrieval layer as a reusable applicatio
 
 ### `GET /health`
 
-Returns service status, indexed document count, and the semantic retrieval model.
+Returns service status, indexed document count, and semantic retrieval model.
+
+### `GET /topics`
+
+Returns the nine analyst-interpreted exploratory policy topics.
 
 ### `GET /search?q=<query>&k=<results>`
 
@@ -23,7 +27,7 @@ Returns indexed metadata for one Federal Register document.
 
 ## Local development
 
-Install retrieval and API dependencies:
+Install application dependencies:
 
 ```bash
 python -m pip install -r requirements-api.txt
@@ -37,4 +41,6 @@ uvicorn api.main:app --reload
 
 FastAPI automatically exposes interactive API documentation at `/docs` and an OpenAPI schema at `/openapi.json`.
 
-The sentence-transformer model is loaded lazily when semantic search is first invoked. Health and document metadata endpoints do not require loading the model.
+## Retrieval runtime
+
+The application uses FastEmbed/ONNX with `sentence-transformers/all-MiniLM-L6-v2`. Model creation is lazy within the Python process. The Docker deployment preloads the model files during image construction and runs with local-files-only inference.

@@ -8,10 +8,10 @@ ENV PORT=8000
 ENV FASTEMBED_CACHE_PATH=/opt/fastembed-cache
 ENV FASTEMBED_LOCAL_FILES_ONLY=1
 
-COPY requirements.txt requirements-api.txt ./
+COPY requirements-lock.txt ./
 
 RUN python -m pip install --upgrade pip \
-    && python -m pip install -r requirements-api.txt \
+    && python -m pip install -r requirements-lock.txt \
     && python - <<'PY'
 from fastembed import TextEmbedding
 TextEmbedding(

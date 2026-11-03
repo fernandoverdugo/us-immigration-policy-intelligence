@@ -16,7 +16,7 @@ jobs:
   benchmark:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -46,16 +46,6 @@ jobs:
           assert summary["documents"] > 0
           print(summary)
           PY
-      - name: Preserve retrieval results
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add analysis/retrieval/results
-          if ! git diff --cached --quiet; then
-            git commit -m "Update retrieval benchmark results"
-            git pull --rebase origin main
-            git push
-          fi
       - uses: actions/upload-artifact@v4
         with:
           name: semantic-retrieval-benchmark

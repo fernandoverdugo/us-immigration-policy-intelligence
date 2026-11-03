@@ -46,7 +46,7 @@ def load_documents(database_url: str) -> pd.DataFrame:
 def build_text(frame: pd.DataFrame) -> pd.Series:
     titles = frame["title"].fillna("").astype(str).str.strip()
     abstracts = frame["abstract"].fillna("").astype(str).str.strip()
-    return (titles + ". " + abstracts).str.replace(r"s+", " ", regex=True).str.strip()
+    return (titles + ". " + abstracts).str.replace(r"\\s+", " ", regex=True).str.strip()
 
 
 def fit_tfidf(text: pd.Series) -> tuple[TfidfVectorizer, np.ndarray]:

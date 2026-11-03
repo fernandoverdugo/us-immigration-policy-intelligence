@@ -1,0 +1,28 @@
+cluster,rank,document_number,publication_date,document_type,title,agency_scopes,distance_to_centroid
+0,1,2024-21661,2024-09-24,Notice,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Liberia,uscis,0.7979339056288083
+0,2,2024-07866,2024-04-15,Notice,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Certain Palestinians,uscis,0.8100805306200727
+0,3,2022-19207,2022-09-06,Notice,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Liberians,uscis,0.8105588845742489
+1,1,2020-28436,2020-12-23,Rule,Security Bars and Processing,eoir,0.8635546450221558
+1,2,2020-14758,2020-07-09,Proposed Rule,Security Bars and Processing,eoir,0.8774640369064497
+1,3,2020-26875,2020-12-11,Rule,Procedures for Asylum and Withholding of Removal; Credible Fear and Reasonable Fear Review,eoir,0.8800893285362077
+2,1,2021-01401,2021-01-22,Notice,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Muscogee (Creek) Nation as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry,cbp,0.13339128459594402
+2,2,2017-18999,2017-09-07,Notice,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Pokagon Band of Potawatomi Indians as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry,cbp,0.13585171496570378
+2,3,2019-26444,2019-12-09,Notice,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Puyallup Tribe of Indians as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry,cbp,0.13585171496570378
+3,1,2023-22375,2023-10-10,Notice,Extension and Redesignation of Cameroon for Temporary Protected Status,uscis,0.6313684046778443
+3,2,2023-01586,2023-01-26,Notice,Extension and Redesignation of Haiti for Temporary Protected Status,uscis,0.6416599166504917
+3,3,2023-17877,2023-08-21,Notice,Extension and Redesignation of Sudan for Temporary Protected Status,uscis,0.6420097971882486
+4,1,2021-26853,2021-12-13,Rule,Executive Office for Immigration Review Electronic Case Access and Filing,eoir,0.7963914377051649
+4,2,2020-27008,2020-12-16,Rule,Appellate Procedures and Decisional Finality in Immigration Proceedings; Administrative Closure,eoir,0.8071582143573685
+4,3,2020-23210,2020-11-03,Rule,Organization of the Executive Office for Immigration Review,eoir,0.8195325597254517
+5,1,2023-04737,2023-03-13,Notice,Employment Authorization for Somali F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Somalia,ice,0.42129569084771934
+5,2,2023-17871,2023-08-21,Notice,Employment Authorization for Sudanese F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Sudan,ice,0.43834374716387975
+5,3,2022-20758,2022-09-27,Notice,Employment Authorization for Burmese F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Burma (Myanmar),ice,0.44604303407415974
+6,1,2020-24238,2020-11-02,Notice,Extension of the Designation of South Sudan for Temporary Protected Status,uscis,0.60467030983171
+6,2,2019-06746,2019-04-05,Notice,Extension of the Designation of South Sudan for Temporary Protected Status,uscis,0.6230448804920787
+6,3,2020-04355,2020-03-02,Notice,Extension of the Designation of Yemen for Temporary Protected Status,uscis,0.6346288515874147
+7,1,2025-20622,2025-11-21,Notice,Inflation Adjustment to HR-1 Immigration Fees,uscis,0.8544067525575816
+7,2,2026-20185,2026-10-01,Notice,Certain DHS Immigration-Related Fees Required by HR-1: Fiscal Year 2027 Adjustments for Inflation,cbp,0.8562174275304001
+7,3,2022-00105,2022-01-11,Rule,Civil Monetary Penalty Adjustments for Inflation,cbp,0.8606358117701397
+8,1,2025-12224,2025-07-01,Notice,Termination of the Designation of Haiti for Temporary Protected Status,uscis,0.6663911678069684
+8,2,2025-12688,2025-07-08,Notice,Termination of the Designation of Nicaragua for Temporary Protected Status,uscis,0.6776320541533253
+8,3,2025-10363,2025-06-06,Notice,Termination of the Designation of Nepal for Temporary Protected Status,uscis,0.6860952024985991

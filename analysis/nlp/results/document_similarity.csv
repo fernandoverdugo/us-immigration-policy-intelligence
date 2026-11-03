@@ -1,0 +1,832 @@
+document_number,related_document_number,rank,cosine_similarity,related_title
+2016-31003,2021-14670,1,0.6096540157142939,Extension and Redesignation of Yemen for Temporary Protected Status
+2016-31003,2021-05715,2,0.5374164140819077,Extension and Redesignation of Syria for Temporary Protected Status
+2016-31003,2020-04355,3,0.49172344537007945,Extension of the Designation of Yemen for Temporary Protected Status
+2016-31861,2020-04976,1,0.6654254852725778,Extension of the Designation of Somalia for Temporary Protected Status
+2016-31861,2018-18444,2,0.6022535916986091,Extension of the Designation of Somalia for Temporary Protected Status
+2016-31861,2016-31003,3,0.4751004342873074,Extension and Redesignation of the Republic of Yemen for Temporary Protected Status
+2017-00902,2019-25137,1,0.3017682534796391,Implementing Bilateral and Multilateral Asylum Cooperative Agreements Under the Immigration and Nationality Act
+2017-00902,2020-28436,2,0.2394765224156037,Security Bars and Processing
+2017-00902,2020-14758,3,0.23268289952806553,Security Bars and Processing
+2017-04454,C1-2018-00885,1,0.46314958501845094,Termination of the Designation of El Salvador for Temporary Protected Status
+2017-04454,2025-00626,2,0.42520709551540514,Extension of the Designation of El Salvador for Temporary Protected Status
+2017-04454,2023-13018,3,0.38125345800761384,Reconsideration and Rescission of Termination of the Designation of El Salvador for Temporary Protected Status; Extension of the Temporary Protected Status Designation for El Salvador
+2017-10749,2017-20174,1,0.5183450027725842,Extension of South Sudan for Temporary Protected Status
+2017-10749,2016-31861,2,0.40555417206675143,Extension of the Designation of Somalia for Temporary Protected Status
+2017-10749,2018-00886,3,0.3917702344866421,Termination of the Designation of Haiti for Temporary Protected Status
+2017-18999,2020-11378,1,1.0000000000000004,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Confederated Tribes of the Colville Reservation as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
+2017-18999,2019-26444,2,1.0000000000000004,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Puyallup Tribe of Indians as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
+2017-18999,2021-01401,3,0.9657455267335869,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Muscogee (Creek) Nation as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
+2017-19167,2026-17108,1,0.2137565785355873,Withdrawal of International Airport Designation of Chalk Seaplane Base
+2017-19167,2019-13431,2,0.20807549726330077,Flights To and From Cuba
+2017-19167,2022-05758,3,0.19499195944885225,Streamlining I-94 Issuance at the Land Border
+2017-20174,2020-24238,1,0.7564234951054567,Extension of the Designation of South Sudan for Temporary Protected Status
+2017-20174,2019-06746,2,0.7450492541978863,Extension of the Designation of South Sudan for Temporary Protected Status
+2017-20174,2017-10749,3,0.5183450027725842,Extension of the Designation of Haiti for Temporary Protected Status
+2017-22074,2017-27141,1,0.6839322479222499,Termination of the Designation of Nicaragua for Temporary Protected Status
+2017-22074,2018-00886,2,0.6227213715101815,Termination of the Designation of Haiti for Temporary Protected Status
+2017-22074,2018-00885,3,0.6066228079405129,Termination of the Designation of El Salvador for Temporary Protected Status
+2017-26104,2019-13933,1,0.3306085261721542,"Board of Immigration Appeals: Affirmance Without Opinion, Referral for Panel Review, and Publication of Decisions as Precedents"
+2017-26104,2026-02326,2,0.3235235193814302,Appellate Procedures for the Board of Immigration Appeals
+2017-26104,2018-03980,3,0.30288696341307875,Expanding the Size of the Board of Immigration Appeals
+2017-27140,2025-07976,1,0.5500575835812563,Extension of South Sudan Designation for Temporary Protected Status
+2017-27140,2026-10704,2,0.54558476255224,Extension of Lebanon Designation for Temporary Protected Status
+2017-27140,2025-12621,3,0.3946173951783302,Termination of the Designation of Honduras for Temporary Protected Status
+2017-27141,2018-00886,1,0.7079946449854223,Termination of the Designation of Haiti for Temporary Protected Status
+2017-27141,2018-10868,2,0.6890356414646467,Termination of the Designation of Nepal for Temporary Protected Status
+2017-27141,2017-22074,3,0.6839322479222499,Termination of the Designation of Sudan for Temporary Protected Status
+2018-00885,2018-10868,1,0.7248370736301968,Termination of the Designation of Nepal for Temporary Protected Status
+2018-00885,2018-12161,2,0.6994171370301124,Termination of the Designation of Honduras for Temporary Protected Status
+2018-00885,2017-27141,3,0.6819892153519922,Termination of the Designation of Nicaragua for Temporary Protected Status
+2018-00886,2017-27141,1,0.7079946449854223,Termination of the Designation of Nicaragua for Temporary Protected Status
+2018-00886,2018-00885,2,0.6493098842344348,Termination of the Designation of El Salvador for Temporary Protected Status
+2018-00886,2018-10868,3,0.6360177555607472,Termination of the Designation of Nepal for Temporary Protected Status
+C1-2018-00885,2023-13018,1,0.5533727928595908,Reconsideration and Rescission of Termination of the Designation of El Salvador for Temporary Protected Status; Extension of the Temporary Protected Status Designation for El Salvador
+C1-2018-00885,2025-00626,2,0.5421489919592166,Extension of the Designation of El Salvador for Temporary Protected Status
+C1-2018-00885,2018-00885,3,0.49801106052947586,Termination of the Designation of El Salvador for Temporary Protected Status
+2018-03980,2020-06846,1,0.8892206930498896,Expanding the Size of the Board of Immigration Appeals
+2018-03980,2024-06929,2,0.7387842672806324,Expanding the Size of the Board of Immigration Appeals
+2018-03980,2025-06294,3,0.5382743453927264,Reducing the Size of the Board of Immigration Appeals
+2018-04454,2019-20457,1,0.7818796668500065,Extension of the Designation of Syria for Temporary Protected Status
+2018-04454,2020-04355,2,0.6606612339560745,Extension of the Designation of Yemen for Temporary Protected Status
+2018-04454,2018-17556,3,0.637795838136084,Extension of the Designation of Yemen for Temporary Protected Status
+2018-06659,2019-06577,1,0.8626475453396485,Continuation of Employment Authorization and Automatic Extension of Existing Employment Authorization Documents for Eligible Liberians Before Period of Deferred Enforced Departure Ends
+2018-06659,2020-07355,2,0.5770614149383759,Continuation of Employment Authorization and Automatic Extension of Existing Employment Authorization Documents for Eligible Liberians During the Period of Extended Wind-Down of Deferred Enforced Departure
+2018-06659,2021-03149,3,0.4987305300761132,Reinstatement of Deferred Enforced Departure and Continuation of Employment Authorization and Automatic Extension of Existing Employment Authorization Documents for Eligible Liberians
+2018-10868,2018-00885,1,0.7248370736301968,Termination of the Designation of El Salvador for Temporary Protected Status
+2018-10868,2017-27141,2,0.6890356414646467,Termination of the Designation of Nicaragua for Temporary Protected Status
+2018-10868,2018-12161,3,0.6852606016544726,Termination of the Designation of Honduras for Temporary Protected Status
+2018-11940,2018-15140,1,0.22620291071089182,Adjusting Program Fees for the Student and Exchange Visitor Program
+2018-11940,2021-09671,2,0.20692454466561655,Collection and Use of Biometrics by U.S. Citizenship and Immigration Services; Withdrawal
+2018-11940,2020-25931,3,0.17975069608003158,Good Cause for a Continuance in Immigration Proceedings
+2018-12161,2018-00885,1,0.6994171370301124,Termination of the Designation of El Salvador for Temporary Protected Status
+2018-12161,2018-10868,2,0.6852606016544726,Termination of the Designation of Nepal for Temporary Protected Status
+2018-12161,2017-27141,3,0.6705183935441172,Termination of the Designation of Nicaragua for Temporary Protected Status
+2018-13578,2020-26115,1,0.5373367022081642,Executive Office for Immigration Review Electronic Case Access and Filing
+2018-13578,2021-26853,2,0.48452009183910594,Executive Office for Immigration Review Electronic Case Access and Filing
+2018-13578,2026-04136,3,0.33981530603704624,Office of the Chief Administrative Hearing Officer Electronic Filing
+2018-15140,2024-06657,1,0.30106672322507533,"Removal of Obsolete Procedures and Requirements Related to F, J, and M Nonimmigrants"
+2018-15140,2024-12396,2,0.26160078172591467,9-11 Response and Biometric Entry-Exit Fee for H-1B and L-1 Visas
+2018-15140,2022-10869,3,0.23247329599961647,Electronic System for Travel Authorization (ESTA) Fee Increase
+2018-17556,2020-04355,1,0.8722415955014815,Extension of the Designation of Yemen for Temporary Protected Status
+2018-17556,2018-18444,2,0.7194489693554462,Extension of the Designation of Somalia for Temporary Protected Status
+2018-17556,2019-06746,3,0.6624198811096287,Extension of the Designation of South Sudan for Temporary Protected Status
+2018-18444,2020-04976,1,0.8156910755341682,Extension of the Designation of Somalia for Temporary Protected Status
+2018-18444,2018-17556,2,0.7194489693554462,Extension of the Designation of Yemen for Temporary Protected Status
+2018-18444,2019-06746,3,0.6433541974096736,Extension of the Designation of South Sudan for Temporary Protected Status
+2018-23892,2019-03783,1,0.9485171056614875,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for Sudan, Nicaragua, Haiti, and El Salvador"
+2018-23892,2019-09635,2,0.6556121847533042,Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for Nepal and Honduras
+2018-23892,2022-24984,3,0.5463882883976333,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for El Salvador, Haiti, Nicaragua, Sudan, Honduras, and Nepal"
+2018-24594,2019-15246,1,0.588023289307205,Asylum Eligibility and Procedural Modifications
+2018-24594,2021-17779,2,0.38620636125129615,"Procedures for Credible Fear Screening and Consideration of Asylum, Withholding of Removal, and CAT Protection Claims by Asylum Officers"
+2018-24594,2024-12435,3,0.3582145996867064,Securing the Border
+2018-26767,2019-22570,1,0.2762266500196081,Special Immigrant Juvenile Petitions
+2018-26767,2021-13929,2,0.21782572529073108,"Establishing a Fixed Time Period of Admission and an Extension of Stay Procedure for Nonimmigrant Academic Students, Exchange Visitors, and Representatives of Foreign Information Media"
+2018-26767,2026-03932,3,0.2097943250732141,Appellate Procedures for the Board of Immigration Appeals; Extension of Comment Period
+2018-27859,2017-00902,1,0.17111125840313854,Eliminating Exception to Expedited Removal Authority for Cuban Nationals Arriving by Air
+2018-27859,2020-14758,2,0.15468709123547353,Security Bars and Processing
+2018-27859,2019-15246,3,0.13709784622563967,Asylum Eligibility and Procedural Modifications
+2019-03783,2018-23892,1,0.9485171056614875,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for Sudan, Nicaragua, Haiti, and El Salvador"
+2019-03783,2019-09635,2,0.659092142009327,Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for Nepal and Honduras
+2019-03783,2022-24984,3,0.551423968273548,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for El Salvador, Haiti, Nicaragua, Sudan, Honduras, and Nepal"
+2019-05838,2022-19882,1,0.5243295678485212,"Professional Conduct for Practitioners-Rules and Procedures, and Representation and Appearances"
+2019-05838,2020-20045,2,0.44283555490552784,"Professional Conduct for Practitioners-Rules and Procedures, and Representation and Appearances"
+2019-05838,2021-26853,3,0.31356109717210995,Executive Office for Immigration Review Electronic Case Access and Filing
+2019-06576,2021-03153,1,0.9156906541802031,Reinstating Deferred Enforced Departure for Liberians
+2019-06576,2020-07356,2,0.7413970860836658,Memorandum on Extending the Wind-Down Period for Deferred Enforced Departure for Liberians
+2019-06576,2024-21661,3,0.3462245376437286,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Liberia
+2019-06577,2018-06659,1,0.8626475453396485,Filing Procedures for Employment Authorization and Automatic Extension of Existing Employment Authorization Documents for Eligible Liberians Before Period of Deferred Enforced Departure Ends
+2019-06577,2020-07355,2,0.6848871604520601,Continuation of Employment Authorization and Automatic Extension of Existing Employment Authorization Documents for Eligible Liberians During the Period of Extended Wind-Down of Deferred Enforced Departure
+2019-06577,2021-03149,3,0.5286433297837864,Reinstatement of Deferred Enforced Departure and Continuation of Employment Authorization and Automatic Extension of Existing Employment Authorization Documents for Eligible Liberians
+2019-06745,2020-11124,1,0.9748504597142756,Civil Monetary Penalty Adjustments for Inflation
+2019-06745,2021-22564,2,0.8797041167817022,Civil Monetary Penalty Adjustments for Inflation
+2019-06745,2022-00105,3,0.8753217905121653,Civil Monetary Penalty Adjustments for Inflation
+2019-06746,2020-24238,1,0.9511485801445291,Extension of the Designation of South Sudan for Temporary Protected Status
+2019-06746,2017-20174,2,0.7450492541978863,Extension of South Sudan for Temporary Protected Status
+2019-06746,2018-17556,3,0.6624198811096287,Extension of the Designation of Yemen for Temporary Protected Status
+2019-09635,2019-03783,1,0.659092142009327,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for Sudan, Nicaragua, Haiti, and El Salvador"
+2019-09635,2018-23892,2,0.6556121847533042,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for Sudan, Nicaragua, Haiti, and El Salvador"
+2019-09635,2022-24984,3,0.5327135158857073,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for El Salvador, Haiti, Nicaragua, Sudan, Honduras, and Nepal"
+2019-10676,2021-20481,1,0.42691189001097396,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for El Salvador, Haiti, Nicaragua, Sudan, Honduras, and Nepal"
+2019-10676,2019-09635,2,0.27113354508228066,Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for Nepal and Honduras
+2019-10676,2023-27342,3,0.24341254537778684,"Extension of Re-Registration Periods for Extensions of the Temporary Protected Status Designations of El Salvador, Haiti, Honduras, Nepal, Nicaragua, and Sudan"
+2019-11251,2026-17108,1,0.31726313129949774,Withdrawal of International Airport Designation of Chalk Seaplane Base
+2019-11251,2019-13431,2,0.21141536883306092,Flights To and From Cuba
+2019-11251,2021-27571,3,0.18657722702046256,Automation of CBP Form I-418 for Vessels
+2019-13431,2025-19983,1,0.4525703785135109,Automation of CBP Form I-418 for Vessels
+2019-13431,2026-17108,2,0.2879427548190796,Withdrawal of International Airport Designation of Chalk Seaplane Base
+2019-13431,2021-27571,3,0.2369716794262806,Automation of CBP Form I-418 for Vessels
+2019-13933,2026-02326,1,0.35431749304622334,Appellate Procedures for the Board of Immigration Appeals
+2019-13933,2020-27008,2,0.3381553347033067,Appellate Procedures and Decisional Finality in Immigration Proceedings; Administrative Closure
+2019-13933,2017-26104,3,0.3306085261721542,Procedures Further Implementing the Annual Limitation on Suspension of Deportation and Cancellation of Removal
+2019-15246,2018-24594,1,0.588023289307205,Aliens Subject to a Bar on Entry Under Certain Presidential Proclamations; Procedures for Protection Claims
+2019-15246,2020-27856,2,0.47878257668018515,Asylum Eligibility and Procedural Modifications
+2019-15246,2019-25137,3,0.4560974759911274,Implementing Bilateral and Multilateral Asylum Cooperative Agreements Under the Immigration and Nationality Act
+2019-18196,2020-23210,1,0.7143788842283405,Organization of the Executive Office for Immigration Review
+2019-18196,2018-13578,2,0.32398897093584766,EOIR Electronic Filing Pilot Program
+2019-18196,2018-03980,3,0.3235305318929872,Expanding the Size of the Board of Immigration Appeals
+2019-20457,2018-04454,1,0.7818796668500065,Extension of the Designation of Syria for Temporary Protected Status
+2019-20457,2020-04355,2,0.6872702053825087,Extension of the Designation of Yemen for Temporary Protected Status
+2019-20457,2020-04976,3,0.6558633229119347,Extension of the Designation of Somalia for Temporary Protected Status
+2019-22570,2018-26767,1,0.2762266500196081,Modernizing Recruitment Requirements for the Temporary Employment of H-2B Foreign Workers in the United States; Extension of Comment Period
+2019-22570,2024-11121,2,0.26663835466892527,Efficient Case and Docket Management in Immigration Proceedings
+2019-22570,2022-06148,3,0.20526063661013264,"Procedures for Credible Fear Screening and Consideration of Asylum, Withholding of Removal, and CAT Protection Claims by Asylum Officers"
+2019-24047,2020-27154,1,0.9503005199345959,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for El Salvador, Haiti, Nicaragua, Sudan, Honduras, and Nepal"
+2019-24047,2021-19617,2,0.9162793387609889,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for El Salvador, Haiti, Nicaragua, Sudan, Honduras, and Nepal"
+2019-24047,2022-24984,3,0.8104605902880666,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for El Salvador, Haiti, Nicaragua, Sudan, Honduras, and Nepal"
+2019-25137,2019-15246,1,0.4560974759911274,Asylum Eligibility and Procedural Modifications
+2019-25137,2018-24594,2,0.3500129612447721,Aliens Subject to a Bar on Entry Under Certain Presidential Proclamations; Procedures for Protection Claims
+2019-25137,2020-27856,3,0.31260202254487846,Asylum Eligibility and Procedural Modifications
+2019-26444,2017-18999,1,1.0000000000000004,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Pokagon Band of Potawatomi Indians as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
+2019-26444,2020-11378,2,1.0000000000000004,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Confederated Tribes of the Colville Reservation as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
+2019-26444,2021-01401,3,0.9657455267335869,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Muscogee (Creek) Nation as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
+2019-27055,2020-23159,1,0.7020292333900648,Procedures for Asylum and Bars to Asylum Eligibility
+2019-27055,2020-12575,2,0.2247095733977035,Procedures for Asylum and Withholding of Removal; Credible Fear and Reasonable Fear Review
+2019-27055,2020-25912,3,0.20644294103937605,Motions To Reopen and Reconsider; Effect of Departure; Stay of Removal
+2019-27404,2021-09671,1,0.1620582675557174,Collection and Use of Biometrics by U.S. Citizenship and Immigration Services; Withdrawal
+2019-27404,2019-10676,2,0.16043732221414872,Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for Nepal and Honduras; Correction
+2019-27404,2022-19882,3,0.15553901662588496,"Professional Conduct for Practitioners-Rules and Procedures, and Representation and Appearances"
+2019-27721,2022-13537,1,0.9983509247209017,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Kickapoo Traditional Tribe of Texas as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
+2019-27721,2021-01401,2,0.9942790440079192,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Muscogee (Creek) Nation as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
+2019-27721,2020-11378,3,0.9582968352716243,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Confederated Tribes of the Colville Reservation as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
+2020-00182,2021-04951,1,0.17671252153968312,Designation of Venezuela for Temporary Protected Status and Implementation of Employment Authorization for Venezuelans Covered by Deferred Enforced Departure
+2020-00182,2021-07987,2,0.16538692150971013,Identifying Barriers Across U.S. Citizenship and Immigration Services (USCIS) Benefits and Services; Request for Public Input
+2020-00182,2024-11986,3,0.161713896542721,Retirement of Forms by Mail Service
+2020-01110,2021-07987,1,0.21041584776095734,Identifying Barriers Across U.S. Citizenship and Immigration Services (USCIS) Benefits and Services; Request for Public Input
+2020-01110,2025-20622,2,0.2013762870672892,Inflation Adjustment to HR-1 Immigration Fees
+2020-01110,C1-2021-07987,3,0.2012276599393391,Identifying Barriers Across U.S. Citizenship and Immigration Services (USCIS) Benefits and Services; Request for Public Input
+2020-01821,2023-15667,1,0.936413388666397,Introduction of a New Version of Employment Eligibility Verification Form
+2020-01821,2021-23260,2,0.33253289538209113,"Remote Document Examination for Form I-9, Employment Eligibility Verification: Request for Public Input"
+2020-01821,2018-06659,3,0.1799188561957084,Filing Procedures for Employment Authorization and Automatic Extension of Existing Employment Authorization Documents for Eligible Liberians Before Period of Deferred Enforced Departure Ends
+2020-03784,2020-27506,1,0.7360983235484878,Executive Office for Immigration Review; Fee Review
+2020-03784,2020-25912,2,0.36729970501184434,Motions To Reopen and Reconsider; Effect of Departure; Stay of Removal
+2020-03784,2026-11692,3,0.3261819461870207,EOIR Fees
+2020-04355,2018-17556,1,0.8722415955014815,Extension of the Designation of Yemen for Temporary Protected Status
+2020-04355,2020-04976,2,0.7473389980714036,Extension of the Designation of Somalia for Temporary Protected Status
+2020-04355,2019-20457,3,0.6872702053825087,Extension of the Designation of Syria for Temporary Protected Status
+2020-04666,2020-04667,1,0.9849820094439259,Notice of DHS's Requirement of the Temporary Labor Certification Final Determination Under the H-2A Temporary Worker Program
+2020-04666,2025-00582,2,0.7537520419416776,Notice of DHS's Requirement of the Permanent Labor Certification Final Determination for Form I-140 Petitions
+2020-04666,2018-15140,3,0.14136030056974497,Adjusting Program Fees for the Student and Exchange Visitor Program
+2020-04667,2020-04666,1,0.9849820094439259,Notice of DHS's Requirement of the Temporary Labor Certification Final Determination Under the H-2B Temporary Worker Program
+2020-04667,2025-00582,2,0.7529935483743885,Notice of DHS's Requirement of the Permanent Labor Certification Final Determination for Form I-140 Petitions
+2020-04667,2018-15140,3,0.14121805103317844,Adjusting Program Fees for the Student and Exchange Visitor Program
+2020-04976,2018-18444,1,0.8156910755341682,Extension of the Designation of Somalia for Temporary Protected Status
+2020-04976,2020-04355,2,0.7473389980714036,Extension of the Designation of Yemen for Temporary Protected Status
+2020-04976,2016-31861,3,0.6654254852725778,Extension of the Designation of Somalia for Temporary Protected Status
+2020-06846,2018-03980,1,0.8892206930498896,Expanding the Size of the Board of Immigration Appeals
+2020-06846,2024-06929,2,0.7716761613340446,Expanding the Size of the Board of Immigration Appeals
+2020-06846,2025-06294,3,0.5974159762026973,Reducing the Size of the Board of Immigration Appeals
+2020-07355,2021-03149,1,0.7422489060723418,Reinstatement of Deferred Enforced Departure and Continuation of Employment Authorization and Automatic Extension of Existing Employment Authorization Documents for Eligible Liberians
+2020-07355,2019-06577,2,0.6848871604520601,Continuation of Employment Authorization and Automatic Extension of Existing Employment Authorization Documents for Eligible Liberians Before Period of Deferred Enforced Departure Ends
+2020-07355,2018-06659,3,0.5770614149383759,Filing Procedures for Employment Authorization and Automatic Extension of Existing Employment Authorization Documents for Eligible Liberians Before Period of Deferred Enforced Departure Ends
+2020-07356,2019-06576,1,0.7413970860836658,Memorandum on Extension of Deferred Enforced Departure for Liberians
+2020-07356,2021-03153,2,0.7094726312888254,Reinstating Deferred Enforced Departure for Liberians
+2020-07356,2020-07355,3,0.33997906538878486,Continuation of Employment Authorization and Automatic Extension of Existing Employment Authorization Documents for Eligible Liberians During the Period of Extended Wind-Down of Deferred Enforced Departure
+2020-07616,2020-23159,1,0.19549196433592594,Procedures for Asylum and Bars to Asylum Eligibility
+2020-07616,2019-25137,2,0.1741008395225254,Implementing Bilateral and Multilateral Asylum Cooperative Agreements Under the Immigration and Nationality Act
+2020-07616,2019-15246,3,0.16761116497873887,Asylum Eligibility and Procedural Modifications
+2020-11378,2017-18999,1,1.0000000000000004,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Pokagon Band of Potawatomi Indians as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
+2020-11378,2019-26444,2,1.0000000000000004,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Puyallup Tribe of Indians as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
+2020-11378,2021-01401,3,0.9657455267335869,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Muscogee (Creek) Nation as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
+2020-12575,2020-26875,1,0.8595211948446934,Procedures for Asylum and Withholding of Removal; Credible Fear and Reasonable Fear Review
+2020-12575,2021-00409,2,0.7647981424560474,Procedures for Asylum and Withholding of Removal; Credible Fear and Reasonable Fear Review
+2020-12575,2021-17779,3,0.5760293718759835,"Procedures for Credible Fear Screening and Consideration of Asylum, Withholding of Removal, and CAT Protection Claims by Asylum Officers"
+2020-11124,2019-06745,1,0.9748504597142756,Civil Monetary Penalty Adjustments for Inflation
+2020-11124,2021-22564,2,0.8792905676617854,Civil Monetary Penalty Adjustments for Inflation
+2020-11124,2022-00105,3,0.8749103015248973,Civil Monetary Penalty Adjustments for Inflation
+2020-14758,2020-28436,1,0.749631540660709,Security Bars and Processing
+2020-14758,2021-01683,2,0.3837023083182377,Security Bars and Processing; Delay of Effective Date
+2020-14758,2021-17779,3,0.3345684547745529,"Procedures for Credible Fear Screening and Consideration of Asylum, Withholding of Removal, and CAT Protection Claims by Asylum Officers"
+2020-18676,2020-27008,1,0.713670317287888,Appellate Procedures and Decisional Finality in Immigration Proceedings; Administrative Closure
+2020-18676,2023-18199,2,0.47512962470838466,Appellate Procedures and Decisional Finality in Immigration Proceedings; Administrative Closure
+2020-18676,2019-13933,3,0.3208836088105426,"Board of Immigration Appeals: Affirmance Without Opinion, Referral for Panel Review, and Publication of Decisions as Precedents"
+2020-21027,2020-27210,1,0.6556334776222389,Procedures for Asylum and Withholding of Removal
+2020-21027,2020-25912,2,0.3485879661706028,Motions To Reopen and Reconsider; Effect of Departure; Stay of Removal
+2020-21027,2020-12575,3,0.3031265818220222,Procedures for Asylum and Withholding of Removal; Credible Fear and Reasonable Fear Review
+2020-20045,2022-19882,1,0.485008937277792,"Professional Conduct for Practitioners-Rules and Procedures, and Representation and Appearances"
+2020-20045,2019-05838,2,0.44283555490552784,"Professional Conduct for Practitioners, Scope of Representation and Appearances"
+2020-20045,2020-27506,3,0.2749697321694117,Executive Office for Immigration Review; Fee Review
+2020-23159,2019-27055,1,0.7020292333900648,Procedures for Asylum and Bars to Asylum Eligibility
+2020-23159,2020-27210,2,0.35157186021232456,Procedures for Asylum and Withholding of Removal
+2020-23159,2022-06148,3,0.3254223695540522,"Procedures for Credible Fear Screening and Consideration of Asylum, Withholding of Removal, and CAT Protection Claims by Asylum Officers"
+2020-24238,2019-06746,1,0.9511485801445291,Extension of the Designation of South Sudan for Temporary Protected Status
+2020-24238,2017-20174,2,0.7564234951054567,Extension of South Sudan for Temporary Protected Status
+2020-24238,2020-04355,3,0.6643856959177024,Extension of the Designation of Yemen for Temporary Protected Status
+2020-23210,2019-18196,1,0.7143788842283405,Organization of the Executive Office for Immigration Review
+2020-23210,2020-27008,2,0.35330314581296646,Appellate Procedures and Decisional Finality in Immigration Proceedings; Administrative Closure
+2020-23210,2021-26853,3,0.35028129994780133,Executive Office for Immigration Review Electronic Case Access and Filing
+2020-25912,2024-30754,1,0.43407661285055765,Withdrawal of Notices of Proposed Rulemaking
+2020-25912,2020-03784,2,0.36729970501184434,Executive Office for Immigration Review; Fee Review
+2020-25912,2020-21027,3,0.3485879661706028,Procedures for Asylum and Withholding of Removal
+2020-25931,2025-16573,1,0.19634180556059783,Designation of Temporary Immigration Judges
+2020-25931,2024-30754,2,0.18423509158419857,Withdrawal of Notices of Proposed Rulemaking
+2020-25931,2018-11940,3,0.17975069608003158,Procedures and Standards for Declining Surety Immigration Bonds and Administrative Appeal Requirement for Breaches
+2020-26115,2021-26853,1,0.6739803787589256,Executive Office for Immigration Review Electronic Case Access and Filing
+2020-26115,2026-04136,2,0.6686201912998115,Office of the Chief Administrative Hearing Officer Electronic Filing
+2020-26115,2018-13578,3,0.5373367022081642,EOIR Electronic Filing Pilot Program
+2020-27154,2019-24047,1,0.9503005199345959,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for El Salvador, Haiti, Honduras, Nepal, Nicaragua, and Sudan"
+2020-27154,2021-19617,2,0.9263638241753341,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for El Salvador, Haiti, Nicaragua, Sudan, Honduras, and Nepal"
+2020-27154,2022-24984,3,0.8295857910701004,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for El Salvador, Haiti, Nicaragua, Sudan, Honduras, and Nepal"
+2020-26875,2020-12575,1,0.8595211948446934,Procedures for Asylum and Withholding of Removal; Credible Fear and Reasonable Fear Review
+2020-26875,2021-00409,2,0.7181886712146969,Procedures for Asylum and Withholding of Removal; Credible Fear and Reasonable Fear Review
+2020-26875,2021-17779,3,0.5557053951037173,"Procedures for Credible Fear Screening and Consideration of Asylum, Withholding of Removal, and CAT Protection Claims by Asylum Officers"
+2020-27008,2020-18676,1,0.713670317287888,Appellate Procedures and Decisional Finality in Immigration Proceedings; Administrative Closure
+2020-27008,2021-26853,2,0.5024279313829005,Executive Office for Immigration Review Electronic Case Access and Filing
+2020-27008,2023-18199,3,0.4362543368328755,Appellate Procedures and Decisional Finality in Immigration Proceedings; Administrative Closure
+2020-27210,2020-21027,1,0.6556334776222389,Procedures for Asylum and Withholding of Removal
+2020-27210,2021-26853,2,0.46929935219507013,Executive Office for Immigration Review Electronic Case Access and Filing
+2020-27210,2022-06148,3,0.46911160809698377,"Procedures for Credible Fear Screening and Consideration of Asylum, Withholding of Removal, and CAT Protection Claims by Asylum Officers"
+2020-27856,2019-15246,1,0.47878257668018515,Asylum Eligibility and Procedural Modifications
+2020-27856,2018-24594,2,0.3323585319122456,Aliens Subject to a Bar on Entry Under Certain Presidential Proclamations; Procedures for Protection Claims
+2020-27856,2019-25137,3,0.31260202254487846,Implementing Bilateral and Multilateral Asylum Cooperative Agreements Under the Immigration and Nationality Act
+2020-27506,2020-03784,1,0.7360983235484878,Executive Office for Immigration Review; Fee Review
+2020-27506,2021-26853,2,0.46111717889320664,Executive Office for Immigration Review Electronic Case Access and Filing
+2020-27506,2020-27008,3,0.38869662716151904,Appellate Procedures and Decisional Finality in Immigration Proceedings; Administrative Closure
+2020-28436,2020-14758,1,0.749631540660709,Security Bars and Processing
+2020-28436,2021-01683,2,0.4775471185981726,Security Bars and Processing; Delay of Effective Date
+2020-28436,2020-26875,3,0.3988055320987759,Procedures for Asylum and Withholding of Removal; Credible Fear and Reasonable Fear Review
+2021-00409,2020-12575,1,0.7647981424560474,Procedures for Asylum and Withholding of Removal; Credible Fear and Reasonable Fear Review
+2021-00409,2020-26875,2,0.7181886712146969,Procedures for Asylum and Withholding of Removal; Credible Fear and Reasonable Fear Review
+2021-00409,2021-17779,3,0.48704621899708866,"Procedures for Credible Fear Screening and Consideration of Asylum, Withholding of Removal, and CAT Protection Claims by Asylum Officers"
+2021-01401,2022-13537,1,0.9959213933576299,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Kickapoo Traditional Tribe of Texas as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
+2021-01401,2019-27721,2,0.9942790440079192,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Swinomish Indian Tribal Community as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
+2021-01401,2020-11378,3,0.9657455267335869,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Confederated Tribes of the Colville Reservation as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
+2021-01683,2021-28016,1,0.6734402965460684,Security Bars and Processing; Delay of Effective Date
+2021-01683,2021-05931,2,0.6704286524608465,Security Bars and Processing; Delay of Effective Date
+2021-01683,2022-28121,3,0.6423297511729977,Security Bars and Processing; Delay of Effective Date
+2021-03149,2020-07355,1,0.7422489060723418,Continuation of Employment Authorization and Automatic Extension of Existing Employment Authorization Documents for Eligible Liberians During the Period of Extended Wind-Down of Deferred Enforced Departure
+2021-03149,2019-06577,2,0.5286433297837864,Continuation of Employment Authorization and Automatic Extension of Existing Employment Authorization Documents for Eligible Liberians Before Period of Deferred Enforced Departure Ends
+2021-03149,2022-19207,3,0.5046375011058735,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Liberians
+2021-03153,2019-06576,1,0.9156906541802031,Memorandum on Extension of Deferred Enforced Departure for Liberians
+2021-03153,2020-07356,2,0.7094726312888254,Memorandum on Extending the Wind-Down Period for Deferred Enforced Departure for Liberians
+2021-03153,2024-21661,3,0.3410868721106867,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Liberia
+2021-04951,2021-16611,1,0.4035204095207857,"Extension of Initial Registration Periods for New Temporary Protected Status Applicants Under the Designations for Venezuela, Syria, and Burma; Correction to the Notice on the Designation of Venezuela for Temporary Protected Status and Implementation of Employment Authorization for Venezuelans Covered by Deferred Enforced Departure"
+2021-04951,2021-06100,2,0.3754015115372688,Designation of Venezuela for Temporary Protected Status and Implementation of Employment Authorization for Venezuelans Covered by Deferred Enforced Departure; Correction
+2021-04951,2024-24229,3,0.3602517653514993,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Lebanon
+2021-05715,2021-14670,1,0.5678534319028361,Extension and Redesignation of Yemen for Temporary Protected Status
+2021-05715,2019-20457,2,0.5535239369390824,Extension of the Designation of Syria for Temporary Protected Status
+2021-05715,2018-04454,3,0.5459542866054786,Extension of the Designation of Syria for Temporary Protected Status
+2021-05931,2021-28016,1,0.8878468702971233,Security Bars and Processing; Delay of Effective Date
+2021-05931,2022-28121,2,0.8600314625412112,Security Bars and Processing; Delay of Effective Date
+2021-05931,2021-01683,3,0.6704286524608465,Security Bars and Processing; Delay of Effective Date
+2021-06100,2021-16611,1,0.5387791629344719,"Extension of Initial Registration Periods for New Temporary Protected Status Applicants Under the Designations for Venezuela, Syria, and Burma; Correction to the Notice on the Designation of Venezuela for Temporary Protected Status and Implementation of Employment Authorization for Venezuelans Covered by Deferred Enforced Departure"
+2021-06100,2021-04951,2,0.3754015115372688,Designation of Venezuela for Temporary Protected Status and Implementation of Employment Authorization for Venezuelans Covered by Deferred Enforced Departure
+2021-06100,2022-10018,3,0.3377229725570043,Extension and Redesignation of South Sudan for Temporary Protected Status-Correction
+2021-07987,C1-2021-07987,1,0.7295324892110399,Identifying Barriers Across U.S. Citizenship and Immigration Services (USCIS) Benefits and Services; Request for Public Input
+2021-07987,2021-23260,2,0.25922006041255713,"Remote Document Examination for Form I-9, Employment Eligibility Verification: Request for Public Input"
+2021-07987,2020-01110,3,0.21041584776095734,Notice Concerning Termination of Eligibility for E-1 and E-2 Nonimmigrant Classification Based on Treaty of Amity With Iran
+C1-2021-07987,2021-07987,1,0.7295324892110399,Identifying Barriers Across U.S. Citizenship and Immigration Services (USCIS) Benefits and Services; Request for Public Input
+C1-2021-07987,2021-23260,2,0.2888768196462078,"Remote Document Examination for Form I-9, Employment Eligibility Verification: Request for Public Input"
+C1-2021-07987,2020-01110,3,0.2012276599393391,Notice Concerning Termination of Eligibility for E-1 and E-2 Nonimmigrant Classification Based on Treaty of Amity With Iran
+2021-09670,2021-13929,1,0.41654010603755925,"Establishing a Fixed Time Period of Admission and an Extension of Stay Procedure for Nonimmigrant Academic Students, Exchange Visitors, and Representatives of Foreign Information Media"
+2021-09670,2020-26875,2,0.3579172394978433,Procedures for Asylum and Withholding of Removal; Credible Fear and Reasonable Fear Review
+2021-09670,2021-09609,3,0.3098927668596573,Removal of International Entrepreneur Parole Program
+2021-09671,2021-09670,1,0.2720677012921216,Employment Authorization for Certain Classes of Aliens With Final Orders of Removal; Withdrawal
+2021-09671,2021-13929,2,0.2645096746716491,"Establishing a Fixed Time Period of Admission and an Extension of Stay Procedure for Nonimmigrant Academic Students, Exchange Visitors, and Representatives of Foreign Information Media"
+2021-09671,2021-09609,3,0.22570766636209683,Removal of International Entrepreneur Parole Program
+2021-09609,2021-09670,1,0.3098927668596573,Employment Authorization for Certain Classes of Aliens With Final Orders of Removal; Withdrawal
+2021-09609,2021-13929,2,0.28977674359467853,"Establishing a Fixed Time Period of Admission and an Extension of Stay Procedure for Nonimmigrant Academic Students, Exchange Visitors, and Representatives of Foreign Information Media"
+2021-09609,2024-16138,3,0.2488184259742161,International Entrepreneur Program: Fiscal Year 2025 Automatic Increase of Investment and Revenue Amount Requirements
+2021-11075,2022-20784,1,0.4500559648478423,Extension and Redesignation of Burma (Myanmar) for Temporary Protected Status
+2021-11075,2024-06104,2,0.4464307829456139,Extension and Redesignation of Burma (Myanmar) for Temporary Protected Status
+2021-11075,2022-10923,3,0.36780346335062253,Designation of Afghanistan for Temporary Protected Status
+2021-13929,2021-09670,1,0.41654010603755925,Employment Authorization for Certain Classes of Aliens With Final Orders of Removal; Withdrawal
+2021-13929,2021-09609,2,0.28977674359467853,Removal of International Entrepreneur Parole Program
+2021-13929,2021-09671,3,0.2645096746716491,Collection and Use of Biometrics by U.S. Citizenship and Immigration Services; Withdrawal
+2021-14670,2020-04355,1,0.6683561985863916,Extension of the Designation of Yemen for Temporary Protected Status
+2021-14670,2018-17556,2,0.6477502105869699,Extension of the Designation of Yemen for Temporary Protected Status
+2021-14670,2016-31003,3,0.6096540157142939,Extension and Redesignation of the Republic of Yemen for Temporary Protected Status
+2021-15595,2022-04573,1,0.5783967450445086,Extension and Redesignation of South Sudan for Temporary Protected Status
+2021-15595,2024-15829,2,0.5712746531641435,Extension and Redesignation of Somalia for Temporary Protected Status
+2021-15595,2021-14670,3,0.5512852939922922,Extension and Redesignation of Yemen for Temporary Protected Status
+2021-16181,2024-24213,1,0.9999999999999999,Notice of Approval of New Credentialing Organization for Healthcare Workers for Certain Immigration Purposes
+2021-16181,2026-05942,2,0.974654680789743,Notice of Approval of New Credentialing Organization for Health Care Workers for Certain Immigration Purposes
+2021-16181,2021-07987,3,0.13075415362893347,Identifying Barriers Across U.S. Citizenship and Immigration Services (USCIS) Benefits and Services; Request for Public Input
+2021-16481,2024-14247,1,0.5405001739394292,Extension and Redesignation of Haiti for Temporary Protected Status
+2021-16481,2022-12229,2,0.4798127738020556,Designation of Cameroon for Temporary Protected Status
+2021-16481,2022-10923,3,0.4696150355203035,Designation of Afghanistan for Temporary Protected Status
+2021-16611,2021-06100,1,0.5387791629344719,Designation of Venezuela for Temporary Protected Status and Implementation of Employment Authorization for Venezuelans Covered by Deferred Enforced Departure; Correction
+2021-16611,2021-04951,2,0.4035204095207857,Designation of Venezuela for Temporary Protected Status and Implementation of Employment Authorization for Venezuelans Covered by Deferred Enforced Departure
+2021-16611,2023-25507,3,0.28735465914456454,Extension and Redesignation of Venezuela for Temporary Protected Status-Correction
+2021-17779,2020-12575,1,0.5760293718759835,Procedures for Asylum and Withholding of Removal; Credible Fear and Reasonable Fear Review
+2021-17779,2020-26875,2,0.5557053951037173,Procedures for Asylum and Withholding of Removal; Credible Fear and Reasonable Fear Review
+2021-17779,C1-2021-17779,3,0.5503888932521208,"Procedures for Credible Fear Screening and Consideration of Asylum, Withholding of Removal, and CAT Protection Claims by Asylum Officers"
+2021-17837,2021-07987,1,0.1871721265717229,Identifying Barriers Across U.S. Citizenship and Immigration Services (USCIS) Benefits and Services; Request for Public Input
+2021-17837,2021-23260,2,0.18358003686231686,"Remote Document Examination for Form I-9, Employment Eligibility Verification: Request for Public Input"
+2021-17837,2019-05838,3,0.15648633220756847,"Professional Conduct for Practitioners, Scope of Representation and Appearances"
+2021-19617,2020-27154,1,0.9263638241753341,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for El Salvador, Haiti, Nicaragua, Sudan, Honduras, and Nepal"
+2021-19617,2019-24047,2,0.9162793387609889,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for El Salvador, Haiti, Honduras, Nepal, Nicaragua, and Sudan"
+2021-19617,2022-24984,3,0.8159012646468017,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for El Salvador, Haiti, Nicaragua, Sudan, Honduras, and Nepal"
+2021-20481,2020-27154,1,0.5923365026596752,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for El Salvador, Haiti, Nicaragua, Sudan, Honduras, and Nepal"
+2021-20481,2021-19617,2,0.5678118928871349,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for El Salvador, Haiti, Nicaragua, Sudan, Honduras, and Nepal"
+2021-20481,2019-24047,3,0.5667786528460458,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for El Salvador, Haiti, Honduras, Nepal, Nicaragua, and Sudan"
+2021-22564,2022-00105,1,0.9820473472328499,Civil Monetary Penalty Adjustments for Inflation
+2021-22564,2023-00626,2,0.9741023327198809,Civil Monetary Penalty Adjustments for Inflation
+2021-22564,2019-06745,3,0.8797041167817022,Civil Monetary Penalty Adjustments for Inflation
+C1-2021-17779,2021-17779,1,0.5503888932521208,"Procedures for Credible Fear Screening and Consideration of Asylum, Withholding of Removal, and CAT Protection Claims by Asylum Officers"
+C1-2021-17779,2022-06148,2,0.4728830689640158,"Procedures for Credible Fear Screening and Consideration of Asylum, Withholding of Removal, and CAT Protection Claims by Asylum Officers"
+C1-2021-17779,2024-30500,3,0.29897504475904924,Clarification Regarding Bars to Eligibility During Credible Fear and Reasonable Fear Review
+2021-23012,2023-09507,1,0.7625973815272973,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Hong Kong
+2021-23012,2025-05903,2,0.7222766590422174,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Hong Kong
+2021-23012,2024-07866,3,0.5104659952866337,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Certain Palestinians
+2021-23260,2020-01821,1,0.33253289538209113,Introduction of a New Version of Employment Eligibility Verification Form
+2021-23260,2023-15667,2,0.3296321466571212,Introduction of a New Version of Employment Eligibility Verification Form
+2021-23260,C1-2021-07987,3,0.2888768196462078,Identifying Barriers Across U.S. Citizenship and Immigration Services (USCIS) Benefits and Services; Request for Public Input
+2021-25732,2023-09512,1,0.9347883728005602,Employment Authorization for Hong Kong F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Hong Kong
+2021-25732,2022-28293,2,0.7834934220329652,Employment Authorization for Yemeni F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Crisis in Yemen
+2021-25732,2022-12227,3,0.782711538467369,Employment Authorization for Cameroonian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Crises in Cameroon
+2021-26853,2020-26115,1,0.6739803787589256,Executive Office for Immigration Review Electronic Case Access and Filing
+2021-26853,2020-27008,2,0.5024279313829005,Appellate Procedures and Decisional Finality in Immigration Proceedings; Administrative Closure
+2021-26853,2018-13578,3,0.48452009183910594,EOIR Electronic Filing Pilot Program
+2021-27571,2025-19983,1,0.6866970422622172,Automation of CBP Form I-418 for Vessels
+2021-27571,2022-05758,2,0.42678077573051754,Streamlining I-94 Issuance at the Land Border
+2021-27571,2025-16453,3,0.2678993041626361,CBP Immigration Fees Required by HR-1 for Fiscal Year 2025
+2021-28016,2022-28121,1,0.9128067248718759,Security Bars and Processing; Delay of Effective Date
+2021-28016,2021-05931,2,0.8878468702971233,Security Bars and Processing; Delay of Effective Date
+2021-28016,2021-01683,3,0.6734402965460684,Security Bars and Processing; Delay of Effective Date
+2022-00105,2021-22564,1,0.9820473472328499,Civil Monetary Penalty Adjustments for Inflation
+2022-00105,2023-00626,2,0.9810936374237045,Civil Monetary Penalty Adjustments for Inflation
+2022-00105,2019-06745,3,0.8753217905121653,Civil Monetary Penalty Adjustments for Inflation
+2022-01402,2022-01403,1,0.9524492414372574,Notification of Temporary Travel Restrictions Applicable to Land Ports of Entry and Ferries Service Between the United States and Mexico
+2022-01402,2022-08743,2,0.9154074852329583,Notification of Temporary Travel Restrictions Applicable to Land Ports of Entry and Ferries Service Between the United States and Canada
+2022-01402,2022-08741,3,0.8711470451419318,Notification of Temporary Travel Restrictions Applicable to Land Ports of Entry and Ferries Service Between the United States and Mexico
+2022-01403,2022-01402,1,0.9524492414372574,Notification of Temporary Travel Restrictions Applicable to Land Ports of Entry and Ferries Service Between the United States and Canada
+2022-01403,2022-08741,2,0.9155341084230698,Notification of Temporary Travel Restrictions Applicable to Land Ports of Entry and Ferries Service Between the United States and Mexico
+2022-01403,2022-08743,3,0.8710542246951386,Notification of Temporary Travel Restrictions Applicable to Land Ports of Entry and Ferries Service Between the United States and Canada
+2022-04570,2023-19320,1,0.9268292346509154,Employment Authorization for South Sudanese F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Armed Conflict and Humanitarian Crisis in South Sudan
+2022-04570,2022-08362,2,0.8788566122828362,Employment Authorization for Sudanese F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Sudan
+2022-04570,2023-17871,3,0.8559379497942036,Employment Authorization for Sudanese F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Sudan
+2022-04573,2021-15595,1,0.5783967450445086,Extension and Redesignation of Somalia for Temporary Protected Status
+2022-04573,2023-19312,2,0.5731154297937405,Extension and Redesignation of South Sudan for Temporary Protected Status
+2022-04573,C1-2023-19312,3,0.5554617972350944,Extension and Redesignation of South Sudan for Temporary Protected Status
+2022-05758,2021-27571,1,0.42678077573051754,Automation of CBP Form I-418 for Vessels
+2022-05758,2025-19983,2,0.33619546135675704,Automation of CBP Form I-418 for Vessels
+2022-05758,2025-16453,3,0.28033349319515194,CBP Immigration Fees Required by HR-1 for Fiscal Year 2025
+2022-06357,2022-10185,1,0.5979499657420071,Immigration Court Practice Manual and the Board of Immigration Appeals Practice Manual; Public Forum
+2022-06357,2021-26853,2,0.28498848939784766,Executive Office for Immigration Review Electronic Case Access and Filing
+2022-06357,2018-13578,3,0.2785673218004078,EOIR Electronic Filing Pilot Program
+2022-06148,C1-2021-17779,1,0.4728830689640158,"Procedures for Credible Fear Screening and Consideration of Asylum, Withholding of Removal, and CAT Protection Claims by Asylum Officers"
+2022-06148,2020-27210,2,0.46911160809698377,Procedures for Asylum and Withholding of Removal
+2022-06148,2020-26875,3,0.46855619637787776,Procedures for Asylum and Withholding of Removal; Credible Fear and Reasonable Fear Review
+2022-08357,2023-17872,1,0.9302974204204432,Employment Authorization for Ukrainian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Armed Conflict in Ukraine
+2022-08357,2022-28293,2,0.8448556253871692,Employment Authorization for Yemeni F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Crisis in Yemen
+2022-08357,2022-12227,3,0.8436761041783277,Employment Authorization for Cameroonian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Crises in Cameroon
+2022-08362,2023-17871,1,0.959875272088966,Employment Authorization for Sudanese F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Sudan
+2022-08362,2022-04570,2,0.8788566122828362,Employment Authorization for South Sudanese F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Humanitarian Crisis in South Sudan
+2022-08362,2023-04737,3,0.8468318616067995,Employment Authorization for Somali F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Somalia
+2022-08363,2022-08390,1,0.7366297192604793,Designation of Ukraine for Temporary Protected Status
+2022-08363,2022-12229,2,0.5654133909554231,Designation of Cameroon for Temporary Protected Status
+2022-08363,2022-10923,3,0.5368237525078862,Designation of Afghanistan for Temporary Protected Status
+2022-08390,2022-08363,1,0.7366297192604793,Designation of Sudan for Temporary Protected Status
+2022-08390,2022-12229,2,0.5941643336704435,Designation of Cameroon for Temporary Protected Status
+2022-08390,2022-10923,3,0.5233359368466578,Designation of Afghanistan for Temporary Protected Status
+2022-08741,2022-08743,1,0.9585976417121581,Notification of Temporary Travel Restrictions Applicable to Land Ports of Entry and Ferries Service Between the United States and Canada
+2022-08741,2022-01403,2,0.9155341084230698,Notification of Temporary Travel Restrictions Applicable to Land Ports of Entry and Ferries Service Between the United States and Mexico
+2022-08741,2022-01402,3,0.8711470451419318,Notification of Temporary Travel Restrictions Applicable to Land Ports of Entry and Ferries Service Between the United States and Canada
+2022-08743,2022-08741,1,0.9585976417121581,Notification of Temporary Travel Restrictions Applicable to Land Ports of Entry and Ferries Service Between the United States and Mexico
+2022-08743,2022-01402,2,0.9154074852329583,Notification of Temporary Travel Restrictions Applicable to Land Ports of Entry and Ferries Service Between the United States and Canada
+2022-08743,2022-01403,3,0.8710542246951386,Notification of Temporary Travel Restrictions Applicable to Land Ports of Entry and Ferries Service Between the United States and Mexico
+2022-10018,C1-2023-19312,1,0.5293583199133811,Extension and Redesignation of South Sudan for Temporary Protected Status
+2022-10018,2022-17931,2,0.5223579947193643,Extension and Redesignation of Syria for Temporary Protected Status-Correction
+2022-10018,2022-04573,3,0.394444267106421,Extension and Redesignation of South Sudan for Temporary Protected Status
+2022-10185,2022-06357,1,0.5979499657420071,Notice of Meeting-EOIR Case & Appeals System; Immigration Court Online Resource
+2022-10185,2026-03932,2,0.3657409974573014,Appellate Procedures for the Board of Immigration Appeals; Extension of Comment Period
+2022-10185,2018-03980,3,0.35340263674557326,Expanding the Size of the Board of Immigration Appeals
+2022-10869,2025-16453,1,0.34198375725600005,CBP Immigration Fees Required by HR-1 for Fiscal Year 2025
+2022-10869,2026-20185,2,0.24201410481846064,Certain DHS Immigration-Related Fees Required by HR-1: Fiscal Year 2027 Adjustments for Inflation
+2022-10869,2025-20304,3,0.24002810131117994,Certain DHS Immigration Fees Required by HR-1: Fiscal Year 2026 Adjustments for Inflation
+2022-10886,2022-28293,1,0.8716801897700142,Employment Authorization for Yemeni F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Crisis in Yemen
+2022-10886,2022-12227,2,0.8705841265031268,Employment Authorization for Cameroonian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Crises in Cameroon
+2022-10886,2022-16469,3,0.861647344196946,Employment Authorization for Syrian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Civil War in Syria Since March 2011
+2022-10923,2022-12229,1,0.576797030745554,Designation of Cameroon for Temporary Protected Status
+2022-10923,2022-26880,2,0.5522691538004396,Designation of Ethiopia for Temporary Protected Status
+2022-10923,2022-08363,3,0.5368237525078862,Designation of Sudan for Temporary Protected Status
+2022-12227,2022-28293,1,0.8916715108908723,Employment Authorization for Yemeni F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Crisis in Yemen
+2022-12227,2022-16469,2,0.8814085696474429,Employment Authorization for Syrian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Civil War in Syria Since March 2011
+2022-12227,2022-10886,3,0.8705841265031268,Employment Authorization for Afghan F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Situation in Afghanistan
+2022-12229,2022-08390,1,0.5941643336704435,Designation of Ukraine for Temporary Protected Status
+2022-12229,2022-10923,2,0.576797030745554,Designation of Afghanistan for Temporary Protected Status
+2022-12229,2022-08363,3,0.5654133909554231,Designation of Sudan for Temporary Protected Status
+2022-13537,2019-27721,1,0.9983509247209017,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Swinomish Indian Tribal Community as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
+2022-13537,2021-01401,2,0.9959213933576299,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Muscogee (Creek) Nation as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
+2022-13537,2020-11378,3,0.9614072946022062,Western Hemisphere Travel Initiative: Designation of an Approved Native American Tribal Card Issued by the Confederated Tribes of the Colville Reservation as an Acceptable Document To Denote Identity and Citizenship for Entry in the United States at Land and Sea Ports of Entry
+2022-14728,2023-06351,1,0.24448102062892133,Implementation of the 2022 Additional Protocol to the 2002 U.S.-Canada Agreement for Cooperation in the Examination of Refugee Status Claims From Nationals of Third Countries
+2022-14728,2020-20045,2,0.19111348270777348,"Professional Conduct for Practitioners-Rules and Procedures, and Representation and Appearances"
+2022-14728,2020-27856,3,0.17149374937135445,Asylum Eligibility and Procedural Modifications
+2022-16469,2022-28293,1,0.8826408436165706,Employment Authorization for Yemeni F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Crisis in Yemen
+2022-16469,2022-12227,2,0.8814085696474429,Employment Authorization for Cameroonian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Crises in Cameroon
+2022-16469,2022-10886,3,0.861647344196946,Employment Authorization for Afghan F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Situation in Afghanistan
+2022-16508,2024-01764,1,0.7471984684523129,Extension and Redesignation of Syria for Temporary Protected Status
+2022-16508,2022-20784,2,0.6834247524785751,Extension and Redesignation of Burma (Myanmar) for Temporary Protected Status
+2022-16508,2022-28283,3,0.6620541361010288,Extension and Redesignation of Yemen for Temporary Protected Status
+2022-17931,2022-10018,1,0.5223579947193643,Extension and Redesignation of South Sudan for Temporary Protected Status-Correction
+2022-17931,2022-16508,2,0.43603231515448543,Extension and Redesignation of Syria for Temporary Protected Status
+2022-17931,2019-20457,3,0.39210363865725656,Extension of the Designation of Syria for Temporary Protected Status
+2022-19207,2024-21661,1,0.7221843987080159,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Liberia
+2022-19207,2024-07866,2,0.7115598653555069,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Certain Palestinians
+2022-19207,2024-24229,3,0.690784041684593,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Lebanon
+2022-19527,2020-24238,1,0.6162378072529234,Extension of the Designation of South Sudan for Temporary Protected Status
+2022-19527,2020-04355,2,0.6147086337380359,Extension of the Designation of Yemen for Temporary Protected Status
+2022-19527,2018-17556,3,0.6081384616108257,Extension of the Designation of Yemen for Temporary Protected Status
+2022-19542,2024-04820,1,0.9290929245358872,Employment Authorization for Venezuelan F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Crisis in Venezuela
+2022-19542,2022-28293,2,0.8443970925252191,Employment Authorization for Yemeni F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Crisis in Yemen
+2022-19542,2022-12227,3,0.8282951309187796,Employment Authorization for Cameroonian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Crises in Cameroon
+2022-19882,2019-05838,1,0.5243295678485212,"Professional Conduct for Practitioners, Scope of Representation and Appearances"
+2022-19882,2020-20045,2,0.485008937277792,"Professional Conduct for Practitioners-Rules and Procedures, and Representation and Appearances"
+2022-19882,2021-26853,3,0.3890189204317693,Executive Office for Immigration Review Electronic Case Access and Filing
+2022-20758,2023-04737,1,0.8959795124830224,Employment Authorization for Somali F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Somalia
+2022-20758,2023-17871,2,0.8671363590511224,Employment Authorization for Sudanese F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Sudan
+2022-20758,2023-01593,3,0.8656562494660365,Employment Authorization for Haitian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Haiti
+2022-20784,2024-06104,1,0.8312140387652761,Extension and Redesignation of Burma (Myanmar) for Temporary Protected Status
+2022-20784,2023-01586,2,0.7258812712020394,Extension and Redesignation of Haiti for Temporary Protected Status
+2022-20784,2022-28283,3,0.7032154053936284,Extension and Redesignation of Yemen for Temporary Protected Status
+2022-24984,2020-27154,1,0.8295857910701004,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for El Salvador, Haiti, Nicaragua, Sudan, Honduras, and Nepal"
+2022-24984,2021-19617,2,0.8159012646468017,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for El Salvador, Haiti, Nicaragua, Sudan, Honduras, and Nepal"
+2022-24984,2019-24047,3,0.8104605902880666,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for El Salvador, Haiti, Honduras, Nepal, Nicaragua, and Sudan"
+2022-26874,2023-04737,1,0.8790337568215437,Employment Authorization for Somali F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Somalia
+2022-26874,2022-20758,2,0.8652471131273151,Employment Authorization for Burmese F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Burma (Myanmar)
+2022-26874,2023-17871,3,0.8507361170132863,Employment Authorization for Sudanese F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Sudan
+2022-26880,2022-12229,1,0.557471030505591,Designation of Cameroon for Temporary Protected Status
+2022-26880,2022-10923,2,0.5522691538004396,Designation of Afghanistan for Temporary Protected Status
+2022-26880,2024-07643,3,0.530032351847368,Extension and Redesignation of Ethiopia for Temporary Protected Status
+2022-27178,2024-30213,1,0.7310505657566745,Termination of Trial Testing of Redesigned Naturalization Test for Naturalization Applications
+2022-27178,2025-18050,2,0.6882331303442586,Notice of Implementation of 2025 Naturalization Civics Test
+2022-27178,2025-00582,3,0.10642712600609236,Notice of DHS's Requirement of the Permanent Labor Certification Final Determination for Form I-140 Petitions
+2022-28121,2021-28016,1,0.9128067248718759,Security Bars and Processing; Delay of Effective Date
+2022-28121,2021-05931,2,0.8600314625412112,Security Bars and Processing; Delay of Effective Date
+2022-28121,2021-01683,3,0.6423297511729977,Security Bars and Processing; Delay of Effective Date
+2022-28283,2023-01586,1,0.7127024217836948,Extension and Redesignation of Haiti for Temporary Protected Status
+2022-28283,2022-20784,2,0.7032154053936284,Extension and Redesignation of Burma (Myanmar) for Temporary Protected Status
+2022-28283,2023-04735,3,0.6932494477674989,Extension and Redesignation of Somalia for Temporary Protected Status
+2022-28293,2022-12227,1,0.8916715108908723,Employment Authorization for Cameroonian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Crises in Cameroon
+2022-28293,2022-16469,2,0.8826408436165706,Employment Authorization for Syrian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Civil War in Syria Since March 2011
+2022-28293,2022-10886,3,0.8716801897700142,Employment Authorization for Afghan F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Situation in Afghanistan
+2023-00626,2022-00105,1,0.9810936374237045,Civil Monetary Penalty Adjustments for Inflation
+2023-00626,2021-22564,2,0.9741023327198809,Civil Monetary Penalty Adjustments for Inflation
+2023-00626,2019-06745,3,0.873906535437666,Civil Monetary Penalty Adjustments for Inflation
+2023-01586,2022-20784,1,0.7258812712020394,Extension and Redesignation of Burma (Myanmar) for Temporary Protected Status
+2023-01586,2022-28283,2,0.7127024217836948,Extension and Redesignation of Yemen for Temporary Protected Status
+2023-01586,2023-04735,3,0.6848384974774199,Extension and Redesignation of Somalia for Temporary Protected Status
+2023-01593,2023-04737,1,0.8794494122423133,Employment Authorization for Somali F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Somalia
+2023-01593,2023-17871,2,0.8700203903610786,Employment Authorization for Sudanese F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Sudan
+2023-01593,2022-20758,3,0.8656562494660365,Employment Authorization for Burmese F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Burma (Myanmar)
+C1-2022-26874,2022-26874,1,0.6456045986419268,Employment Authorization for Ethiopian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Ethiopia
+C1-2022-26874,2024-07642,2,0.644835084777885,Employment Authorization for Ethiopian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Armed Conflict and the Current Humanitarian Crisis in Ethiopia
+C1-2022-26874,2024-15082,3,0.5420486755685471,Employment Authorization for Yemeni F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Yemen
+2023-03718,2023-10146,1,0.892901270176169,Circumvention of Lawful Pathways
+2023-03718,2023-07592,2,0.24646955476411267,"Bureau of Population, Refugees, and Migration; Central American Minors Program"
+2023-03718,2020-14758,3,0.2080174603007241,Security Bars and Processing
+2023-04735,2022-28283,1,0.6932494477674989,Extension and Redesignation of Yemen for Temporary Protected Status
+2023-04735,2023-01586,2,0.6848384974774199,Extension and Redesignation of Haiti for Temporary Protected Status
+2023-04735,2023-22375,3,0.656694361553514,Extension and Redesignation of Cameroon for Temporary Protected Status
+2023-04737,2022-20758,1,0.8959795124830224,Employment Authorization for Burmese F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Burma (Myanmar)
+2023-04737,2023-17871,2,0.8809531055448939,Employment Authorization for Sudanese F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Sudan
+2023-04737,2023-01593,3,0.8794494122423133,Employment Authorization for Haitian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Haiti
+2023-06351,2023-07966,1,0.5513753977756342,Implementation of the 2022 Additional Protocol to the 2002 U.S.-Canada Agreement for Cooperation in the Examination of Refugee Status Claims From Nationals of Third Countries; Correction
+2023-06351,2019-25137,2,0.27861934234797736,Implementing Bilateral and Multilateral Asylum Cooperative Agreements Under the Immigration and Nationality Act
+2023-06351,2022-14728,3,0.24448102062892133,"Conforming Amendments Related to Temporary Entry of Business Persons Under the Agreement Between the United States of America, the United Mexican States, and Canada (USMCA)"
+2023-07592,2023-03718,1,0.24646955476411267,Circumvention of Lawful Pathways
+2023-07592,2023-10146,2,0.24129518909882886,Circumvention of Lawful Pathways
+2023-07592,2025-22744,3,0.21480986562602963,"Termination of Family Reunification Parole Processes for Colombians, Cubans, Ecuadorians, Guatemalans, Haitians, Hondurans, and Salvadorans"
+2023-07966,2023-06351,1,0.5513753977756342,Implementation of the 2022 Additional Protocol to the 2002 U.S.-Canada Agreement for Cooperation in the Examination of Refugee Status Claims From Nationals of Third Countries
+2023-07966,2019-25137,2,0.22190678802650987,Implementing Bilateral and Multilateral Asylum Cooperative Agreements Under the Immigration and Nationality Act
+2023-07966,2021-06100,3,0.1812676775184159,Designation of Venezuela for Temporary Protected Status and Implementation of Employment Authorization for Venezuelans Covered by Deferred Enforced Departure; Correction
+2023-09507,2025-05903,1,0.7891712905359579,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Hong Kong
+2023-09507,2021-23012,2,0.7625973815272973,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Hong Kong
+2023-09507,2024-07866,3,0.6498201339068688,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Certain Palestinians
+2023-09512,2021-25732,1,0.9347883728005602,Employment Authorization for F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of Emergent Circumstances in Hong Kong
+2023-09512,2023-04737,2,0.7569588255962849,Employment Authorization for Somali F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Somalia
+2023-09512,2022-28293,3,0.7535008282162013,Employment Authorization for Yemeni F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Crisis in Yemen
+2023-09948,2023-09949,1,0.935887998320904,Notification of Termination of Temporary Travel Restrictions Applicable to Land Ports of Entry and Ferries Service Between the United States and Mexico
+2023-09948,2022-01402,2,0.7761235025024776,Notification of Temporary Travel Restrictions Applicable to Land Ports of Entry and Ferries Service Between the United States and Canada
+2023-09948,2022-08743,3,0.7506967440629544,Notification of Temporary Travel Restrictions Applicable to Land Ports of Entry and Ferries Service Between the United States and Canada
+2023-09949,2023-09948,1,0.935887998320904,Notification of Termination of Temporary Travel Restrictions Applicable to Land Ports of Entry and Ferries Service Between the United States and Canada
+2023-09949,2022-01403,2,0.7765349408038983,Notification of Temporary Travel Restrictions Applicable to Land Ports of Entry and Ferries Service Between the United States and Mexico
+2023-09949,2022-08741,3,0.7511093903065581,Notification of Temporary Travel Restrictions Applicable to Land Ports of Entry and Ferries Service Between the United States and Mexico
+2023-10146,2023-03718,1,0.892901270176169,Circumvention of Lawful Pathways
+2023-10146,2023-07592,2,0.24129518909882886,"Bureau of Population, Refugees, and Migration; Central American Minors Program"
+2023-10146,2019-15246,3,0.2333465835945116,Asylum Eligibility and Procedural Modifications
+2023-13017,2023-13246,1,0.7994693553327159,Reconsideration and Rescission of Termination of the Designation of Nicaragua for Temporary Protected Status; Extension of the Temporary Protected Status Designation for Nicaragua
+2023-13017,2023-13019,2,0.6782288762648998,Reconsideration and Rescission of Termination of the Designation of Nepal for Temporary Protected Status; Extension of the Temporary Protected Status Designation for Nepal
+2023-13017,2023-13018,3,0.6748499365178604,Reconsideration and Rescission of Termination of the Designation of El Salvador for Temporary Protected Status; Extension of the Temporary Protected Status Designation for El Salvador
+2023-13018,2023-13017,1,0.6748499365178604,Reconsideration and Rescission of Termination of the Designation of Honduras for Temporary Protected Status; Extension of the Temporary Protected Status Designation for Honduras
+2023-13018,2023-13246,2,0.6478073165532848,Reconsideration and Rescission of Termination of the Designation of Nicaragua for Temporary Protected Status; Extension of the Temporary Protected Status Designation for Nicaragua
+2023-13018,2023-13019,3,0.6450944292574948,Reconsideration and Rescission of Termination of the Designation of Nepal for Temporary Protected Status; Extension of the Temporary Protected Status Designation for Nepal
+2023-13019,2023-13017,1,0.6782288762648998,Reconsideration and Rescission of Termination of the Designation of Honduras for Temporary Protected Status; Extension of the Temporary Protected Status Designation for Honduras
+2023-13019,2023-13018,2,0.6450944292574948,Reconsideration and Rescission of Termination of the Designation of El Salvador for Temporary Protected Status; Extension of the Temporary Protected Status Designation for El Salvador
+2023-13019,2023-13246,3,0.6430367307149696,Reconsideration and Rescission of Termination of the Designation of Nicaragua for Temporary Protected Status; Extension of the Temporary Protected Status Designation for Nicaragua
+2023-13246,2023-13017,1,0.7994693553327159,Reconsideration and Rescission of Termination of the Designation of Honduras for Temporary Protected Status; Extension of the Temporary Protected Status Designation for Honduras
+2023-13246,2023-13018,2,0.6478073165532848,Reconsideration and Rescission of Termination of the Designation of El Salvador for Temporary Protected Status; Extension of the Temporary Protected Status Designation for El Salvador
+2023-13246,2023-13019,3,0.6430367307149696,Reconsideration and Rescission of Termination of the Designation of Nepal for Temporary Protected Status; Extension of the Temporary Protected Status Designation for Nepal
+2023-15667,2020-01821,1,0.936413388666397,Introduction of a New Version of Employment Eligibility Verification Form
+2023-15667,2021-23260,2,0.3296321466571212,"Remote Document Examination for Form I-9, Employment Eligibility Verification: Request for Public Input"
+2023-15667,2018-06659,3,0.17726495357742755,Filing Procedures for Employment Authorization and Automatic Extension of Existing Employment Authorization Documents for Eligible Liberians Before Period of Deferred Enforced Departure Ends
+2023-17042,2024-14232,1,0.6159237555324629,Employment Authorization for Haitian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Haiti
+2023-17042,2023-01593,2,0.5176390370469676,Employment Authorization for Haitian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Haiti
+2023-17042,C1-2022-26874,3,0.510599369757924,Employment Authorization for Ethiopian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Ethiopia
+2023-17871,2022-08362,1,0.959875272088966,Employment Authorization for Sudanese F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Sudan
+2023-17871,2023-04737,2,0.8809531055448939,Employment Authorization for Somali F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Somalia
+2023-17871,2023-01593,3,0.8700203903610786,Employment Authorization for Haitian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Haiti
+2023-17872,2022-08357,1,0.9302974204204432,Employment Authorization for Ukrainian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Ongoing Armed Conflict in Ukraine
+2023-17872,2024-01762,2,0.8643235881804311,Employment Authorization for Syrian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Armed Conflict and Current Humanitarian Crisis in Syria
+2023-17872,2023-22371,3,0.8577479730131656,Employment Authorization for Cameroonian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Armed Conflict and Current Humanitarian Crisis in Cameroon
+2023-17875,2023-17877,1,0.8850952050472279,Extension and Redesignation of Sudan for Temporary Protected Status
+2023-17875,2023-22375,2,0.7314137696634722,Extension and Redesignation of Cameroon for Temporary Protected Status
+2023-17875,2023-20791,3,0.7281006388932849,Extension and Redesignation of Afghanistan for Temporary Protected Status
+2023-17877,2023-17875,1,0.8850952050472279,Extension and Redesignation of Ukraine for Temporary Protected Status
+2023-17877,2023-19312,2,0.7708535744500459,Extension and Redesignation of South Sudan for Temporary Protected Status
+2023-17877,2023-22375,3,0.730440310287376,Extension and Redesignation of Cameroon for Temporary Protected Status
+2023-19312,2023-17877,1,0.7708535744500459,Extension and Redesignation of Sudan for Temporary Protected Status
+2023-19312,2023-20791,2,0.7480636388773686,Extension and Redesignation of Afghanistan for Temporary Protected Status
+2023-19312,2023-22375,3,0.7148498229096502,Extension and Redesignation of Cameroon for Temporary Protected Status
+2023-19320,2022-04570,1,0.9268292346509154,Employment Authorization for South Sudanese F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Humanitarian Crisis in South Sudan
+2023-19320,2023-17871,2,0.8627068724934064,Employment Authorization for Sudanese F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Sudan
+2023-19320,2024-01762,3,0.8308835198557547,Employment Authorization for Syrian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Armed Conflict and Current Humanitarian Crisis in Syria
+2023-18199,2024-11121,1,0.5638818566354368,Efficient Case and Docket Management in Immigration Proceedings
+2023-18199,2020-18676,2,0.47512962470838466,Appellate Procedures and Decisional Finality in Immigration Proceedings; Administrative Closure
+2023-18199,2020-27008,3,0.4362543368328755,Appellate Procedures and Decisional Finality in Immigration Proceedings; Administrative Closure
+C1-2023-19312,2022-04573,1,0.5554617972350944,Extension and Redesignation of South Sudan for Temporary Protected Status
+C1-2023-19312,2022-10018,2,0.5293583199133811,Extension and Redesignation of South Sudan for Temporary Protected Status-Correction
+C1-2023-19312,2023-19312,3,0.46600647924793837,Extension and Redesignation of South Sudan for Temporary Protected Status
+2023-20789,2024-01762,1,0.9183796256406492,Employment Authorization for Syrian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Armed Conflict and Current Humanitarian Crisis in Syria
+2023-20789,2023-22371,2,0.9113927620651904,Employment Authorization for Cameroonian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Armed Conflict and Current Humanitarian Crisis in Cameroon
+2023-20789,2022-10886,3,0.8578594484808412,Employment Authorization for Afghan F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Situation in Afghanistan
+2023-20791,2023-19312,1,0.7480636388773686,Extension and Redesignation of South Sudan for Temporary Protected Status
+2023-20791,2023-17875,2,0.7281006388932849,Extension and Redesignation of Ukraine for Temporary Protected Status
+2023-20791,2023-17877,3,0.7271315890571053,Extension and Redesignation of Sudan for Temporary Protected Status
+2023-21865,2023-22375,1,0.6847376851851114,Extension and Redesignation of Cameroon for Temporary Protected Status
+2023-21865,2023-20791,2,0.6217093992804078,Extension and Redesignation of Afghanistan for Temporary Protected Status
+2023-21865,2023-04735,3,0.6206750242589856,Extension and Redesignation of Somalia for Temporary Protected Status
+2023-22371,2024-01762,1,0.9207513778490231,Employment Authorization for Syrian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Armed Conflict and Current Humanitarian Crisis in Syria
+2023-22371,2023-20789,2,0.9113927620651904,Employment Authorization for Afghan F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Armed Conflict and Current Humanitarian Crisis in Afghanistan
+2023-22371,2022-12227,3,0.8586046704433898,Employment Authorization for Cameroonian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Crises in Cameroon
+2023-22375,2023-17875,1,0.7314137696634722,Extension and Redesignation of Ukraine for Temporary Protected Status
+2023-22375,2023-17877,2,0.730440310287376,Extension and Redesignation of Sudan for Temporary Protected Status
+2023-22375,2023-20791,3,0.7254421492896646,Extension and Redesignation of Afghanistan for Temporary Protected Status
+2023-25507,2022-10018,1,0.3507973939240502,Extension and Redesignation of South Sudan for Temporary Protected Status-Correction
+2023-25507,2023-21865,2,0.3345059058150388,Extension and Redesignation of Venezuela for Temporary Protected Status
+2023-25507,2022-17931,3,0.3136591450664463,Extension and Redesignation of Syria for Temporary Protected Status-Correction
+2023-27342,2021-20481,1,0.3778426523313252,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for El Salvador, Haiti, Nicaragua, Sudan, Honduras, and Nepal"
+2023-27342,2022-24984,2,0.3764209234123724,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for El Salvador, Haiti, Nicaragua, Sudan, Honduras, and Nepal"
+2023-27342,2019-24047,3,0.3659047383605726,"Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for El Salvador, Haiti, Honduras, Nepal, Nicaragua, and Sudan"
+2024-01762,2023-22371,1,0.9207513778490231,Employment Authorization for Cameroonian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Armed Conflict and Current Humanitarian Crisis in Cameroon
+2024-01762,2023-20789,2,0.9183796256406492,Employment Authorization for Afghan F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Armed Conflict and Current Humanitarian Crisis in Afghanistan
+2024-01762,2023-17872,3,0.8643235881804311,Employment Authorization for Ukrainian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Armed Conflict in Ukraine
+2024-01764,2022-16508,1,0.7471984684523129,Extension and Redesignation of Syria for Temporary Protected Status
+2024-01764,2024-07643,2,0.707597093401363,Extension and Redesignation of Ethiopia for Temporary Protected Status
+2024-01764,2024-06104,3,0.6925563632163672,Extension and Redesignation of Burma (Myanmar) for Temporary Protected Status
+2024-04820,2022-19542,1,0.9290929245358872,Employment Authorization for Venezuelan F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Humanitarian Crisis in Venezuela
+2024-04820,2023-04737,2,0.8670361655992046,Employment Authorization for Somali F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Somalia
+2024-04820,2022-28293,3,0.8665300808612639,Employment Authorization for Yemeni F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Crisis in Yemen
+2024-06096,2024-07642,1,0.8762143749012621,Employment Authorization for Ethiopian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Armed Conflict and the Current Humanitarian Crisis in Ethiopia
+2024-06096,2024-07869,2,0.8287734361469843,Employment Authorization for Certain Palestinian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Humanitarian Crisis in the Palestinian Territories
+2024-06096,2024-24226,3,0.7890881464516911,Employment Authorization for Certain Lebanese F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Humanitarian Crisis in Lebanon
+2024-06104,2022-20784,1,0.8312140387652761,Extension and Redesignation of Burma (Myanmar) for Temporary Protected Status
+2024-06104,2024-07643,2,0.6970678943032409,Extension and Redesignation of Ethiopia for Temporary Protected Status
+2024-06104,2024-01764,3,0.6925563632163672,Extension and Redesignation of Syria for Temporary Protected Status
+2024-06929,2020-06846,1,0.7716761613340446,Expanding the Size of the Board of Immigration Appeals
+2024-06929,2018-03980,2,0.7387842672806324,Expanding the Size of the Board of Immigration Appeals
+2024-06929,2025-06294,3,0.4922991417112473,Reducing the Size of the Board of Immigration Appeals
+2024-06657,2018-15140,1,0.30106672322507533,Adjusting Program Fees for the Student and Exchange Visitor Program
+2024-06657,2024-16127,2,0.2068535919808079,Update to the Department of Homeland Security STEM Designated Degree Program List
+2024-06657,2025-23970,3,0.20464834107573707,Security Bars and Processing; Confirmation of Effective Date; Partial Withdrawal
+2024-07642,2024-06096,1,0.8762143749012621,Employment Authorization for Nationals of Burma F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of Current Armed Conflict and the Current Humanitarian Crisis in Burma (Myanmar)
+2024-07642,2024-07869,2,0.815259609540777,Employment Authorization for Certain Palestinian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Humanitarian Crisis in the Palestinian Territories
+2024-07642,2024-24226,3,0.7762214208508591,Employment Authorization for Certain Lebanese F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Humanitarian Crisis in Lebanon
+2024-07643,2024-01764,1,0.707597093401363,Extension and Redesignation of Syria for Temporary Protected Status
+2024-07643,2024-06104,2,0.6970678943032409,Extension and Redesignation of Burma (Myanmar) for Temporary Protected Status
+2024-07643,2023-22375,3,0.6960564357905878,Extension and Redesignation of Cameroon for Temporary Protected Status
+2024-07866,2024-24229,1,0.9417112211978774,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Lebanon
+2024-07866,2024-21661,2,0.8217809526719007,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Liberia
+2024-07866,2022-19207,3,0.7115598653555069,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Liberians
+2024-07869,2024-24226,1,0.952115635028323,Employment Authorization for Certain Lebanese F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Humanitarian Crisis in Lebanon
+2024-07869,2024-15082,2,0.8649892208117981,Employment Authorization for Yemeni F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Yemen
+2024-07869,2024-15788,3,0.864498177119934,Employment Authorization for Somali F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Somalia
+2024-11121,2023-18199,1,0.5638818566354368,Appellate Procedures and Decisional Finality in Immigration Proceedings; Administrative Closure
+2024-11121,2020-27008,2,0.40945206218281266,Appellate Procedures and Decisional Finality in Immigration Proceedings; Administrative Closure
+2024-11121,2021-26853,3,0.3505438457631441,Executive Office for Immigration Review Electronic Case Access and Filing
+2024-11986,2020-01110,1,0.17920089063462208,Notice Concerning Termination of Eligibility for E-1 and E-2 Nonimmigrant Classification Based on Treaty of Amity With Iran
+2024-11986,2022-06357,2,0.17772885167010802,Notice of Meeting-EOIR Case & Appeals System; Immigration Court Online Resource
+2024-11986,2021-07987,3,0.16323636244900283,Identifying Barriers Across U.S. Citizenship and Immigration Services (USCIS) Benefits and Services; Request for Public Input
+2024-12396,2018-15140,1,0.26160078172591467,Adjusting Program Fees for the Student and Exchange Visitor Program
+2024-12396,2020-27506,2,0.17293943448469642,Executive Office for Immigration Review; Fee Review
+2024-12396,2020-00182,3,0.15164047873820788,Registration Requirement for Petitioners Seeking To File H-1B Petitions on Behalf of Cap-Subject Aliens
+2024-12435,2024-22602,1,0.5978109420671249,Securing the Border
+2024-12435,2018-24594,2,0.3582145996867064,Aliens Subject to a Bar on Entry Under Certain Presidential Proclamations; Procedures for Protection Claims
+2024-12435,2019-25137,3,0.2094316248870647,Implementing Bilateral and Multilateral Asylum Cooperative Agreements Under the Immigration and Nationality Act
+2024-14121,2024-31204,1,0.9399010405090626,Civil Monetary Penalty Adjustments for Inflation
+2024-14121,2021-22564,2,0.7429469903485237,Civil Monetary Penalty Adjustments for Inflation
+2024-14121,2022-00105,3,0.7392459321738847,Civil Monetary Penalty Adjustments for Inflation
+2024-14232,2024-15082,1,0.8809913715437989,Employment Authorization for Yemeni F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Yemen
+2024-14232,2024-15788,2,0.8804912436287056,Employment Authorization for Somali F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Somalia
+2024-14232,2024-27787,3,0.8729574963396868,Employment Authorization for Lebanese F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Lebanon
+2024-14247,2024-15084,1,0.635054323772778,Extension and Redesignation of Yemen for Temporary Protected Status
+2024-14247,2024-15829,2,0.6083684891425403,Extension and Redesignation of Somalia for Temporary Protected Status
+2024-14247,2023-01586,3,0.5619839353380486,Extension and Redesignation of Haiti for Temporary Protected Status
+2024-15082,2024-15788,1,0.9186927692768448,Employment Authorization for Somali F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Somalia
+2024-15082,2024-27787,2,0.9108321582712691,Employment Authorization for Lebanese F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Lebanon
+2024-15082,2024-14232,3,0.8809913715437989,Employment Authorization for Haitian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Haiti
+2024-15084,2024-15829,1,0.6958916183346816,Extension and Redesignation of Somalia for Temporary Protected Status
+2024-15084,2024-14247,2,0.635054323772778,Extension and Redesignation of Haiti for Temporary Protected Status
+2024-15084,2022-28283,3,0.5584012326461733,Extension and Redesignation of Yemen for Temporary Protected Status
+2024-15788,2024-15082,1,0.9186927692768448,Employment Authorization for Yemeni F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Yemen
+2024-15788,2024-27787,2,0.9103150901102979,Employment Authorization for Lebanese F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Lebanon
+2024-15788,2024-14232,3,0.8804912436287056,Employment Authorization for Haitian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Haiti
+2024-15829,2024-15084,1,0.6958916183346816,Extension and Redesignation of Yemen for Temporary Protected Status
+2024-15829,2024-14247,2,0.6083684891425403,Extension and Redesignation of Haiti for Temporary Protected Status
+2024-15829,2021-15595,3,0.5712746531641435,Extension and Redesignation of Somalia for Temporary Protected Status
+2024-16127,2024-06657,1,0.2068535919808079,"Removal of Obsolete Procedures and Requirements Related to F, J, and M Nonimmigrants"
+2024-16127,2022-12227,2,0.17333759452104736,Employment Authorization for Cameroonian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Crises in Cameroon
+2024-16127,2025-22744,3,0.17149163399772982,"Termination of Family Reunification Parole Processes for Colombians, Cubans, Ecuadorians, Guatemalans, Haitians, Hondurans, and Salvadorans"
+2024-16138,2021-09609,1,0.2488184259742161,Removal of International Entrepreneur Parole Program
+2024-16138,2024-06657,2,0.16765665460275858,"Removal of Obsolete Procedures and Requirements Related to F, J, and M Nonimmigrants"
+2024-16138,2025-20401,3,0.16228076428597252,Certain Immigration Enforcement-Related Fees Required by HR-1 Reconciliation Bill: Fiscal Year 2026 Adjustments for Inflation
+2024-21661,2024-07866,1,0.8217809526719007,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Certain Palestinians
+2024-21661,2024-24229,2,0.7946990713000901,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Lebanon
+2024-21661,2025-05903,3,0.7252483558229856,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Hong Kong
+2024-22602,2024-12435,1,0.5978109420671249,Securing the Border
+2024-22602,2020-27856,2,0.26914431401343764,Asylum Eligibility and Procedural Modifications
+2024-22602,2026-21024,3,0.26207530303606164,Imposition and Collection of Civil Penalties for Certain Immigration-Related Violations
+2024-24226,2024-07869,1,0.952115635028323,Employment Authorization for Certain Palestinian F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Humanitarian Crisis in the Palestinian Territories
+2024-24226,2024-27787,2,0.9058990394311056,Employment Authorization for Lebanese F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Lebanon
+2024-24226,2024-15082,3,0.8235697612658787,Employment Authorization for Yemeni F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Yemen
+2024-24229,2024-07866,1,0.9417112211978774,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Certain Palestinians
+2024-24229,2024-21661,2,0.7946990713000901,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Liberia
+2024-24229,2022-19207,3,0.690784041684593,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Liberians
+2024-24213,2021-16181,1,0.9999999999999999,Notice of Approval of New Credentialing Organization for Healthcare Workers for Certain Immigration Purposes
+2024-24213,2026-05942,2,0.974654680789743,Notice of Approval of New Credentialing Organization for Health Care Workers for Certain Immigration Purposes
+2024-24213,2021-07987,3,0.13075415362893347,Identifying Barriers Across U.S. Citizenship and Immigration Services (USCIS) Benefits and Services; Request for Public Input
+2024-27787,2024-15082,1,0.9108321582712691,Employment Authorization for Yemeni F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Yemen
+2024-27787,2024-15788,2,0.9103150901102979,Employment Authorization for Somali F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Crisis in Somalia
+2024-27787,2024-24226,3,0.9058990394311056,Employment Authorization for Certain Lebanese F-1 Nonimmigrant Students Experiencing Severe Economic Hardship as a Direct Result of the Current Humanitarian Crisis in Lebanon
+2024-27788,2022-26880,1,0.5107741559667557,Designation of Ethiopia for Temporary Protected Status
+2024-27788,2022-12229,2,0.4714834868427211,Designation of Cameroon for Temporary Protected Status
+2024-27788,2024-14247,3,0.4622344449530873,Extension and Redesignation of Haiti for Temporary Protected Status
+2024-30500,2021-00409,1,0.39970380180035137,Procedures for Asylum and Withholding of Removal; Credible Fear and Reasonable Fear Review
+2024-30500,2020-12575,2,0.3396213416396478,Procedures for Asylum and Withholding of Removal; Credible Fear and Reasonable Fear Review
+2024-30500,2020-26875,3,0.33002855542868986,Procedures for Asylum and Withholding of Removal; Credible Fear and Reasonable Fear Review
+2024-30774,2021-01683,1,0.6391893431896623,Security Bars and Processing; Delay of Effective Date
+2024-30774,2021-28016,2,0.6187354132659545,Security Bars and Processing; Delay of Effective Date
+2024-30774,2022-28121,3,0.607293219817773,Security Bars and Processing; Delay of Effective Date
+2024-30213,2022-27178,1,0.7310505657566745,Trial Testing of Redesigned Naturalization Test for Naturalization Applications
+2024-30213,2025-18050,2,0.6107835233356329,Notice of Implementation of 2025 Naturalization Civics Test
+2024-30213,2025-22744,3,0.12292688741774009,"Termination of Family Reunification Parole Processes for Colombians, Cubans, Ecuadorians, Guatemalans, Haitians, Hondurans, and Salvadorans"
+2024-30754,2020-25912,1,0.43407661285055765,Motions To Reopen and Reconsider; Effect of Departure; Stay of Removal
+2024-30754,2020-03784,2,0.29033203706551414,Executive Office for Immigration Review; Fee Review
+2024-30754,2020-27506,3,0.23955155185939292,Executive Office for Immigration Review; Fee Review
+2024-31204,2024-14121,1,0.9399010405090626,Civil Monetary Penalty Adjustments for Inflation
+2024-31204,2022-00105,2,0.7600157521085459,Civil Monetary Penalty Adjustments for Inflation
+2024-31204,2023-00626,3,0.7587869284216107,Civil Monetary Penalty Adjustments for Inflation
+2025-00582,2020-04666,1,0.7537520419416776,Notice of DHS's Requirement of the Temporary Labor Certification Final Determination Under the H-2B Temporary Worker Program
+2025-00582,2020-04667,2,0.7529935483743885,Notice of DHS's Requirement of the Temporary Labor Certification Final Determination Under the H-2A Temporary Worker Program
+2025-00582,2018-26767,3,0.18129248340030574,Modernizing Recruitment Requirements for the Temporary Employment of H-2B Foreign Workers in the United States; Extension of Comment Period
+2025-00626,2023-13018,1,0.606489318671018,Reconsideration and Rescission of Termination of the Designation of El Salvador for Temporary Protected Status; Extension of the Temporary Protected Status Designation for El Salvador
+2025-00626,C1-2018-00885,2,0.5421489919592166,Termination of the Designation of El Salvador for Temporary Protected Status
+2025-00626,2017-04454,3,0.42520709551540514,Automatic Extension of Employment Authorization Documentation for Beneficiaries Under El Salvador's Designation for Temporary Protected Status
+2025-00769,2025-00770,1,0.6706890754618977,Extension of the Designation of Sudan for Temporary Protected Status
+2025-00769,2025-00771,2,0.6459149271045062,Extension of the Designation of Ukraine for Temporary Protected Status
+2025-00769,2023-21865,3,0.46686393003352744,Extension and Redesignation of Venezuela for Temporary Protected Status
+2025-00770,2025-00771,1,0.8252956430864676,Extension of the Designation of Ukraine for Temporary Protected Status
+2025-00770,2025-00769,2,0.6706890754618977,Extension of the 2023 Designation of Venezuela for Temporary Protected Status
+2025-00770,2023-17877,3,0.473804474496003,Extension and Redesignation of Sudan for Temporary Protected Status
+2025-00771,2025-00770,1,0.8252956430864676,Extension of the Designation of Sudan for Temporary Protected Status
+2025-00771,2025-00769,2,0.6459149271045062,Extension of the 2023 Designation of Venezuela for Temporary Protected Status
+2025-00771,2023-17875,3,0.510594686228156,Extension and Redesignation of Ukraine for Temporary Protected Status
+2025-02183,2025-00769,1,0.4247677101660659,Extension of the 2023 Designation of Venezuela for Temporary Protected Status
+2025-02183,2023-21865,2,0.39420443570803987,Extension and Redesignation of Venezuela for Temporary Protected Status
+2025-02183,2025-02294,3,0.37756838424751354,"Termination of the October 3, 2023 Designation of Venezuela for Temporary Protected Status"
+2025-02294,2025-17087,1,0.5833646025089293,Termination of the 2021 Designation of Venezuela for Temporary Protected Status
+2025-02294,2023-21865,2,0.3933598157336873,Extension and Redesignation of Venezuela for Temporary Protected Status
+2025-02294,2025-02183,3,0.37756838424751354,Vacatur of 2025 Temporary Protected Status Decision for Venezuela
+2025-02970,2024-14247,1,0.4801459918781281,Extension and Redesignation of Haiti for Temporary Protected Status
+2025-02970,2025-21379,2,0.38368680253236,Termination of the Designation of Haiti for Temporary Protected Status
+2025-02970,2023-01586,3,0.37010866180669943,Extension and Redesignation of Haiti for Temporary Protected Status
+2025-05903,2023-09507,1,0.7891712905359579,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Hong Kong
+2025-05903,2024-21661,2,0.7252483558229856,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Liberia
+2025-05903,2021-23012,3,0.7222766590422174,Implementation of Employment Authorization for Individuals Covered by Deferred Enforced Departure for Hong Kong
+2025-06294,2020-06846,1,0.5974159762026973,Expanding the Size of the Board of Immigration Appeals
+2025-06294,2018-03980,2,0.5382743453927264,Expanding the Size of the Board of Immigration Appeals
+2025-06294,2024-06929,3,0.4922991417112473,Expanding the Size of the Board of Immigration Appeals
+2025-07976,2026-10704,1,0.6578753362237054,Extension of Lebanon Designation for Temporary Protected Status
+2025-07976,2017-27140,2,0.5500575835812563,Extension of the Designation of Honduras for Temporary Protected Status
+2025-07976,2025-19800,3,0.501471632838569,Termination of the Designation of South Sudan for Temporary Protected Status
+2025-08201,2025-12688,1,0.6308057960394043,Termination of the Designation of Nicaragua for Temporary Protected Status
+2025-08201,2025-10363,2,0.6177143843371243,Termination of the Designation of Nepal for Temporary Protected Status
+2025-08201,2025-12224,3,0.6139090225335411,Termination of the Designation of Haiti for Temporary Protected Status
+2025-10236,2025-10363,1,0.6859093541165757,Termination of the Designation of Nepal for Temporary Protected Status
+2025-10236,2025-12224,2,0.6117003409846623,Termination of the Designation of Haiti for Temporary Protected Status
+2025-10236,2025-12688,3,0.5748355862740924,Termination of the Designation of Nicaragua for Temporary Protected Status
+2025-10363,2025-10236,1,0.6859093541165757,Termination of the Designation of Cameroon for Temporary Protected Status
+2025-10363,2025-12224,2,0.6550040395511709,Termination of the Designation of Haiti for Temporary Protected Status
+2025-10363,2025-12688,3,0.6182182672269728,Termination of the Designation of Nicaragua for Temporary Protected Status
+2025-11965,2026-21024,1,0.7010626017454998,Imposition and Collection of Civil Penalties for Certain Immigration-Related Violations
+2025-11965,2025-06294,2,0.2803442057371651,Reducing the Size of the Board of Immigration Appeals
+2025-11965,2026-02326,3,0.2678781905387376,Appellate Procedures for the Board of Immigration Appeals
+2025-12224,2025-12688,1,0.7075378349829283,Termination of the Designation of Nicaragua for Temporary Protected Status
+2025-12224,2025-21379,2,0.6885059119084904,Termination of the Designation of Haiti for Temporary Protected Status
+2025-12224,2025-10363,3,0.6550040395511709,Termination of the Designation of Nepal for Temporary Protected Status
+2025-12621,2025-12688,1,0.6946113668596252,Termination of the Designation of Nicaragua for Temporary Protected Status
+2025-12621,2025-12224,2,0.6511149851875372,Termination of the Designation of Haiti for Temporary Protected Status
+2025-12621,2018-12161,3,0.6349307508936,Termination of the Designation of Honduras for Temporary Protected Status
+2025-12688,2025-12224,1,0.7075378349829283,Termination of the Designation of Haiti for Temporary Protected Status
+2025-12688,2025-12621,2,0.6946113668596252,Termination of the Designation of Honduras for Temporary Protected Status
+2025-12688,2025-08201,3,0.6308057960394043,Termination of the Designation of Afghanistan for Temporary Protected Status
+2025-16453,2025-20304,1,0.5561305082134238,Certain DHS Immigration Fees Required by HR-1: Fiscal Year 2026 Adjustments for Inflation
+2025-16453,2026-20185,2,0.5226728610909505,Certain DHS Immigration-Related Fees Required by HR-1: Fiscal Year 2027 Adjustments for Inflation
+2025-16453,2022-10869,3,0.34198375725600005,Electronic System for Travel Authorization (ESTA) Fee Increase
+2025-16573,2026-02326,1,0.37993462835311365,Appellate Procedures for the Board of Immigration Appeals
+2025-16573,2020-23210,2,0.2502455377047302,Organization of the Executive Office for Immigration Review
+2025-16573,2026-15458,3,0.23932554427938335,Civil Money Penalty for Actions in Contempt of an Immigration Judge's Proper Exercise of Authority
+2025-17087,2025-18322,1,0.6200627085793764,Termination of the Designation of Syria for Temporary Protected Status
+2025-17087,2025-02294,2,0.5833646025089293,"Termination of the October 3, 2023 Designation of Venezuela for Temporary Protected Status"
+2025-17087,2025-19800,3,0.5496693966532763,Termination of the Designation of South Sudan for Temporary Protected Status
+2025-18050,2022-27178,1,0.6882331303442586,Trial Testing of Redesigned Naturalization Test for Naturalization Applications
+2025-18050,2024-30213,2,0.6107835233356329,Termination of Trial Testing of Redesigned Naturalization Test for Naturalization Applications
+2025-18050,2020-01110,3,0.15095301898849128,Notice Concerning Termination of Eligibility for E-1 and E-2 Nonimmigrant Classification Based on Treaty of Amity With Iran
+2025-18322,2025-17087,1,0.6200627085793764,Termination of the 2021 Designation of Venezuela for Temporary Protected Status
+2025-18322,2025-22746,2,0.613725862597382,Termination of the Designation of Ethiopia for Temporary Protected Status
+2025-18322,2026-04179,3,0.606895650703981,Termination of the Designation of Yemen for Temporary Protected Status
+2025-19800,2025-21069,1,0.6136183367154358,Termination of the Designation of Burma (Myanmar) for Temporary Protected Status
+2025-19800,2026-04179,2,0.6068420432564585,Termination of the Designation of Yemen for Temporary Protected Status
+2025-19800,2025-22746,3,0.6027449598567624,Termination of the Designation of Ethiopia for Temporary Protected Status
+2025-19983,2021-27571,1,0.6866970422622172,Automation of CBP Form I-418 for Vessels
+2025-19983,2019-13431,2,0.4525703785135109,Flights To and From Cuba
+2025-19983,2022-05758,3,0.33619546135675704,Streamlining I-94 Issuance at the Land Border
+2025-20304,2026-20185,1,0.8859555979988736,Certain DHS Immigration-Related Fees Required by HR-1: Fiscal Year 2027 Adjustments for Inflation
+2025-20304,2025-20401,2,0.6773959555228788,Certain Immigration Enforcement-Related Fees Required by HR-1 Reconciliation Bill: Fiscal Year 2026 Adjustments for Inflation
+2025-20304,2026-20186,3,0.6487134554229886,Certain DHS Immigration-Related Fees Required by HR-1: Fiscal Year 2027 Adjustments for Inflation
+2025-20401,2026-20186,1,0.8141510467173357,Certain DHS Immigration-Related Fees Required by HR-1: Fiscal Year 2027 Adjustments for Inflation
+2025-20401,2025-20304,2,0.6773959555228788,Certain DHS Immigration Fees Required by HR-1: Fiscal Year 2026 Adjustments for Inflation
+2025-20401,2026-20185,3,0.606250431097086,Certain DHS Immigration-Related Fees Required by HR-1: Fiscal Year 2027 Adjustments for Inflation
+2025-20622,2025-20304,1,0.5716884164249038,Certain DHS Immigration Fees Required by HR-1: Fiscal Year 2026 Adjustments for Inflation
+2025-20622,2026-20186,2,0.5331586230889174,Certain DHS Immigration-Related Fees Required by HR-1: Fiscal Year 2027 Adjustments for Inflation
+2025-20622,2025-20401,3,0.5256272331699123,Certain Immigration Enforcement-Related Fees Required by HR-1 Reconciliation Bill: Fiscal Year 2026 Adjustments for Inflation
+2025-21069,2025-19800,1,0.6136183367154358,Termination of the Designation of South Sudan for Temporary Protected Status
+2025-21069,2026-04179,2,0.6007421970373749,Termination of the Designation of Yemen for Temporary Protected Status
+2025-21069,2025-22746,3,0.596686296642321,Termination of the Designation of Ethiopia for Temporary Protected Status
+2025-21379,2025-12224,1,0.6885059119084904,Termination of the Designation of Haiti for Temporary Protected Status
+2025-21379,2026-04179,2,0.5768184629010278,Termination of the Designation of Yemen for Temporary Protected Status
+2025-21379,2025-22746,3,0.5681704882908264,Termination of the Designation of Ethiopia for Temporary Protected Status
+2025-22744,2021-09609,1,0.23483533964864833,Removal of International Entrepreneur Parole Program
+2025-22744,2023-07592,2,0.21480986562602963,"Bureau of Population, Refugees, and Migration; Central American Minors Program"
+2025-22744,2024-16127,3,0.17149163399772982,Update to the Department of Homeland Security STEM Designated Degree Program List
+2025-22746,2026-04179,1,0.6389429654436338,Termination of the Designation of Yemen for Temporary Protected Status
+2025-22746,2025-18322,2,0.613725862597382,Termination of the Designation of Syria for Temporary Protected Status
+2025-22746,2026-00596,3,0.6097772930824091,Termination of the Designation of Somalia for Temporary Protected Status
+2025-23970,2024-30774,1,0.41217421409214555,Security Bars and Processing; Delay of Effective Date
+2025-23970,2022-28121,2,0.39433065533196743,Security Bars and Processing; Delay of Effective Date
+2025-23970,2021-05931,3,0.3889590682799243,Security Bars and Processing; Delay of Effective Date
+2026-00596,2026-04179,1,0.6681317666423562,Termination of the Designation of Yemen for Temporary Protected Status
+2026-00596,2025-22746,2,0.6097772930824091,Termination of the Designation of Ethiopia for Temporary Protected Status
+2026-00596,2025-18322,3,0.5796797092330066,Termination of the Designation of Syria for Temporary Protected Status
+2026-01012,2026-17146,1,0.7377541730459898,Inflation Adjustment for EOIR OBBBA Fees; Fiscal Year 2027
+2026-01012,2026-19841,2,0.6308094051388772,Inflation Adjustment for EOIR OBBBA Fees for Certain DHS Forms; Fiscal Year 2027
+2026-01012,2025-20622,3,0.5111751851836357,Inflation Adjustment to HR-1 Immigration Fees
+2026-02326,2025-06294,1,0.45711463278665887,Reducing the Size of the Board of Immigration Appeals
+2026-02326,2026-03932,2,0.4064570121612397,Appellate Procedures for the Board of Immigration Appeals; Extension of Comment Period
+2026-02326,2025-16573,3,0.37993462835311365,Designation of Temporary Immigration Judges
+2026-03932,2026-02326,1,0.4064570121612397,Appellate Procedures for the Board of Immigration Appeals
+2026-03932,2022-10185,2,0.3657409974573014,Immigration Court Practice Manual and the Board of Immigration Appeals Practice Manual; Public Forum
+2026-03932,2025-06294,3,0.30291366320646107,Reducing the Size of the Board of Immigration Appeals
+2026-04136,2020-26115,1,0.6686201912998115,Executive Office for Immigration Review Electronic Case Access and Filing
+2026-04136,2021-26853,2,0.4133158991249449,Executive Office for Immigration Review Electronic Case Access and Filing
+2026-04136,2018-13578,3,0.33981530603704624,EOIR Electronic Filing Pilot Program
+2026-04179,2026-00596,1,0.6681317666423562,Termination of the Designation of Somalia for Temporary Protected Status
+2026-04179,2025-22746,2,0.6389429654436338,Termination of the Designation of Ethiopia for Temporary Protected Status
+2026-04179,2025-18322,3,0.606895650703981,Termination of the Designation of Syria for Temporary Protected Status
+2026-05942,2024-24213,1,0.974654680789743,Notice of Approval of New Credentialing Organization for Healthcare Workers for Certain Immigration Purposes
+2026-05942,2021-16181,2,0.974654680789743,Notice of Approval of New Credentialing Organization for Healthcare Workers for Certain Immigration Purposes
+2026-05942,2021-07987,3,0.1265455294415206,Identifying Barriers Across U.S. Citizenship and Immigration Services (USCIS) Benefits and Services; Request for Public Input
+2026-10082,2025-20401,1,0.36056335777119364,Certain Immigration Enforcement-Related Fees Required by HR-1 Reconciliation Bill: Fiscal Year 2026 Adjustments for Inflation
+2026-10082,2026-20186,2,0.344754199087174,Certain DHS Immigration-Related Fees Required by HR-1: Fiscal Year 2027 Adjustments for Inflation
+2026-10082,2025-20304,3,0.21596965165404836,Certain DHS Immigration Fees Required by HR-1: Fiscal Year 2026 Adjustments for Inflation
+2026-10704,2025-07976,1,0.6578753362237054,Extension of South Sudan Designation for Temporary Protected Status
+2026-10704,2017-27140,2,0.54558476255224,Extension of the Designation of Honduras for Temporary Protected Status
+2026-10704,2024-27788,3,0.31193105332785653,Designation of Lebanon for Temporary Protected Status
+2026-11692,2020-27506,1,0.34585706975144787,Executive Office for Immigration Review; Fee Review
+2026-11692,2026-17146,2,0.3456079379945652,Inflation Adjustment for EOIR OBBBA Fees; Fiscal Year 2027
+2026-11692,2020-23210,3,0.34079556351118967,Organization of the Executive Office for Immigration Review
+2026-15458,2025-16573,1,0.23932554427938335,Designation of Temporary Immigration Judges
+2026-15458,2024-11121,2,0.2097410871202652,Efficient Case and Docket Management in Immigration Proceedings
+2026-15458,2020-27008,3,0.1964831218879602,Appellate Procedures and Decisional Finality in Immigration Proceedings; Administrative Closure
+2026-17108,C1-2026-17108,1,0.32164775749742125,Withdrawal of International Airport Designation of Chalk Seaplane Base
+2026-17108,2019-11251,2,0.31726313129949774,Notice of the Withdrawal of a 1994 Programmatic Environmental Impact Statement and a 2001 Supplemental Environmental Impact Statement Regarding Certain Activities Along the U.S. Southwest Border
+2026-17108,2019-13431,3,0.2879427548190796,Flights To and From Cuba
+2026-17146,2026-19841,1,0.7914196527598674,Inflation Adjustment for EOIR OBBBA Fees for Certain DHS Forms; Fiscal Year 2027
+2026-17146,2026-01012,2,0.7377541730459898,Inflation Adjustment for EOIR OBBBA Fees; Fiscal Year 2026
+2026-17146,2025-20622,3,0.4736530483380128,Inflation Adjustment to HR-1 Immigration Fees
+2026-19841,2026-17146,1,0.7914196527598674,Inflation Adjustment for EOIR OBBBA Fees; Fiscal Year 2027
+2026-19841,2026-01012,2,0.6308094051388772,Inflation Adjustment for EOIR OBBBA Fees; Fiscal Year 2026
+2026-19841,2026-20185,3,0.4764330227860607,Certain DHS Immigration-Related Fees Required by HR-1: Fiscal Year 2027 Adjustments for Inflation
+C1-2026-17108,2026-17108,1,0.32164775749742125,Withdrawal of International Airport Designation of Chalk Seaplane Base
+C1-2026-17108,2021-09609,2,0.18861236873084072,Removal of International Entrepreneur Parole Program
+C1-2026-17108,2024-30754,3,0.18209227481817422,Withdrawal of Notices of Proposed Rulemaking
+2026-20185,2025-20304,1,0.8859555979988736,Certain DHS Immigration Fees Required by HR-1: Fiscal Year 2026 Adjustments for Inflation
+2026-20185,2026-20186,2,0.7163311368198878,Certain DHS Immigration-Related Fees Required by HR-1: Fiscal Year 2027 Adjustments for Inflation
+2026-20185,2025-20401,3,0.606250431097086,Certain Immigration Enforcement-Related Fees Required by HR-1 Reconciliation Bill: Fiscal Year 2026 Adjustments for Inflation
+2026-20186,2025-20401,1,0.8141510467173357,Certain Immigration Enforcement-Related Fees Required by HR-1 Reconciliation Bill: Fiscal Year 2026 Adjustments for Inflation
+2026-20186,2026-20185,2,0.7163311368198878,Certain DHS Immigration-Related Fees Required by HR-1: Fiscal Year 2027 Adjustments for Inflation
+2026-20186,2025-20304,3,0.6487134554229886,Certain DHS Immigration Fees Required by HR-1: Fiscal Year 2026 Adjustments for Inflation
+2026-21024,2025-11965,1,0.7010626017454998,Imposition and Collection of Civil Penalties for Certain Immigration-Related Violations
+2026-21024,2024-22602,2,0.26207530303606164,Securing the Border
+2026-21024,2019-25137,3,0.23557569784901014,Implementing Bilateral and Multilateral Asylum Cooperative Agreements Under the Immigration and Nationality Act

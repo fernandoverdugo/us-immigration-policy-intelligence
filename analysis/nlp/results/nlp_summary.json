@@ -1,0 +1,22 @@
+{
+  "coverage": {
+    "documents": 1062,
+    "nonempty_title": 1062,
+    "nonempty_abstract": 1043,
+    "nonempty_text": 1062,
+    "administrative_information_collection": 785,
+    "substantive_policy": 277
+  },
+  "tfidf_features": 2276,
+  "tfidf_documents": 277,
+  "tfidf_scope": "substantive_policy",
+  "clusters": 9,
+  "cluster_selection": {
+    "selected": 9,
+    "evaluated_range": [
+      5,
+      12
+    ],
+    "criterion": "balance of cosine silhouette separation and policy interpretability"
+  }
+}

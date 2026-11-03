@@ -18,6 +18,7 @@ def test_health_endpoint():
     payload = response.json()
     assert payload["status"] == "ok"
     assert payload["documents"] > 0
+    assert "deployment_commit" in payload
 
 
 def test_topics_endpoint():

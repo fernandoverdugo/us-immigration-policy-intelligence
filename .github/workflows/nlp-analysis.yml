@@ -1,0 +1,76 @@
+name: NLP analysis
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/run_nlp_analysis.py"
+      - "tests/test_nlp_analysis.py"
+      - "requirements.txt"
+      - "src/ingestion/**"
+      - "scripts/fetch_federal_register.py"
+      - "scripts/load_postgres.py"
+      - "database/**"
+      - ".github/workflows/nlp-analysis.yml"
+  workflow_dispatch:
+
+jobs:
+  nlp:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: immigration_policy
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d immigration_policy"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    permissions:
+      contents: read
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/immigration_policy
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - run: python -m pip install -r requirements.txt
+      - run: python -m pytest -q
+      - run: python -m scripts.fetch_federal_register
+      - run: python -m scripts.load_postgres
+      - run: python -m scripts.run_nlp_analysis
+      - name: Verify NLP outputs
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          base = Path("analysis/nlp")
+          expected = {
+              "document_text.csv",
+              "top_terms_by_year.csv",
+              "top_terms_by_agency.csv",
+              "document_similarity.csv",
+              "cluster_assignments.csv",
+              "cluster_terms.csv",
+              "nlp_summary.json",
+          }
+          assert all((base / name).exists() for name in expected)
+
+          summary = json.loads((base / "nlp_summary.json").read_text())
+          assert summary["tfidf_documents"] > 0
+          assert summary["tfidf_features"] > 0
+          assert summary["clusters"] == 8
+          print(summary)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: classical-nlp-analysis
+          path: analysis/nlp/
+          retention-days: 7

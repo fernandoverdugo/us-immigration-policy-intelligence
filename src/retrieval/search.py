@@ -8,6 +8,7 @@ import numpy as np
 import pandas as pd
 
 RESULTS_DIR = Path("analysis/retrieval/results")
+CLUSTER_LABELS_PATH = Path("analysis/nlp/cluster_labels.csv")
 MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
 
@@ -20,6 +21,15 @@ def load_index() -> tuple[pd.DataFrame, np.ndarray]:
         raise ValueError("Embedding index metadata and vectors are misaligned.")
 
     return metadata, embeddings
+
+
+@lru_cache(maxsize=1)
+def load_cluster_labels() -> dict[int, str]:
+    frame = pd.read_csv(CLUSTER_LABELS_PATH)
+    return {
+        int(row["cluster"]): str(row["analyst_label"])
+        for _, row in frame.iterrows()
+    }
 
 
 @lru_cache(maxsize=1)
@@ -36,6 +46,7 @@ def semantic_search(query: str, k: int = 10) -> list[dict]:
         raise ValueError("k must be between 1 and 50.")
 
     metadata, embeddings = load_index()
+    labels = load_cluster_labels()
     model = load_model()
 
     query_vector = model.encode(
@@ -59,6 +70,11 @@ def semantic_search(query: str, k: int = 10) -> list[dict]:
                 "title": row["title"],
                 "agency_scopes": row["agency_scopes"],
                 "cluster": int(row["cluster"]),
+                "topic": labels.get(int(row["cluster"]), "Unlabeled policy topic"),
+                "source_url": (
+                    "https://www.federalregister.gov/d/"
+                    + str(row["document_number"])
+                ),
                 "score": float(scores[idx]),
             }
         )

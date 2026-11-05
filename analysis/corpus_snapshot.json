@@ -1,8 +1,8 @@
 {
-  "generated_at_utc": "2026-11-03T22:57:13.460175+00:00",
+  "generated_at_utc": "2026-11-05T01:06:40.925570+00:00",
   "source": "FederalRegister.gov API",
   "publication_date_start": "2017-01-01",
-  "publication_date_end": "2026-12-31",
+  "publication_date_end": "2026-11-05",
   "corpus_sha256": "4b7d610ceafc109e8c73e67632c8a9e81457356d6d2eef97c30f019d03984a2a",
   "note": "The 2026 calendar year is incomplete at retrieval time; rerunning ingestion can change downstream counts.",
   "included_unique": 1062,

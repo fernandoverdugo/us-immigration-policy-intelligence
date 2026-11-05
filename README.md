@@ -2,7 +2,7 @@
 
 An API-driven data engineering, SQL, NLP, and semantic-search project for analyzing U.S. federal immigration policy activity in the Federal Register.
 
-The project builds a reproducible 2017–2026 immigration-policy corpus, normalizes it into PostgreSQL, analyzes rulemaking patterns with SQL, explores policy topics with classical NLP, benchmarks semantic retrieval against TF-IDF, and exposes the resulting search system through FastAPI and a browser-based application.
+The project builds a reproducible 2017–present immigration-policy corpus, normalizes it into PostgreSQL, analyzes rulemaking patterns with SQL, explores policy topics with classical NLP, benchmarks semantic retrieval against TF-IDF, and exposes the resulting search system through FastAPI and a browser-based application.
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/fernandoverdugo/us-immigration-policy-intelligence)
 
@@ -51,7 +51,7 @@ Initial agency scope:
 - U.S. Immigration and Customs Enforcement (ICE)
 - Executive Office for Immigration Review (EOIR)
 
-Agency membership alone is not treated as sufficient evidence of immigration-policy relevance. Corpus inclusion uses auditable signals such as Title 8 CFR references, controlled immigration terminology, and scoped agency rules.
+Corpus inclusion uses auditable evidence appropriate to each agency scope. USCIS and EOIR are treated as inherently within the project's immigration-policy scope, while CBP and ICE documents require additional immigration-specific evidence such as Title 8 CFR references or controlled terminology because those agencies also perform substantial work outside the project's analytical scope.
 
 Raw API responses remain separate from the normalized analytical corpus so the inclusion methodology can be reviewed and revised.
 
@@ -70,7 +70,7 @@ Current validated corpus:
 
 The corpus distinguishes formal **core rulemaking** (Rules and Proposed Rules) from the larger **supplemental notice** layer.
 
-The current committed analytical snapshot records its retrieval timestamp and configured publication-date window in `analysis/corpus_snapshot.json`. Because 2026 is still in progress, rerunning ingestion can change current-year counts and downstream outputs.
+The current committed analytical snapshot records its retrieval timestamp and publication-date window in `analysis/corpus_snapshot.json`. The ingestion endpoint advances automatically to the current date, so rerunning the pipeline can change current-year counts and downstream outputs.
 
 ## Architecture
 
@@ -188,6 +188,7 @@ FastAPI exposes:
 
 - `GET /` — browser search interface
 - `GET /health` — service status
+- `GET /about` — current corpus, topic, benchmark, and year-range metadata
 - `GET /topics` — interpreted policy topics
 - `GET /filters` — available agency/year/type/topic filters
 - `GET /search?q=<query>&k=<n>` — filter-aware semantic policy search

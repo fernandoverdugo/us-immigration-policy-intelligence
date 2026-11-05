@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import json
 import os
+from datetime import date
 from pathlib import Path
 
 import pandas as pd
@@ -19,10 +21,12 @@ from src.retrieval.search import (
 
 WEB_DIR = Path("web")
 SIMILARITY_PATH = Path("analysis/nlp/results/document_similarity.csv")
+RETRIEVAL_SUMMARY_PATH = Path("analysis/retrieval/results/retrieval_summary.json")
+CURRENT_YEAR = date.today().year
 
 app = FastAPI(
     title="U.S. Immigration Policy Intelligence API",
-    version="0.3.0",
+    version="0.4.0",
     description=(
         "Search and explore the project's Federal Register immigration-policy corpus."
     ),
@@ -52,6 +56,24 @@ def health() -> dict:
     }
 
 
+@app.get("/about")
+def about() -> dict:
+    metadata, _ = load_index()
+    labels = load_cluster_labels()
+    summary = json.loads(RETRIEVAL_SUMMARY_PATH.read_text(encoding="utf-8"))
+    years = pd.to_datetime(metadata["publication_date"], errors="coerce").dt.year.dropna()
+    start_year = int(years.min()) if len(years) else 2017
+    end_year = int(years.max()) if len(years) else CURRENT_YEAR
+    return {
+        "documents": len(metadata),
+        "topics": len(labels),
+        "semantic_precision_at_5": summary["semantic_mean_precision_at_5"],
+        "retrieval_model": MODEL_NAME,
+        "start_year": start_year,
+        "end_year": end_year,
+    }
+
+
 @app.get("/topics")
 def topics() -> dict:
     labels = load_cluster_labels()
@@ -73,7 +95,7 @@ def filters() -> dict:
 def search(
     q: str = Query(min_length=2, max_length=500),
     k: int = Query(default=10, ge=1, le=50),
-    year: int | None = Query(default=None, ge=2017, le=2026),
+    year: int | None = Query(default=None, ge=2017, le=CURRENT_YEAR),
     agency: str | None = Query(default=None, max_length=50),
     document_type: str | None = Query(default=None, max_length=50),
     topic: int | None = Query(default=None, ge=0),

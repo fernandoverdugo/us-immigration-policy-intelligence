@@ -1,8 +1,10 @@
-# Milestone 5 — Retrieval findings
+# Retrieval findings
 
-The retrieval benchmark compares lexical TF-IDF search with local FastEmbed/ONNX sentence embeddings over the same 277-document substantive-policy corpus.
+The current retrieval benchmark compares lexical TF-IDF search with local FastEmbed/ONNX sentence embeddings over the substantive-policy corpus.
 
-## Headline results
+## Current benchmark snapshot
+
+At the current committed snapshot, the benchmark contains **9 natural-language queries** evaluated against **277 substantive policy documents**. The document count can change as the scheduled Federal Register refresh updates the corpus.
 
 | Metric | TF-IDF | Semantic embeddings |
 |---|---:|---:|
@@ -33,11 +35,11 @@ The benchmark therefore evaluates **topic alignment against analyst-interpreted 
 
 ## Decision
 
-Semantic retrieval is promoted as the primary natural-language search method because it:
+Semantic retrieval is the primary natural-language search method because it:
 
 1. improves aggregate precision and reciprocal rank,
 2. handles paraphrased queries better than lexical matching,
-3. preserves 100% hit rate@5 in the benchmark, and
+3. preserves 100% hit rate@5 in the current benchmark, and
 4. produces qualitatively stronger results for several important policy topics.
 
 TF-IDF remains useful as a transparent lexical baseline and may later be combined with semantic retrieval in a hybrid ranker.
@@ -50,4 +52,4 @@ The model runs locally through FastEmbed's ONNX runtime and does not require a p
 
 ## Evaluation limitation
 
-The nine-query benchmark is deliberately small and topic-oriented. A future production evaluation should use manually judged query-document relevance labels rather than exploratory cluster membership alone.
+The nine-query benchmark is deliberately small and topic-oriented. A stronger production-style evaluation would use manually judged query-document relevance labels rather than exploratory cluster membership alone.

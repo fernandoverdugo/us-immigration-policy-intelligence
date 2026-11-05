@@ -1,6 +1,6 @@
-# Milestone 5 — Semantic retrieval
+# Semantic retrieval evaluation
 
-This stage compares the project's existing TF-IDF retrieval baseline with local FastEmbed/ONNX sentence embeddings.
+This analysis compares the project's TF-IDF retrieval baseline with local FastEmbed/ONNX sentence embeddings.
 
 ## Embedding model
 
@@ -16,7 +16,7 @@ No paid API or external model-serving credential is required.
 
 ## Evaluation design
 
-The benchmark contains nine natural-language queries corresponding to the nine analyst-interpreted policy clusters from Milestone 4.
+The benchmark currently contains nine natural-language queries corresponding to the nine maintained analyst-interpreted policy topics.
 
 For each query, the project compares TF-IDF and semantic retrieval using:
 
@@ -24,9 +24,11 @@ For each query, the project compares TF-IDF and semantic retrieval using:
 - hit rate@5
 - reciprocal rank@5
 
-The target cluster is used as a topic-level relevance proxy. This is useful for comparing retrieval behavior, but it is not a legal relevance judgment and should not be interpreted as a formal information-retrieval gold standard.
+The target topic cluster is used as a topic-level relevance proxy. This is useful for comparing retrieval behavior, but it is not a legal relevance judgment and should not be interpreted as a formal information-retrieval gold standard.
 
-## Validated benchmark
+The workflow validates benchmark and index sizes dynamically rather than assuming a fixed substantive-document count, so scheduled corpus growth does not invalidate the benchmark pipeline.
+
+## Current validated benchmark
 
 | Metric | TF-IDF | Semantic |
 | --- | ---: | ---: |
@@ -46,4 +48,4 @@ The retrieval workflow regenerates and preserves these outputs from the validate
 
 ## Upstream dependency
 
-The benchmark consumes the committed Milestone 4 outputs in `analysis/nlp/results/`, including the normalized `document_text.csv` index and cluster assignments. This ensures lexical and semantic retrieval are evaluated against the same validated substantive-policy corpus.
+The benchmark consumes the committed classical-NLP outputs in `analysis/nlp/results/`, including the normalized `document_text.csv` index and cluster assignments. This ensures lexical and semantic retrieval are evaluated against the same validated substantive-policy corpus.

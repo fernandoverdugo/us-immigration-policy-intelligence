@@ -7,7 +7,6 @@ on:
       - "scripts/run_retrieval_benchmark.py"
       - "tests/test_retrieval_benchmark.py"
       - "analysis/retrieval/benchmark_queries.csv"
-      - "analysis/retrieval/README.md"
       - "analysis/nlp/results/**"
       - "src/retrieval/embedding.py"
       - "requirements.txt"

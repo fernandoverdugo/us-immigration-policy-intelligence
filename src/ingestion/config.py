@@ -1,5 +1,7 @@
+from datetime import date
+
 START_DATE = "2017-01-01"
-END_DATE = "2026-12-31"
+END_DATE = date.today().isoformat()
 
 AGENCY_SLUGS = {
     "uscis": "u-s-citizenship-and-immigration-services",

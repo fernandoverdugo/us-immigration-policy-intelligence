@@ -4,18 +4,24 @@ const results = document.querySelector("#results");
 const status = document.querySelector("#status");
 const title = document.querySelector("#results-title");
 const documentCount = document.querySelector("#document-count");
+const topicCount = document.querySelector("#topic-count");
+const precisionScore = document.querySelector("#precision-score");
+const corpusRange = document.querySelector("#corpus-range");
 const agencyFilter = document.querySelector("#agency-filter");
 const yearFilter = document.querySelector("#year-filter");
 const typeFilter = document.querySelector("#type-filter");
 const topicFilter = document.querySelector("#topic-filter");
 const clearFilters = document.querySelector("#clear-filters");
 
-async function refreshHealth() {
+async function refreshAbout() {
   try {
-    const response = await fetch("/health");
+    const response = await fetch("/about");
     if (!response.ok) return;
     const data = await response.json();
-    documentCount.textContent = data.documents.toLocaleString();
+    documentCount.textContent = Number(data.documents).toLocaleString();
+    topicCount.textContent = Number(data.topics).toLocaleString();
+    precisionScore.textContent = Number(data.semantic_precision_at_5).toFixed(3);
+    corpusRange.textContent = `Federal Register · ${data.start_year}–${data.end_year}`;
   } catch (_) {
     return;
   }
@@ -162,5 +168,5 @@ clearFilters.addEventListener("click", () => {
   topicFilter.value = "";
 });
 
-refreshHealth();
+refreshAbout();
 loadFilters();

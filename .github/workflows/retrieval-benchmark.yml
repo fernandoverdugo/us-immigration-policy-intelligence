@@ -42,6 +42,8 @@ jobs:
           import json
           from pathlib import Path
 
+          import pandas as pd
+
           base = Path("analysis/retrieval/results")
           expected = {
               "semantic_embeddings.npy",
@@ -53,8 +55,12 @@ jobs:
           assert all((base / name).exists() for name in expected)
 
           summary = json.loads((base / "retrieval_summary.json").read_text())
-          assert summary["queries"] == 9
-          assert summary["documents"] == 277
+          benchmark = pd.read_csv("analysis/retrieval/benchmark_queries.csv")
+          index = pd.read_csv(base / "embedding_index.csv")
+
+          assert summary["queries"] == len(benchmark)
+          assert summary["documents"] == len(index)
+          assert summary["documents"] > 0
           assert summary["embedding_runtime"] == "fastembed-onnx"
           print(summary)
           PY

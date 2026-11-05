@@ -1,14 +1,16 @@
-# Milestone 4 — NLP findings
+# NLP findings
 
-The classical NLP layer uses the full 1,062-document Federal Register corpus for coverage reporting, then separates routine administrative information-collection notices from topic-oriented policy analysis.
+The classical NLP layer uses the full Federal Register corpus for coverage reporting, then separates routine administrative information-collection notices from topic-oriented policy analysis.
 
-## Analytical scope
+## Current analytical snapshot
 
 - Full corpus: **1,062 documents**
 - Routine administrative information-collection notices: **785**
 - Substantive policy subset: **277**
 - TF-IDF features: **2,276**
 - Selected K-means clusters: **9**
+
+These counts describe the current committed snapshot and can change as the scheduled Federal Register refresh updates the corpus.
 
 The 9-cluster solution was selected as a balance between cosine-silhouette separation and policy interpretability. The pipeline evaluates cluster counts from 5 through 12 and preserves the evaluation table.
 
@@ -30,8 +32,6 @@ These labels are analyst interpretations of exploratory clusters. They are not o
 
 ## Representative examples
 
-The clustering aligns well with recognizable regulatory themes.
-
 - Cluster 0 includes DED employment-authorization notices for Liberia and Palestinians.
 - Cluster 1 includes major asylum and withholding-of-removal rules.
 - Cluster 2 groups Western Hemisphere Travel Initiative notices involving approved Native American tribal cards.
@@ -44,7 +44,7 @@ The clustering aligns well with recognizable regulatory themes.
 
 ## Agency language patterns
 
-The TF-IDF agency summaries also show strong substantive differentiation:
+The TF-IDF agency summaries show strong substantive differentiation:
 
 - **CBP:** entry, travel, border, ports, penalties
 - **EOIR:** rule, immigration, asylum, appeals, review
@@ -53,7 +53,9 @@ The TF-IDF agency summaries also show strong substantive differentiation:
 
 ## Model-selection note
 
-Cosine silhouette scores increased from approximately **0.163 at 5 clusters** to a peak of approximately **0.233 at 11 clusters** within the tested range. The 9-cluster solution scored approximately **0.197** but produced a more compact and policy-coherent taxonomy. For this exploratory portfolio project, interpretability is treated as an explicit model-selection criterion rather than maximizing silhouette score alone.
+Cosine silhouette scores increased from approximately **0.163 at 5 clusters** to a peak of approximately **0.233 at 11 clusters** within the tested range. The 9-cluster solution scored approximately **0.197** but produced a more compact and policy-coherent taxonomy.
+
+For this exploratory analysis, interpretability is treated as an explicit model-selection criterion rather than maximizing silhouette score alone.
 
 ## Reproducibility
 

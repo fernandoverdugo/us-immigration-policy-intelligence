@@ -16,6 +16,17 @@ Every retained document includes:
 
 These fields make corpus selection auditable, including documents associated with more than one project agency scope.
 
+## Corpus-selection rationale
+
+Agency membership is not treated identically across all four source agencies.
+
+- **USCIS and EOIR** are treated as inherently within the project's immigration-policy scope, so documents retrieved under those agency scopes can qualify through agency scope alone.
+- **CBP and ICE** have substantial responsibilities outside the project's analytical scope, so their documents require additional immigration-specific evidence such as Title 8 CFR references or controlled immigration terminology.
+
+This asymmetry is intentional. The purpose is to reduce false positives from broader enforcement and border-security activity while retaining immigration-policy material from agencies whose core missions are already tightly aligned with the research question.
+
+Corpus selection remains a methodological filter rather than a claim that the project contains every immigration-related federal policy action.
+
 ## Snapshot metadata
 
 `analysis/corpus_snapshot.json` records the retrieval timestamp, configured publication-date window, source, document counts, and scoped-agency associations for the current committed analytical snapshot.

@@ -28,6 +28,16 @@ def test_health_endpoint():
     assert "deployment_commit" in payload
 
 
+def test_about_endpoint():
+    response = client.get("/about")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["documents"] > 0
+    assert payload["topics"] > 0
+    assert 0 <= payload["semantic_precision_at_5"] <= 1
+    assert payload["start_year"] <= payload["end_year"]
+
+
 def test_topics_endpoint():
     response = client.get("/topics")
     assert response.status_code == 200

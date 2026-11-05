@@ -1,6 +1,6 @@
-# Milestone 4 — Classical NLP
+# Classical NLP analysis
 
-This stage analyzes the Federal Register corpus using interpretable text methods before introducing embeddings.
+This analysis uses interpretable text methods to explore policy topics before introducing semantic embeddings.
 
 ## NLP scope
 
@@ -10,7 +10,7 @@ A Notice is classified as `administrative_information_collection` when its title
 
 All Rules, Proposed Rules, and other notices are classified as `substantive_policy`.
 
-The current corpus contains 1,062 documents. The refined topic-analysis subset contains roughly 277 substantive documents.
+In the current committed snapshot, the full corpus contains **1,062 documents** and the substantive-policy subset contains **277 documents**. These counts can change when the scheduled refresh adds or removes source documents.
 
 ## Methods
 
@@ -29,7 +29,7 @@ The selected 9-cluster solution balances quantitative separation with policy int
 
 The workflow writes:
 
-- `document_text.csv` — normalized title + abstract text and NLP scope used by downstream retrieval
+- `document_text.csv`
 - `top_terms_by_year.csv`
 - `top_terms_by_agency.csv`
 - `document_similarity.csv`

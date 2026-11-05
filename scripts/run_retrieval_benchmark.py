@@ -19,12 +19,13 @@ def load_policy_documents() -> pd.DataFrame:
     assignments = pd.read_csv(NLP_DIR / "cluster_assignments.csv")
     text = pd.read_csv(NLP_DIR / "document_text.csv")
 
-    return assignments.merge(
+    merged = assignments.merge(
         text[["document_number", "text"]],
         on="document_number",
         how="left",
         validate="one_to_one",
     )
+    return merged.sort_values("document_number", kind="stable").reset_index(drop=True)
 
 
 def build_tfidf_index(

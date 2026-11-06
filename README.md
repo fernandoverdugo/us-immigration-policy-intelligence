@@ -14,7 +14,7 @@ The project builds a reproducible 2017–present immigration-policy corpus, norm
 
 The service runs on Render's free web-service tier, so it may take roughly a minute to wake after a period of inactivity.
 
-## Portfolio highlights
+## Project highlights
 
 - **1,062** validated Federal Register documents in the current corpus
 - **277** substantive policy documents used for topic-oriented NLP

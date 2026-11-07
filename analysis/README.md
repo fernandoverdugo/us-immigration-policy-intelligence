@@ -59,4 +59,4 @@ The analytical workflow:
 4. executes the SQL analytical layer,
 5. publishes compact aggregate outputs.
 
-The generated CSV files in `analysis/outputs/` are review artifacts. Raw API responses and the full generated document corpus are intentionally not committed.
+The generated CSV files in `analysis/outputs/` are compact analytical outputs. Raw API responses and the full generated document corpus are intentionally not committed.

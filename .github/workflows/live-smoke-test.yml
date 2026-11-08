@@ -42,10 +42,77 @@ jobs:
           assert health["status"] == "ok"
           expected = main["sha"]
           actual = health.get("deployment_commit")
-          assert actual == expected, (
-              f"stale deployment: current main is {expected}, live service is {actual}"
+          assert actual, "live service did not report a deployment commit"
+
+          if actual != expected:
+              print(
+                  "Live service is not on current main; checking whether the "
+                  "difference is limited to non-runtime repository files."
+              )
+          PY
+
+          if ! python - <<'PY'
+          import json
+
+          with open("/tmp/health.json") as handle:
+              health = json.load(handle)
+          with open("/tmp/main.json") as handle:
+              main = json.load(handle)
+
+          raise SystemExit(0 if health.get("deployment_commit") == main["sha"] else 1)
+          PY
+          then
+            ACTUAL_SHA="$(python -c 'import json; print(json.load(open("/tmp/health.json"))["deployment_commit"])')"
+            EXPECTED_SHA="$(python -c 'import json; print(json.load(open("/tmp/main.json"))["sha"])')"
+
+            curl --fail --silent               "https://api.github.com/repos/fernandoverdugo/us-immigration-policy-intelligence/compare/${ACTUAL_SHA}...${EXPECTED_SHA}"               > /tmp/compare.json
+
+            python - <<'PY'
+          import json
+
+          with open("/tmp/compare.json") as handle:
+              compare = json.load(handle)
+
+          assert compare.get("status") in {"ahead", "identical"}, (
+              "live deployment commit is not an ancestor of current main"
+          )
+
+          runtime_prefixes = (
+              "api/",
+              "src/",
+              "web/",
+              "analysis/",
+              "data/",
+              "database/",
+              "scripts/",
+              "tests/",
+          )
+          runtime_files = {
+              "Dockerfile",
+              "render.yaml",
+              "requirements.txt",
+              "requirements-api.txt",
+              "requirements-retrieval.txt",
+              "requirements-lock.txt",
+          }
+
+          changed = [row["filename"] for row in compare.get("files", [])]
+          relevant = [
+              path for path in changed
+              if path in runtime_files or path.startswith(runtime_prefixes)
+          ]
+
+          assert not relevant, (
+              "live deployment is behind runtime-relevant changes: "
+              + ", ".join(relevant)
+          )
+
+          print(
+              "Live service is behind current main only by non-runtime files: "
+              + ", ".join(changed)
           )
           PY
+          fi
       - name: Verify homepage
         run: |
           curl --fail --retry 12 --retry-delay 10 --retry-all-errors \

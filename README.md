@@ -1,5 +1,7 @@
 # U.S. Immigration Policy Intelligence
 
+[![API checks](https://github.com/fernandoverdugo/us-immigration-policy-intelligence/actions/workflows/api-checks.yml/badge.svg)](https://github.com/fernandoverdugo/us-immigration-policy-intelligence/actions/workflows/api-checks.yml)
+
 An API-driven data engineering, SQL, NLP, and semantic-search project for analyzing U.S. federal immigration policy activity in the Federal Register.
 
 The project builds a reproducible 2017–present immigration-policy corpus, normalizes it into PostgreSQL, analyzes rulemaking patterns with SQL, explores policy topics with classical NLP, benchmarks semantic retrieval against TF-IDF, and exposes the resulting search system through FastAPI and a browser-based application.

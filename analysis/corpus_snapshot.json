@@ -1,9 +1,9 @@
 {
-  "generated_at_utc": "2026-11-05T01:06:40.925570+00:00",
+  "generated_at_utc": "2026-11-14T13:28:11.336093+00:00",
   "source": "FederalRegister.gov API",
   "publication_date_start": "2017-01-01",
-  "publication_date_end": "2026-11-05",
-  "corpus_sha256": "4b7d610ceafc109e8c73e67632c8a9e81457356d6d2eef97c30f019d03984a2a",
+  "publication_date_end": "2026-11-14",
+  "corpus_sha256": "35d418370609f3fb14ddae7bd33fdac1bad6c9f5ada7b4bb2b766095e783dc5b",
   "note": "The 2026 calendar year is incomplete at retrieval time; rerunning ingestion can change downstream counts.",
   "included_unique": 1062,
   "included_by_document_type": {
